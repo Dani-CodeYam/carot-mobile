@@ -1,0 +1,10 @@
+/* NativeWind / Tailwind utility layer.
+ *
+ * Design tokens are defined in lib/theme.ts — that is the single source
+ * of truth for colors, spacing, typography, and border radius.
+ * Do NOT define CSS custom properties here for design tokens.
+ * React Native components cannot read CSS variables.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

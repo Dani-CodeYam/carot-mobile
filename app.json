@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "El Carot",
+    "slug": "carot-mobile",
+    "version": "1.0.0",
+    "scheme": "carot",
+    "platforms": ["ios", "android", "web"],
+    "backgroundColor": "#202020",
+    "userInterfaceStyle": "dark",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "bundleIdentifier": "com.elcarot.mobile"
+    },
+    "android": {
+      "package": "com.elcarot.mobile",
+      "backgroundColor": "#202020"
+    }
+  }
+}
