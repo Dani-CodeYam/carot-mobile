@@ -111,3 +111,7 @@ expo-env.d.ts
 # @end expo-cli
 
 # CodeYam - local runtime state
+
+# Agent tooling — machine-local, not shared
+.claude/settings.local.json
+.codex/
