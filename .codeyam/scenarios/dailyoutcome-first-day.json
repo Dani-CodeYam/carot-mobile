@@ -1,0 +1,11 @@
+{
+  "name": "DailyOutcome - First day",
+  "id": "ffa2bb31-31e2-4c9e-9dd8-8a30afccccc9",
+  "url": "/isolated-components/DailyOutcome?s=FirstDay",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "DailyOutcome",
+  "scenarioType": "component"
+}

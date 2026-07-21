@@ -1,0 +1,11 @@
+{
+  "name": "Tengo una pregunta específica",
+  "id": "508f4301-1003-4471-b7a8-c7aa5103d1f2",
+  "url": "/question",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/question.tsx"
+}

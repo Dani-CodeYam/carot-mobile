@@ -1,0 +1,11 @@
+{
+  "name": "Quiero recibir un mensaje",
+  "id": "79e3be69-7e5a-4128-aa0d-5ec565ec604d",
+  "url": "/reading",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/reading.tsx"
+}

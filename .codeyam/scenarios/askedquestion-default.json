@@ -1,0 +1,11 @@
+{
+  "name": "AskedQuestion - Default",
+  "id": "c3235a88-2c52-454c-8588-81a4a1a6dabd",
+  "url": "/isolated-components/AskedQuestion?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AskedQuestion",
+  "scenarioType": "component"
+}

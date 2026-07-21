@@ -1,0 +1,11 @@
+{
+  "name": "LangProvider - Default",
+  "id": "8a3d6650-7955-4456-a9d7-67d4c6eca088",
+  "url": "/isolated-components/LangProvider?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "LangProvider",
+  "scenarioType": "component"
+}

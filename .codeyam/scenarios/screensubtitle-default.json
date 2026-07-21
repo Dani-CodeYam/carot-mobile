@@ -1,0 +1,11 @@
+{
+  "name": "ScreenSubtitle - Default",
+  "id": "7ec50992-bf74-4f38-84ed-36626d8bdbb1",
+  "url": "/isolated-components/ScreenSubtitle?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ScreenSubtitle",
+  "scenarioType": "component"
+}

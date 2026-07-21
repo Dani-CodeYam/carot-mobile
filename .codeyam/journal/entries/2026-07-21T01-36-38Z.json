@@ -1,0 +1,1455 @@
+{
+  "timestamp": "2026-07-21T01:36:38Z",
+  "title": "Message and question flows, and a card you choose yourself",
+  "type": "feature",
+  "userRequest": "bien, pero las flechas para ir d eun lado a otro de las cartas no funcionan",
+  "description": "Built the web app's two remaining entry points as real flows: 'quiero recibir un mensaje' draws with nothing asked of it, and 'tengo una pregunta específica' takes the question first and keeps it on screen above the answer. Both end in a spread of 22 face-down cards you move through and pick from — the deck is shuffled each visit, so position says nothing about the arcana and the choice is a real blind draw. The revealed page was rebuilt to match the web: star-rule dividers, a sage italic quote and centred body, all on Josefin Sans (bundled, no new dependency), with the arcana/name line dropped since the artwork already carries it.\n\nThe spread's movement is animated deliberately, not decoratively: every card shows the same back, so changing the index alone repaints an identical frame and the arrows read as broken. A first attempt only slid the row, which made the arriving card reach the middle still tilted and dim before snapping upright; it is now a continuous carousel where each slot interpolates its tilt, drop and dimming from one driver, and lands in the exact centre pose. slotSamples covers that with a test asserting the arriving pose equals the resting centre pose.\n\nAll five pages were deconstructed to pure composition — zero raw JSX, 790 lines down to 341 — across 24 components with 52 scenarios, and the untested pre-existing logic (dailyCard's day-rollover rules, the bilingual deck, date formatting) picked up 69 tests total.\n\nTwo notes for whoever picks this up. First, the shipped v6 .codeyam/seed-adapter.ts emits {\"localStorage\": {...}} but the binary parses adapter stdout as a FLAT key→value map (parse_local_storage_from_stdout, crates/control-api/src/seed.rs), so every seeded key landed as one entry literally named \"localStorage\" and seeded scenarios silently captured their EMPTY state. The adapter is patched locally to emit the flat map; a `refresh-seed-adapter --force` would revert it. Second, animation transients are unverified by capture — the tooling settles the page before screenshotting, so the card flip and the spread's slide are confirmed by logic and endpoints only, never observed.",
+  "modifiedFiles": [
+    {
+      "path": ".gitignore",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/index.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/reading.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "assets/card-back.jpg",
+      "status": "deleted"
+    },
+    {
+      "path": "components/TarotCard.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "lib/cardImages.ts",
+      "status": "modified"
+    },
+    {
+      "path": "lib/theme.ts",
+      "status": "modified"
+    },
+    {
+      "path": "package.json",
+      "status": "modified"
+    },
+    {
+      "path": "tsconfig.json",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/hooks/_step_metadata.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/claude-notify.sh",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/editor-pretool-hook.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/editor-step-hook.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/finalize-procedure.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-design/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-edit-plan/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-editor/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-explore/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/holistic-analysis/deprecated-prompt.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/holistic-analysis/misleading-api-prompt.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/lib/read-json-field.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/session-mining/analyze-prompt.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/session-mining/cleanup.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-new-app/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-new-rule/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-onboard/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-plan/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-prototype/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/review-procedure.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-app/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-recent-change/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-slice/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/extract-session.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/find-last-session.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".codex/config.toml",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/CRASH-RECOVERY.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/capture.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/dev-scaffolded",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/editor.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/first-build-session.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/mocks/catalog.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/package.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/recovered-session-tail.txt",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-handlers.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-interactivity.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-issues.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-metrics.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-mocks.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-playwright.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/actionbar-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/actionbar-outlined.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/actionbutton-disabled.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/actionbutton-filled.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/actionbutton-outline.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/askedquestion-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/askedquestion-long-question.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardfan-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardpicker-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardreveal-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardreveal-long-meaning.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardreveal-spanish.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardstage-awaiting-tap.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardstage-revealed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cardstage-self-turning.json",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/carta-del-d\\303\\255a-revelada.json\"",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/carta-del-d\\303\\255a.json\"",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cartas-anteriores-con-historial.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/cartas-anteriores.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/choosecardstep-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/choosecardstep-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dailyoutcome-first-day.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dailyoutcome-with-history.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/historyempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/historyrow-collapsed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/historyrow-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/historyrow-expanded.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/home.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/homeactions-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/homeactions-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/homeheader-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/homeheader-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/langprovider-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/langtoggle-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/lede-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/lede-single-line.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/questionform-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/questionform-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/questionform-filled.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/quiero-recibir-un-mensaje.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screen-centered.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screen-top-aligned.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenheader-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-outlined--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-outlined--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-disabled--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-disabled--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-filled--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-filled--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-outline--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-outline--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-long-question--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-long-question--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardfan-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardfan-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardpicker-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardpicker-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-long-meaning--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-long-meaning--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-spanish--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-spanish--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-awaiting-tap--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-awaiting-tap--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-revealed--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-revealed--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-self-turning--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-self-turning--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a--iphone-16.png\"",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a--iphone-16.png.hash\"",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a-revelada--iphone-16.png\"",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a-revelada--iphone-16.png.hash\"",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-first-day--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-first-day--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-with-history--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-with-history--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyempty-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyempty-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-collapsed--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-collapsed--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-expanded--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-expanded--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langprovider-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langprovider-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langtoggle-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langtoggle-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-single-line--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-single-line--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-empty--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-empty--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-filled--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-filled--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-centered--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-centered--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-top-aligned--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-top-aligned--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screenheader-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screenheader-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-two-lines--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-two-lines--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starrule-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starrule-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-down--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-down--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-up--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-up--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/tengo-una-pregunta-espec\\303\\255fica--iphone-16.png\"",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/tengo-una-pregunta-espec\\303\\255fica--iphone-16.png.hash\"",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/wordmark-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/wordmark-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screensubtitle-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screensubtitle-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screentitle-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screentitle-two-lines.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/starrule-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/tarotcard-face-down.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/tarotcard-face-up.json",
+      "status": "added"
+    },
+    {
+      "path": "\".codeyam/scenarios/tengo-una-pregunta-espec\\303\\255fica.json\"",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/wordmark-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seed-adapter.ts",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/daily-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/daily-revealed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/daily-stale.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/daily-unrevealed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/history-rich.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/history-sparse.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seeds/lang-en.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/simulator-status.jsonl",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/stack.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "added"
+    },
+    {
+      "path": ".gitattributes",
+      "status": "added"
+    },
+    {
+      "path": "app/daily.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/history.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ActionBar.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ActionButton.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/AskedQuestion.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CardFan.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CardPicker.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CardReveal.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CardStage.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ChooseCardStep.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/DailyOutcome.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/HistoryEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/HistoryRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/HomeActions.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/HomeHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/LangProvider.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/LangToggle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Lede.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/QuestionForm.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Screen.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ScreenHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ScreenSubtitle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ScreenTitle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/StarRule.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TarotCard.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Wordmark.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/question.tsx",
+      "status": "added"
+    },
+    {
+      "path": "assets/card-back.png",
+      "status": "added"
+    },
+    {
+      "path": "assets/fonts/JosefinSans-Italic.ttf",
+      "status": "added"
+    },
+    {
+      "path": "assets/fonts/JosefinSans-Light.ttf",
+      "status": "added"
+    },
+    {
+      "path": "assets/fonts/JosefinSans-Regular.ttf",
+      "status": "added"
+    },
+    {
+      "path": "assets/fonts/JosefinSans-SemiBold.ttf",
+      "status": "added"
+    },
+    {
+      "path": "components/ActionBar.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/ActionButton.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/AskedQuestion.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/CardFan.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/CardPicker.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/CardReveal.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/CardStage.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/ChooseCardStep.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/DailyOutcome.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/HistoryEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/HistoryRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/HomeActions.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/HomeHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/LangToggle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/Lede.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/QuestionForm.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/Screen.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/ScreenHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/ScreenSubtitle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/ScreenTitle.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/StarRule.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/Wordmark.tsx",
+      "status": "added"
+    },
+    {
+      "path": "data/cards.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "jest.setup.js",
+      "status": "added"
+    },
+    {
+      "path": "lib/cardImages.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/cardPickerLayout.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/cardPickerLayout.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/dailyCard.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/dailyCard.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/draw.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/draw.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/lang.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/lang.tsx",
+      "status": "added"
+    },
+    {
+      "path": "lib/nav.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/useDailyCard.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/useDailyCard.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/useTurnUp.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/useTurnUp.ts",
+      "status": "added"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Carta del día",
+      "screenshotPath": "carta-del-día--iphone-16.png"
+    },
+    {
+      "name": "Carta del día - Revelada",
+      "screenshotPath": "carta-del-día-revelada--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores",
+      "screenshotPath": "cartas-anteriores--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Con historial",
+      "screenshotPath": "cartas-anteriores-con-historial--iphone-16.png"
+    },
+    {
+      "name": "Home",
+      "screenshotPath": "home--iphone-16.png"
+    },
+    {
+      "name": "Quiero recibir un mensaje",
+      "screenshotPath": "quiero-recibir-un-mensaje--iphone-16.png"
+    },
+    {
+      "name": "Tengo una pregunta específica",
+      "screenshotPath": "tengo-una-pregunta-específica--iphone-16.png"
+    },
+    {
+      "name": "ActionBar - Default",
+      "screenshotPath": "actionbar-default--iphone-16.png"
+    },
+    {
+      "name": "ActionBar - Outlined",
+      "screenshotPath": "actionbar-outlined--iphone-16.png"
+    },
+    {
+      "name": "ActionButton - Disabled",
+      "screenshotPath": "actionbutton-disabled--iphone-16.png"
+    },
+    {
+      "name": "ActionButton - Filled",
+      "screenshotPath": "actionbutton-filled--iphone-16.png"
+    },
+    {
+      "name": "ActionButton - Outline",
+      "screenshotPath": "actionbutton-outline--iphone-16.png"
+    },
+    {
+      "name": "AskedQuestion - Default",
+      "screenshotPath": "askedquestion-default--iphone-16.png"
+    },
+    {
+      "name": "AskedQuestion - Long question",
+      "screenshotPath": "askedquestion-long-question--iphone-16.png"
+    },
+    {
+      "name": "CardFan - Default",
+      "screenshotPath": "cardfan-default--iphone-16.png"
+    },
+    {
+      "name": "CardPicker - Default",
+      "screenshotPath": "cardpicker-default--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - English",
+      "screenshotPath": "cardreveal-english--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - Long meaning",
+      "screenshotPath": "cardreveal-long-meaning--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - Spanish",
+      "screenshotPath": "cardreveal-spanish--iphone-16.png"
+    },
+    {
+      "name": "CardStage - Awaiting tap",
+      "screenshotPath": "cardstage-awaiting-tap--iphone-16.png"
+    },
+    {
+      "name": "CardStage - Revealed",
+      "screenshotPath": "cardstage-revealed--iphone-16.png"
+    },
+    {
+      "name": "CardStage - Self turning",
+      "screenshotPath": "cardstage-self-turning--iphone-16.png"
+    },
+    {
+      "name": "ChooseCardStep - Default",
+      "screenshotPath": "choosecardstep-default--iphone-16.png"
+    },
+    {
+      "name": "ChooseCardStep - English",
+      "screenshotPath": "choosecardstep-english--iphone-16.png"
+    },
+    {
+      "name": "DailyOutcome - First day",
+      "screenshotPath": "dailyoutcome-first-day--iphone-16.png"
+    },
+    {
+      "name": "DailyOutcome - With history",
+      "screenshotPath": "dailyoutcome-with-history--iphone-16.png"
+    },
+    {
+      "name": "HistoryEmpty - Default",
+      "screenshotPath": "historyempty-default--iphone-16.png"
+    },
+    {
+      "name": "HistoryRow - Collapsed",
+      "screenshotPath": "historyrow-collapsed--iphone-16.png"
+    },
+    {
+      "name": "HistoryRow - English",
+      "screenshotPath": "historyrow-english--iphone-16.png"
+    },
+    {
+      "name": "HistoryRow - Expanded",
+      "screenshotPath": "historyrow-expanded--iphone-16.png"
+    },
+    {
+      "name": "HomeActions - Default",
+      "screenshotPath": "homeactions-default--iphone-16.png"
+    },
+    {
+      "name": "HomeActions - English",
+      "screenshotPath": "homeactions-english--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - Default",
+      "screenshotPath": "homeheader-default--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - English",
+      "screenshotPath": "homeheader-english--iphone-16.png"
+    },
+    {
+      "name": "LangProvider - Default",
+      "screenshotPath": "langprovider-default--iphone-16.png"
+    },
+    {
+      "name": "LangToggle - Default",
+      "screenshotPath": "langtoggle-default--iphone-16.png"
+    },
+    {
+      "name": "Lede - Default",
+      "screenshotPath": "lede-default--iphone-16.png"
+    },
+    {
+      "name": "Lede - Single line",
+      "screenshotPath": "lede-single-line--iphone-16.png"
+    },
+    {
+      "name": "QuestionForm - Empty",
+      "screenshotPath": "questionform-empty--iphone-16.png"
+    },
+    {
+      "name": "QuestionForm - English",
+      "screenshotPath": "questionform-english--iphone-16.png"
+    },
+    {
+      "name": "QuestionForm - Filled",
+      "screenshotPath": "questionform-filled--iphone-16.png"
+    },
+    {
+      "name": "Screen - Centered",
+      "screenshotPath": "screen-centered--iphone-16.png"
+    },
+    {
+      "name": "Screen - Top aligned",
+      "screenshotPath": "screen-top-aligned--iphone-16.png"
+    },
+    {
+      "name": "ScreenHeader - Default",
+      "screenshotPath": "screenheader-default--iphone-16.png"
+    },
+    {
+      "name": "ScreenSubtitle - Default",
+      "screenshotPath": "screensubtitle-default--iphone-16.png"
+    },
+    {
+      "name": "ScreenSubtitle - English",
+      "screenshotPath": "screensubtitle-english--iphone-16.png"
+    },
+    {
+      "name": "ScreenTitle - Default",
+      "screenshotPath": "screentitle-default--iphone-16.png"
+    },
+    {
+      "name": "ScreenTitle - Two lines",
+      "screenshotPath": "screentitle-two-lines--iphone-16.png"
+    },
+    {
+      "name": "StarRule - Default",
+      "screenshotPath": "starrule-default--iphone-16.png"
+    },
+    {
+      "name": "TarotCard - Face down",
+      "screenshotPath": "tarotcard-face-down--iphone-16.png"
+    },
+    {
+      "name": "TarotCard - Face up",
+      "screenshotPath": "tarotcard-face-up--iphone-16.png"
+    },
+    {
+      "name": "Wordmark - Default",
+      "screenshotPath": "wordmark-default--iphone-16.png"
+    }
+  ],
+  "testResults": {
+    "total": 69,
+    "passed": 69,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 69,
+        "passed": 69
+      }
+    ]
+  }
+}

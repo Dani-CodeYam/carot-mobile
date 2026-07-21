@@ -1,0 +1,11 @@
+{
+  "name": "ScreenTitle - Two lines",
+  "id": "b031779e-8cf5-45d8-8e5d-ab2298f3e2aa",
+  "url": "/isolated-components/ScreenTitle?s=TwoLines",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ScreenTitle",
+  "scenarioType": "component"
+}

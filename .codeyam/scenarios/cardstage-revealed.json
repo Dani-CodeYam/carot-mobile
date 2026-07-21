@@ -1,0 +1,11 @@
+{
+  "name": "CardStage - Revealed",
+  "id": "7a9e691f-a651-495e-a83b-3bd158c1d0d8",
+  "url": "/isolated-components/CardStage?s=Revealed",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardStage",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "CardStage - Awaiting tap",
+  "id": "ca326ef8-f32c-4e69-aac8-8008c790a98a",
+  "url": "/isolated-components/CardStage?s=AwaitingTap",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardStage",
+  "scenarioType": "component"
+}

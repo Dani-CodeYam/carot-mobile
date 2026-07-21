@@ -1,0 +1,30 @@
+
+⏺ User answered Claude's questions:
+  ⎿  · What should happen to the Daily Card work I just built (history screen + tap-to-reveal lock), which
+     the web app doesn't have? → Discard it and start from the web
+     · How should the mobile app get "today's card" and the AI interpretations, which the web serves from
+     its backend? → Call the web app's API (Recommended)
+     · How do you want the remaining web screens sequenced? → Group into a few batches
+
+⏺ Understood — discard the daily/history work, port from the web, call the web's API, in batches.
+
+  Before I delete anything, let me establish exactly what's mine versus what was already uncommitted when we
+  started.
+
+  Ran 1 shell command
+
+⏺ Here's exactly what I'd remove. Note package.json/package-lock.json were already modified before this
+  session, and Playwright is now required by the editor's capture tooling — so I'd leave those alone.
+
+  Delete (untracked — not recoverable): app/daily.tsx, app/history.tsx, components/LangToggle.tsx,
+  lib/dailyCard.ts, lib/lang.tsx, lib/nav.ts, .codeyam/seeds/, .codeyam/data-structure.json
+
+  Revert to HEAD: app/_layout.tsx, app/index.tsx, app/reading.tsx, components/TarotCard.tsx
+
+  Leave untouched (pre-existing): .gitignore, lib/cardImages.ts, tsconfig.json, assets/card-back.*,
+  package.json, package-lock.json, .claude/, .codex/, .gitattributes
+
+  Reverting TarotCard.tsx restores the face-up-before-tap bug, but you'll be porting the web's flip anyway,
+  so it's the right baseline.
+
+BBBBBBB

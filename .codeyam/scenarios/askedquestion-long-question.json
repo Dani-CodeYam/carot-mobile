@@ -1,0 +1,11 @@
+{
+  "name": "AskedQuestion - Long question",
+  "id": "1a323849-748e-4fa7-9dbf-8dc33df956a1",
+  "url": "/isolated-components/AskedQuestion?s=LongQuestion",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AskedQuestion",
+  "scenarioType": "component"
+}

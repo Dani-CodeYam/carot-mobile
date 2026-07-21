@@ -1,0 +1,11 @@
+{
+  "name": "CardStage - Self turning",
+  "id": "1288c7f7-87f0-4982-b52d-719338bff512",
+  "url": "/isolated-components/CardStage?s=SelfTurning",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardStage",
+  "scenarioType": "component"
+}

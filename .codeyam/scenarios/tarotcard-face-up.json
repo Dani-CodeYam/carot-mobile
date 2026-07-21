@@ -1,0 +1,11 @@
+{
+  "name": "TarotCard - Face up",
+  "id": "3e68fa68-ddc7-4997-a910-fe227731478a",
+  "url": "/isolated-components/TarotCard?s=FaceUp",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "TarotCard",
+  "scenarioType": "component"
+}

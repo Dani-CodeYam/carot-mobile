@@ -1,0 +1,11 @@
+{
+  "name": "Lede - Single line",
+  "id": "93804b95-c032-4525-ba12-dfe35cd3980f",
+  "url": "/isolated-components/Lede?s=SingleLine",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Lede",
+  "scenarioType": "component"
+}

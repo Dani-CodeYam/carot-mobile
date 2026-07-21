@@ -1,0 +1,12 @@
+{
+  "type": "application",
+  "seed": {
+    "elcarot.todayOverride": "2026-07-20",
+    "elcarot.dailyCard": {
+      "date": "2026-07-20",
+      "n": 17,
+      "revealed": false
+    },
+    "elcarot.history": []
+  }
+}

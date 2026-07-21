@@ -1,0 +1,11 @@
+{
+  "name": "TarotCard - Face down",
+  "id": "e7fec3a1-d1d0-485f-8c92-425df45cdd21",
+  "url": "/isolated-components/TarotCard?s=FaceDown",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "TarotCard",
+  "scenarioType": "component"
+}

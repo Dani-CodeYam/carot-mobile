@@ -1,0 +1,11 @@
+{
+  "name": "ActionBar - Outlined",
+  "id": "ce6e0a4e-2421-4be1-8e06-0bd7c0011cf6",
+  "url": "/isolated-components/ActionBar?s=Outlined",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ActionBar",
+  "scenarioType": "component"
+}

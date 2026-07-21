@@ -1,0 +1,391 @@
+[
+  {
+    "description": "Gives a screen's closing action the full column width, so a button inside a centred reveal still matches the bars on Home instead of shrinking to its label.",
+    "filePath": "components/ActionBar.tsx",
+    "name": "ActionBar",
+    "scenarios": [
+      "actionbar-default",
+      "actionbar-outlined"
+    ]
+  },
+  {
+    "description": "The app's one button: a full-width bar in the display face, filled sage for the thing you came to do and outlined for the quieter alternative. Dims when disabled — the state the ask button holds until a question is written.",
+    "filePath": "components/ActionButton.tsx",
+    "name": "ActionButton",
+    "scenarios": [
+      "actionbutton-filled",
+      "actionbutton-outline",
+      "actionbutton-disabled"
+    ]
+  },
+  {
+    "description": "The question kept on screen above the card that answers it, so the meaning is read against what was actually asked rather than from memory.",
+    "filePath": "components/AskedQuestion.tsx",
+    "name": "AskedQuestion",
+    "scenarios": [
+      "askedquestion-default",
+      "askedquestion-long-question"
+    ]
+  },
+  {
+    "description": "Home's hero — three cards fanned face-up. Fixed faces, not a random draw, so Home looks identical every launch; a shuffling hero reads as a bug rather than as magic.",
+    "filePath": "components/CardFan.tsx",
+    "name": "CardFan",
+    "scenarios": [
+      "cardfan-default"
+    ]
+  },
+  {
+    "description": "The spread of 22 face-down cards you move through and choose from, by arrow or swipe, wrapping at both ends. Movement is animated because every card shows the same back — without the motion the arrows read as broken since only the counter changes.",
+    "filePath": "components/CardPicker.tsx",
+    "name": "CardPicker",
+    "scenarios": [
+      "cardpicker-default"
+    ]
+  },
+  {
+    "description": "What a card says once face-up: quote then meaning, each set off by a row of three stars. Carries no arcana or name line — the artwork already has all three, and repeating them pushed the quote below the fold.",
+    "filePath": "components/CardReveal.tsx",
+    "name": "CardReveal",
+    "scenarios": [
+      "cardreveal-spanish",
+      "cardreveal-english",
+      "cardreveal-long-meaning"
+    ]
+  },
+  {
+    "description": "The card at the size the app shows it, with the tap-me nudge underneath. The nudge appears only while the card is face-down AND tappable — on a self-turning card it would be an instruction you cannot follow.",
+    "filePath": "components/CardStage.tsx",
+    "name": "CardStage",
+    "scenarios": [
+      "cardstage-awaiting-tap",
+      "cardstage-revealed"
+    ]
+  },
+  {
+    "description": "The lede and the spread together — the choose-your-card step both draw flows share.",
+    "filePath": "components/ChooseCardStep.tsx",
+    "name": "ChooseCardStep",
+    "scenarios": [
+      "choosecardstep-default"
+    ]
+  },
+  {
+    "description": "How the daily card ends: a note that tomorrow brings another, and — only once there is a trail worth looking at — the way into it.",
+    "filePath": "components/DailyOutcome.tsx",
+    "name": "DailyOutcome",
+    "scenarios": [
+      "dailyoutcome-with-history",
+      "dailyoutcome-first-day"
+    ]
+  },
+  {
+    "description": "Carta del día — one card per day, chosen from the date itself so it cannot be rerolled. Arrives face-down on the first visit of the day and stays open on every visit after, with a way into the past cards once there are any.",
+    "filePath": "app/daily.tsx",
+    "name": "DailyScreen",
+    "scenarios": [
+      "carta-del-día"
+    ]
+  },
+  {
+    "description": "What the history shows before there is any: not an error, just a day that has not turned over yet.",
+    "filePath": "components/HistoryEmpty.tsx",
+    "name": "HistoryEmpty",
+    "scenarios": [
+      "historyempty-default"
+    ]
+  },
+  {
+    "description": "One past day in the trail, opening in place rather than pushing a screen — the list is the point, and the meanings run long enough that navigating away for each would make the trail tedious.",
+    "filePath": "components/HistoryRow.tsx",
+    "name": "HistoryRow",
+    "scenarios": [
+      "historyrow-collapsed",
+      "historyrow-expanded"
+    ]
+  },
+  {
+    "description": "Cartas anteriores — the trail of daily cards already lived through, newest first, each row opening in place rather than pushing a screen.",
+    "filePath": "app/history.tsx",
+    "name": "HistoryScreen",
+    "scenarios": [
+      "cartas-anteriores"
+    ]
+  },
+  {
+    "description": "The three ways in, in the web app's order: the two draws lead as filled bars and the daily card follows as the outlined one, since it is the habit rather than the ask.",
+    "filePath": "components/HomeActions.tsx",
+    "name": "HomeActions",
+    "scenarios": [
+      "homeactions-default"
+    ]
+  },
+  {
+    "description": "Home's top line: the language switch, the greeting, a star. Equal-width flanks keep the greeting optically centred in either language.",
+    "filePath": "components/HomeHeader.tsx",
+    "name": "HomeHeader",
+    "scenarios": [
+      "homeheader-default"
+    ]
+  },
+  {
+    "description": "El Carot's landing screen: greeting, wordmark, a fan of cards, and the three ways in — an open message, a specific question, and the daily card, in the web app's order.",
+    "filePath": "app/index.tsx",
+    "name": "HomeScreen",
+    "scenarios": [
+      "home"
+    ]
+  },
+  {
+    "description": "Holds the ES/EN preference in context and restores it from storage on launch, rendering in the default language first so the preview never blanks waiting on a stored value. Living in context is what lets the toggle on one screen update every screen at once.",
+    "filePath": "lib/lang.tsx",
+    "name": "LangProvider",
+    "scenarios": [
+      "langprovider-default"
+    ]
+  },
+  {
+    "description": "The ES / EN switch for card text, with the inactive half dimmed. Home only, so a reading is read rather than reconfigured.",
+    "filePath": "components/LangToggle.tsx",
+    "name": "LangToggle",
+    "scenarios": [
+      "langtoggle-default"
+    ]
+  },
+  {
+    "description": "The quiet centred paragraph under a title — the instruction read once before doing the thing, deliberately not competing with the cards below it.",
+    "filePath": "components/Lede.tsx",
+    "name": "Lede",
+    "scenarios": [
+      "lede-default"
+    ]
+  },
+  {
+    "description": "Where the question gets written. Nothing is drawn until it is: the submit button stays disabled on an empty field rather than quietly drawing for a question never posed.",
+    "filePath": "components/QuestionForm.tsx",
+    "name": "QuestionForm",
+    "scenarios": [
+      "questionform-empty",
+      "questionform-filled"
+    ]
+  },
+  {
+    "description": "Tengo una pregunta específica — write the question, then choose a card from the spread with the question kept on screen above it. The question never leaves the device; it only frames the card.",
+    "filePath": "app/question.tsx",
+    "name": "QuestionScreen",
+    "scenarios": [
+      "tengo-una-pregunta-específica"
+    ]
+  },
+  {
+    "description": "Quiero recibir un mensaje — an open draw with nothing asked of it. The spread opens face-down and you choose a card yourself; it is never handed to you. A `?n=` deep link forces a specific card and skips the spread.",
+    "filePath": "app/reading.tsx",
+    "name": "ReadingScreen",
+    "scenarios": [
+      "quiero-recibir-un-mensaje"
+    ]
+  },
+  {
+    "description": "App shell: registers the bundled fonts, mounts the language provider and safe-area frame, and hosts the expo-router Stack. Renders no UI of its own.",
+    "filePath": "app/_layout.tsx",
+    "name": "RootLayout",
+    "untestabilityReason": {
+      "justification": "Framework boundary — font registration, provider mounting and the expo-router Stack. It has no visual surface of its own; what it wires up is exercised through every screen scenario.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "The page frame every screen sits in: dark ground, scrollable, centred column. Optionally centres content in the viewport — Home wants that, the reading screens do not, because their content outgrows the viewport once a card opens.",
+    "filePath": "components/Screen.tsx",
+    "name": "Screen",
+    "scenarios": [
+      "screen-top-aligned",
+      "screen-centered"
+    ]
+  },
+  {
+    "description": "The bar every screen below Home wears: back, the EL CAROT wordmark, a star. Carries no language toggle by design — that lives on Home.",
+    "filePath": "components/ScreenHeader.tsx",
+    "name": "ScreenHeader",
+    "scenarios": [
+      "screenheader-default"
+    ]
+  },
+  {
+    "description": "The small line directly under a screen title — the daily card's date, and anything else qualifying the title rather than restating it.",
+    "filePath": "components/ScreenSubtitle.tsx",
+    "name": "ScreenSubtitle",
+    "scenarios": [
+      "screensubtitle-default"
+    ]
+  },
+  {
+    "description": "A screen's own title in the display face, the line under the wordmark saying which part of the app you are in. Wraps to two lines on the longer message-flow question.",
+    "filePath": "components/ScreenTitle.tsx",
+    "name": "ScreenTitle",
+    "scenarios": [
+      "screentitle-default",
+      "screentitle-two-lines"
+    ]
+  },
+  {
+    "description": "Three small stars — the divider setting a revealed card's quote apart from its meaning, in place of a plain rule.",
+    "filePath": "components/StarRule.tsx",
+    "name": "StarRule",
+    "scenarios": [
+      "starrule-default"
+    ]
+  },
+  {
+    "description": "A single card with a 3D flip: shows the back until flipped, then rotates to reveal the artwork. Rotates ONE face and swaps its image at the halfway point, because react-native-web flattens the 3D context and a stacked hidden face bleeds through.",
+    "filePath": "components/TarotCard.tsx",
+    "name": "TarotCard",
+    "scenarios": [
+      "tarotcard-face-down",
+      "tarotcard-face-up"
+    ]
+  },
+  {
+    "description": "EL CAROT set large in the display face, the app saying its own name. Home only; other screens carry the small version inside ScreenHeader.",
+    "filePath": "components/Wordmark.tsx",
+    "name": "Wordmark",
+    "scenarios": [
+      "wordmark-default"
+    ]
+  },
+  {
+    "description": "Adds a day to the trail, newest-first and never twice for the same date — re-adding a day replaces it rather than duplicating the row.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "addToHistory",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Looks a card up by its arcana index, falling back to the first card when a stored index is out of range — corrupt or hand-edited storage should not crash the screen.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "cardByIndex",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "The card belonging to a date. Deterministic via a cheap string hash rather than randomness, so the day's card survives a reinstall and can be asserted in a test.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "cardForDate",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Resolves a `?n=` deep-link parameter to a card, or null when the link names none. Junk, decimals, negatives and out-of-range indices all yield null so a bad link opens the spread instead of erroring.",
+    "filePath": "lib/draw.ts",
+    "name": "cardFromParam",
+    "testFile": "lib/draw.test.ts"
+  },
+  {
+    "description": "Resolves a card's artwork filename to its bundled image, falling back to the card back for an unknown name. React Native's bundler needs literal require() calls, which is why the map is written out rather than built from a path.",
+    "filePath": "lib/cardImages.ts",
+    "name": "cardImage",
+    "testFile": "lib/cardImages.test.ts"
+  },
+  {
+    "description": "Picks a card's meaning or quote in the requested language, falling back to the Spanish original when a translation is missing so an untranslated card still says something.",
+    "filePath": "data/cards.ts",
+    "name": "cardText",
+    "testFile": "data/cards.test.ts"
+  },
+  {
+    "description": "Caps a slot's distance-from-centre at one card in either direction, so cards further out in the spread stop accumulating tilt and dimming instead of ending up upside-down and invisible.",
+    "filePath": "lib/cardPickerLayout.ts",
+    "name": "clamp",
+    "testFile": "lib/cardPickerLayout.test.ts"
+  },
+  {
+    "description": "Renders a stored YYYY-MM-DD as the day a card belonged to, in the reader's language. Capitalizes only the first letter in Spanish, which lowercases weekdays and months — CSS `capitalize` would give \"Lunes, 20 De Julio\".",
+    "filePath": "lib/lang.tsx",
+    "name": "formatDay",
+    "testFile": "lib/lang.test.ts"
+  },
+  {
+    "description": "Back navigation that survives a deep link. `router.back()` is a no-op when there is no history to pop — exactly what happens when a screen is opened directly by URL — so it falls back to an explicit destination and the back control keeps working either way.",
+    "filePath": "lib/nav.ts",
+    "name": "goBackTo",
+    "untestabilityReason": {
+      "justification": "A two-line expo-router boundary: it reads router.canGoBack() and calls back() or replace(). There is no logic of its own to assert — only the router calls, which need a live navigation stack. Its effect is visible in every ScreenHeader scenario.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Loads today's state, rolling the day over when the stored draw is stale: a stale draw that was revealed graduates into history, while one never opened is dropped, on the reasoning that an unopened card was never really yours.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "loadDaily",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Past days only — today's card lives in the daily draw, not here. Returns an empty list rather than undefined before any day has rolled over.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "loadHistory",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Flips today's card face-up and records it, so a reload keeps it open. Returns a new draw rather than mutating the one passed in.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "revealToday",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Returns the whole 22-card deck in random order for the pick-your-own-card spread. Fisher-Yates over a copy, so the shared source deck is never reordered. Shuffling is what makes choosing a face-down card a real draw rather than picking an index.",
+    "filePath": "lib/draw.ts",
+    "name": "shuffledDeck",
+    "testFile": "lib/draw.test.ts"
+  },
+  {
+    "description": "Computes the three animation samples for one slot in the card spread — rail one card left, at rest, one card right — giving its position, drop, tilt and opacity. Guarantees an arriving neighbour lands in the exact centre pose, which is what removes the visible snap when moving between cards.",
+    "filePath": "lib/cardPickerLayout.ts",
+    "name": "slotSamples",
+    "testFile": "lib/cardPickerLayout.test.ts"
+  },
+  {
+    "description": "Binds one spread slot's animation samples onto the rail's Animated.Value, producing the interpolated opacity and transform the carousel renders.",
+    "filePath": "components/CardPicker.tsx",
+    "name": "slotStyle",
+    "untestabilityReason": {
+      "justification": "A React Native Animated boundary — it only feeds pre-computed samples into Animated.Value.interpolate, which needs a live animation driver to observe. The arithmetic it binds lives in slotSamples (lib/cardPickerLayout.ts) and is fully unit-tested there.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Looks up a UI string in the current language. The copy lives beside the language it belongs to, so a missing key is a type error rather than an `undefined` on screen.",
+    "filePath": "lib/lang.tsx",
+    "name": "t",
+    "testFile": "lib/lang.test.ts"
+  },
+  {
+    "description": "Formats a date as YYYY-MM-DD in LOCAL time, so the day turns over at the user's midnight rather than Greenwich's. Zero-padded so keys sort lexically.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "toDateKey",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "The current day, honouring a seeded `todayOverride`. That override is the scenario seam — never written by the app — so a capture taken months later still renders the day it was authored for.",
+    "filePath": "lib/dailyCard.ts",
+    "name": "today",
+    "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Loads today's card, its date, whether it has been revealed, and how many past cards exist. Reveal is optimistic — the card turns immediately and the write follows — and is a no-op on an already-open card or before the load lands.",
+    "filePath": "lib/useDailyCard.ts",
+    "name": "useDailyCard",
+    "testFile": "lib/useDailyCard.test.ts"
+  },
+  {
+    "description": "Reads the current language and its setters from context. Living in context is what lets the toggle on one screen update every screen at once.",
+    "filePath": "lib/lang.tsx",
+    "name": "useLang",
+    "untestabilityReason": {
+      "justification": "A one-line useContext read with no logic of its own. What it returns is provided by LangProvider, whose behaviour is shown by the langprovider-default scenario and asserted through the `t` and formatDay tests.",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Turns a chosen card face-up a beat after it arrives, so the flip is watched rather than already done. Resets to face-down on every change of card, including a direct swap, so a new card never inherits the previous one's revealed state.",
+    "filePath": "lib/useTurnUp.ts",
+    "name": "useTurnUp",
+    "testFile": "lib/useTurnUp.test.ts"
+  }
+]

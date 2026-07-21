@@ -1,0 +1,16 @@
+{
+  "name": "Carta del día",
+  "id": "50e6043e-3db1-495e-a091-14204fa5544f",
+  "url": "/daily",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.dailyCard": null,
+    "elcarot.history": [],
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/daily.tsx"
+}

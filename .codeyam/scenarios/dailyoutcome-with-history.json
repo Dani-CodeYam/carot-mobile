@@ -1,0 +1,11 @@
+{
+  "name": "DailyOutcome - With history",
+  "id": "86d19fbe-a720-4e0a-b1ec-a517ad77e0a7",
+  "url": "/isolated-components/DailyOutcome?s=WithHistory",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "DailyOutcome",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ActionButton - Disabled",
+  "id": "f913cc78-4f76-4fa2-a792-f249ab064fcd",
+  "url": "/isolated-components/ActionButton?s=Disabled",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ActionButton",
+  "scenarioType": "component"
+}

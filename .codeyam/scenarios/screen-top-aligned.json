@@ -1,0 +1,11 @@
+{
+  "name": "Screen - Top aligned",
+  "id": "a09ad31a-e3d5-4673-8e82-31a50e8471a6",
+  "url": "/isolated-components/Screen?s=TopAligned",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Screen",
+  "scenarioType": "component"
+}

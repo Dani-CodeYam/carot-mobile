@@ -1,0 +1,11 @@
+{
+  "name": "ChooseCardStep - Default",
+  "id": "39c88d99-573b-4bcc-8bd9-5c978f5b025a",
+  "url": "/isolated-components/ChooseCardStep?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ChooseCardStep",
+  "scenarioType": "component"
+}

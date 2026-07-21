@@ -1,0 +1,11 @@
+{
+  "name": "Lede - Default",
+  "id": "da89ce18-30d8-4e17-beaa-76e6f57f8f58",
+  "url": "/isolated-components/Lede?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Lede",
+  "scenarioType": "component"
+}

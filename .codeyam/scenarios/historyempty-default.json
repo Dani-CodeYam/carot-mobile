@@ -1,0 +1,11 @@
+{
+  "name": "HistoryEmpty - Default",
+  "id": "8b171c0f-7c95-453a-902d-7794bd472e40",
+  "url": "/isolated-components/HistoryEmpty?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "HistoryEmpty",
+  "scenarioType": "component"
+}

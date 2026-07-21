@@ -1,0 +1,11 @@
+{
+  "name": "ActionBar - Default",
+  "id": "9e08a96c-fb23-4c07-b300-5de7e8710508",
+  "url": "/isolated-components/ActionBar?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ActionBar",
+  "scenarioType": "component"
+}

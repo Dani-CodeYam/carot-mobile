@@ -1,0 +1,11 @@
+{
+  "name": "Screen - Centered",
+  "id": "ad6a4422-3576-4576-898a-75e103c112d2",
+  "url": "/isolated-components/Screen?s=Centered",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Screen",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "CardReveal - Spanish",
+  "id": "23a1f056-5fcb-4cc7-a23c-cac4c82fe6bd",
+  "url": "/isolated-components/CardReveal?s=Spanish",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardReveal",
+  "scenarioType": "component"
+}

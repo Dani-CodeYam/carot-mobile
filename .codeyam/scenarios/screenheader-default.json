@@ -1,0 +1,11 @@
+{
+  "name": "ScreenHeader - Default",
+  "id": "386f9a4e-0e98-4983-b33e-129fe5477308",
+  "url": "/isolated-components/ScreenHeader?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ScreenHeader",
+  "scenarioType": "component"
+}

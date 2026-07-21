@@ -1,0 +1,11 @@
+{
+  "name": "CardFan - Default",
+  "id": "f645f468-18c3-4379-a229-9457175df082",
+  "url": "/isolated-components/CardFan?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardFan",
+  "scenarioType": "component"
+}

@@ -1,0 +1,2 @@
+{"state":"preflight-running"}
+{"state":"preflight-failed","check":"cocoapods-installed","message":"CocoaPods not installed — run `sudo gem install cocoapods`."}

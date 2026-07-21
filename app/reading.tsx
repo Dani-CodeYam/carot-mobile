@@ -1,167 +1,66 @@
 /**
- * Reading screen — the core El Carot experience.
+ * "Quiero recibir un mensaje" — an open draw with nothing asked of it.
  *
- * Draws a card (random, or the `n` index passed in), shows it face-down, and
- * flips it face-up on tap to reveal the arcana, an inspirational quote, and the
- * full meaning. "Elegir otra carta" draws again. Standalone: the draw is local,
- * no backend. Spanish by default (the deck is bilingual — see cardText).
+ * The counterpart to the specific question (see app/question): you bring no
+ * question, the deck answers anyway. The spread opens face-down and you choose
+ * a card from it, as on the web — the card is never handed to you. Once chosen
+ * it turns face-up on its own; "elegir otra carta" reshuffles and reopens the
+ * spread, so a second message is a second real draw.
+ *
+ * `?n=` forces a specific card and skips the spread — the deep link the gallery
+ * will use. Standalone: the draw is local, no backend.
  */
 import { useMemo, useState } from 'react';
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import { router, useLocalSearchParams } from 'expo-router';
-import { CAROT_CARDS, cardText, type Card, type Lang } from '@/data/cards';
-import { TarotCard } from '@/components/TarotCard';
-import { theme } from '@/lib/theme';
-
-const LANG: Lang = 'es';
-
-function drawRandom(exclude?: number): Card {
-  let pick = CAROT_CARDS[Math.floor(Math.random() * CAROT_CARDS.length)];
-  if (exclude !== undefined && CAROT_CARDS.length > 1) {
-    while (pick.n === exclude) {
-      pick = CAROT_CARDS[Math.floor(Math.random() * CAROT_CARDS.length)];
-    }
-  }
-  return pick;
-}
+import { useLocalSearchParams } from 'expo-router';
+import { ActionBar } from '@/components/ActionBar';
+import { ActionButton } from '@/components/ActionButton';
+import { CardReveal } from '@/components/CardReveal';
+import { CardStage } from '@/components/CardStage';
+import { ChooseCardStep } from '@/components/ChooseCardStep';
+import { Screen } from '@/components/Screen';
+import { ScreenHeader } from '@/components/ScreenHeader';
+import { ScreenTitle } from '@/components/ScreenTitle';
+import type { Card } from '@/data/cards';
+import { cardFromParam, shuffledDeck } from '@/lib/draw';
+import { t, useLang } from '@/lib/lang';
+import { useTurnUp } from '@/lib/useTurnUp';
 
 export default function ReadingScreen() {
+  const { lang } = useLang();
   const { n } = useLocalSearchParams<{ n?: string }>();
-  const initial = useMemo<Card>(() => {
-    const idx = n !== undefined ? Number(n) : NaN;
-    return Number.isInteger(idx) && CAROT_CARDS[idx] ? CAROT_CARDS[idx] : drawRandom();
-  }, [n]);
+  const linked = useMemo(() => cardFromParam(n), [n]);
 
-  const [card, setCard] = useState<Card>(initial);
-  const [flipped, setFlipped] = useState(false);
+  const [deck, setDeck] = useState(shuffledDeck);
+  const [card, setCard] = useState<Card | null>(linked);
+  const turned = useTurnUp(card);
 
   const drawAnother = () => {
-    setFlipped(false);
-    // brief beat so the card flips back down before swapping the artwork
-    setTimeout(() => setCard(drawRandom(card.n)), 250);
+    setCard(null);
+    setDeck(shuffledDeck());
   };
 
   return (
-    <ScrollView
-      style={{ flex: 1, backgroundColor: theme.colors.bgBase }}
-      contentContainerStyle={styles.content}
-    >
-      <Pressable onPress={() => router.back()} hitSlop={12}>
-        <Text style={styles.back}>‹ El Carot</Text>
-      </Pressable>
+    <Screen>
+      <ScreenHeader />
 
-      <View style={styles.cardWrap}>
-        <TarotCard
-          card={card}
-          flipped={flipped}
-          onPress={() => setFlipped(true)}
-          width={230}
-        />
-        {!flipped ? (
-          <Text style={styles.hint}>Tocá la carta para revelarla</Text>
-        ) : null}
-      </View>
+      {!card ? (
+        <>
+          <ScreenTitle>{t(lang, 'messageTitle')}</ScreenTitle>
+          <ChooseCardStep deck={deck} lede={t(lang, 'pickIntro')} onChoose={setCard} />
+        </>
+      ) : (
+        <>
+          <CardStage card={card} flipped={turned} />
 
-      {flipped ? (
-        <View style={styles.reveal}>
-          <Text style={styles.roman}>{card.rom}</Text>
-          <Text style={styles.arcana}>{card.arcana}</Text>
-          <Text style={styles.name}>{card.name}</Text>
-
-          <View style={styles.divider} />
-
-          <Text style={styles.quote}>“{cardText(card, 'quote', LANG)}”</Text>
-          <Text style={styles.meaning}>{cardText(card, 'meaning', LANG)}</Text>
-
-          <Pressable style={styles.button} onPress={drawAnother}>
-            <Text style={styles.buttonText}>Elegir otra carta</Text>
-          </Pressable>
-        </View>
-      ) : null}
-    </ScrollView>
+          {turned ? (
+            <CardReveal card={card} lang={lang}>
+              <ActionBar>
+                <ActionButton label={t(lang, 'drawAnother')} onPress={drawAnother} />
+              </ActionBar>
+            </CardReveal>
+          ) : null}
+        </>
+      )}
+    </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  content: {
-    padding: theme.spacing.xl,
-    paddingBottom: theme.spacing['3xl'],
-    alignItems: 'center',
-  },
-  back: {
-    alignSelf: 'flex-start',
-    color: theme.colors.textSecondary,
-    fontSize: theme.fontSize.base,
-    marginBottom: theme.spacing.lg,
-  },
-  cardWrap: {
-    alignItems: 'center',
-    marginTop: theme.spacing.md,
-  },
-  hint: {
-    color: theme.colors.textMuted,
-    fontSize: theme.fontSize.sm,
-    marginTop: theme.spacing.lg,
-  },
-  reveal: {
-    marginTop: theme.spacing['2xl'],
-    alignItems: 'center',
-    maxWidth: 520,
-  },
-  roman: {
-    color: theme.colors.sage,
-    fontSize: theme.fontSize.base,
-    letterSpacing: 3,
-  },
-  arcana: {
-    color: theme.colors.textPrimary,
-    fontFamily: theme.fontFamily.display,
-    fontSize: theme.fontSize['3xl'],
-    marginTop: theme.spacing.xs,
-    textAlign: 'center',
-  },
-  name: {
-    color: theme.colors.sageLight,
-    fontSize: theme.fontSize.lg,
-    marginTop: theme.spacing.xs,
-  },
-  divider: {
-    width: 48,
-    height: 1,
-    backgroundColor: theme.colors.border,
-    marginVertical: theme.spacing.xl,
-  },
-  quote: {
-    color: theme.colors.textPrimary,
-    fontSize: theme.fontSize.xl,
-    fontStyle: 'italic',
-    textAlign: 'center',
-    lineHeight: theme.fontSize.xl * 1.4,
-  },
-  meaning: {
-    color: theme.colors.textPrimary,
-    fontSize: theme.fontSize.base,
-    lineHeight: theme.fontSize.base * 1.7,
-    textAlign: 'left',
-    marginTop: theme.spacing.xl,
-    opacity: 0.92,
-  },
-  button: {
-    marginTop: theme.spacing['2xl'],
-    backgroundColor: theme.colors.accent,
-    paddingVertical: theme.spacing.md,
-    paddingHorizontal: theme.spacing['2xl'],
-    borderRadius: theme.borderRadius.full,
-  },
-  buttonText: {
-    color: theme.colors.textOnCream,
-    fontSize: theme.fontSize.base,
-    fontWeight: theme.fontWeight.medium,
-  },
-});

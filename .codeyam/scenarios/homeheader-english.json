@@ -1,0 +1,11 @@
+{
+  "name": "HomeHeader - English",
+  "id": "53b166e2-35b8-4c4e-aca9-8070ecd8f6c0",
+  "url": "/isolated-components/HomeHeader?s=English",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "HomeHeader",
+  "scenarioType": "component"
+}

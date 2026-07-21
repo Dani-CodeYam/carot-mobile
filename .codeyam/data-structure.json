@@ -1,0 +1,69 @@
+{
+  "$comment": "El Carot persists everything on-device via lib/storage.ts (AsyncStorage). On web AsyncStorage is backed by plain localStorage with no key prefix, so these keys map 1:1 to the localStorage keys the CodeYam seed adapter injects. Production starts empty — a fresh install has no daily card and no history.",
+  "type": "async-storage",
+  "tables": [
+    {
+      "name": "elcarot.dailyCard",
+      "description": "The card locked in for the current day. Absent until the user opens the daily screen for the first time that day.",
+      "shape": "object",
+      "fields": [
+        {
+          "name": "date",
+          "type": "string",
+          "description": "Local calendar day the card belongs to, as YYYY-MM-DD. A stored date older than today means a fresh card is due."
+        },
+        {
+          "name": "n",
+          "type": "number",
+          "description": "Major-arcana index 0-21, keying into CAROT_CARDS in data/cards.ts."
+        },
+        {
+          "name": "revealed",
+          "type": "boolean",
+          "description": "Whether the user has already flipped the card face-up. Return visits the same day render the reveal directly when true."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.history",
+      "description": "Past daily cards, newest first. A day is appended once its card is revealed. Empty array on a fresh install.",
+      "shape": "array",
+      "fields": [
+        {
+          "name": "date",
+          "type": "string",
+          "description": "The calendar day, YYYY-MM-DD."
+        },
+        {
+          "name": "n",
+          "type": "number",
+          "description": "Major-arcana index 0-21."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.lang",
+      "description": "Persisted language preference for card text. Defaults to 'es' when absent.",
+      "shape": "scalar",
+      "fields": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "'es' or 'en'. See Lang in data/cards.ts."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.todayOverride",
+      "description": "Test/scenario seam only — never written by the app. When present, the date helper treats this YYYY-MM-DD as today so scenarios can pin a specific day and stay reproducible across calendar dates.",
+      "shape": "scalar",
+      "fields": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "A YYYY-MM-DD date to substitute for the real clock."
+        }
+      ]
+    }
+  ]
+}

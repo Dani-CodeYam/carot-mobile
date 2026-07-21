@@ -1,0 +1,11 @@
+{
+  "name": "StarRule - Default",
+  "id": "69e5d014-5598-45ed-acc8-a6f64e29caa0",
+  "url": "/isolated-components/StarRule?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "StarRule",
+  "scenarioType": "component"
+}

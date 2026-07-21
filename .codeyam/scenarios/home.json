@@ -1,0 +1,11 @@
+{
+  "name": "Home",
+  "id": "4b585758-3cc5-41bb-a96f-75d4f5346b89",
+  "url": "/",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/index.tsx"
+}

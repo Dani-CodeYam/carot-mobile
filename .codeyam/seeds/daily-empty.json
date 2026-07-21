@@ -1,0 +1,6 @@
+{
+  "type": "application",
+  "seed": {
+    "elcarot.todayOverride": "2026-07-20"
+  }
+}

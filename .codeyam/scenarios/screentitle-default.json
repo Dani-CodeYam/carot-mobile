@@ -1,0 +1,11 @@
+{
+  "name": "ScreenTitle - Default",
+  "id": "88ea4ad5-b05d-4fa0-acca-81298dc46659",
+  "url": "/isolated-components/ScreenTitle?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ScreenTitle",
+  "scenarioType": "component"
+}

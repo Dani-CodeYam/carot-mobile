@@ -1,0 +1,266 @@
+{
+  "$comment": "Per-developer settings (port, provider, proxy ports, startCommand, etc.) belong in editor.local.json. That file is gitignored and is deep-merged on top of this one at load time. See CLAUDE.md or run `codeyam-editor editor config-show` to inspect the effective config.",
+  "apps": [
+    {
+      "dir": ".",
+      "name": "El Carot",
+      "startCommand": "NODE_OPTIONS=--dns-result-order=ipv4first BROWSER=none npx expo start --web --port 8083 --host localhost",
+      "type": "mobile"
+    }
+  ],
+  "audit": {
+    "allowedDocumentationOnlySlugs": [
+      "post-merge-drift-sweep"
+    ],
+    "branchBaseRef": "main",
+    "coverageBootstrap": {
+      "enabled": true
+    },
+    "glossarySkip": [
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_empty_mode_table",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_kv_pairs_to_int_dict",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_string_list",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "cli_command",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "load_step_metadata",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "resolve_mode_table",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "_preview_hint",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "_slug_label",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "git_add_paths_are_plans_only",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "main",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "staged_paths_are_plans_only",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "_terminal_signal_missing",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "detect_event",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "label_signals_pre_commit_warning",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "label_signals_user_feedback_phase",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "log_event",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "main",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "resolve_mode",
+        "reason": "derive-generated"
+      }
+    ],
+    "itemShape": {
+      "changeWithoutVerify": "note",
+      "compound": "warning",
+      "vague": "warning"
+    },
+    "scenarioFreshnessDays": 14,
+    "stepBudget": {
+      "maxChecklistItems": 6,
+      "maxLines": 80,
+      "severity": "warning"
+    },
+    "testNamingConventions": {}
+  },
+  "catalogAutoAdd": {
+    "allow": [],
+    "deny": []
+  },
+  "cleanup": {
+    "completedPlanRetention": 20,
+    "logCompress": true,
+    "logDeleteDays": 30,
+    "logRotateDays": 7,
+    "screenshotPruneOrphans": true,
+    "tmpDeleteHours": 24
+  },
+  "coverageThresholds": {
+    "global": {
+      "minLinePercent": 90
+    }
+  },
+  "database": null,
+  "defaultScreenSize": "iPhone 16",
+  "env": {},
+  "files": {
+    "eventLogMaxBytes": null,
+    "journalShardEntries": null,
+    "logKeepRotated": null,
+    "textLogMaxBytes": null
+  },
+  "formatters": [],
+  "git": {
+    "commitQueue": {
+      "enabled": true,
+      "heartbeatIntervalSec": 15,
+      "machineAliveHookTimeoutMs": 5000,
+      "maxHookPrunePerSweep": 10,
+      "maxProgressStallSec": 900,
+      "pollIntervalMs": 2000,
+      "serverHeartbeatIntervalSec": 60,
+      "waitTimeoutSec": 300
+    },
+    "planClaims": {
+      "enabled": true,
+      "fetchIntervalSec": 3
+    }
+  },
+  "hooks": {},
+  "port": 8083,
+  "projectDescription": "A tarot reading app for mobile — daily card draws and spreads",
+  "projectTitle": "El Carot",
+  "provider": "claude",
+  "proxy": {
+    "controlPort": 14199,
+    "dbPort": 14101,
+    "httpPort": 14100,
+    "httpsPassthrough": [
+      "crates.io",
+      "static.crates.io",
+      "index.crates.io",
+      "registry.npmjs.org",
+      "pypi.org",
+      "files.pythonhosted.org",
+      "proxy.golang.org",
+      "sum.golang.org",
+      "storage.googleapis.com",
+      "rubygems.org",
+      "github.com",
+      "codeload.github.com",
+      "objects.githubusercontent.com"
+    ],
+    "httpsPreview": false
+  },
+  "runnerTimeout": {
+    "floorSeconds": 900,
+    "headroomSeconds": 90,
+    "mode": "auto"
+  },
+  "scenarios": {
+    "dir": ".codeyam/scenarios"
+  },
+  "screenSizes": {
+    "iPad": {
+      "height": 1180,
+      "width": 820
+    },
+    "iPhone 16": {
+      "height": 852,
+      "width": 393
+    },
+    "iPhone 16 Pro Max": {
+      "height": 932,
+      "width": 430
+    }
+  },
+  "server": {
+    "autoRestartOnStaleBinary": true,
+    "maxRssMb": 6144
+  },
+  "setupBrowserEnabled": false,
+  "silenceHookStderr": false,
+  "startCommand": "NODE_OPTIONS=--dns-result-order=ipv4first BROWSER=none npx expo start --web --port 8083 --host localhost",
+  "staticChecks": [
+    {
+      "command": "npx tsc --noEmit",
+      "description": "TypeScript strict type-check",
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**"
+      ],
+      "filePatterns": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "name": "tsc"
+    }
+  ],
+  "testParallelism": {
+    "loadGuard": true
+  },
+  "testPartitions": [],
+  "testRunners": [
+    {
+      "changedCommand": "npx jest --json --testLocationInResults {changed_test_files} {changed_source_files:--findRelatedTests}",
+      "command": "npx jest --json --testLocationInResults",
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**"
+      ],
+      "name": "tests",
+      "outputFormat": "jest-json",
+      "sourceFilePatterns": [
+        "**/*.{ts,tsx,js,jsx}"
+      ],
+      "targetedCommand": "npx jest --json --testLocationInResults -t \"{test_names}\"",
+      "testFilePatterns": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.test.js",
+        "**/*.test.jsx"
+      ]
+    }
+  ],
+  "toolchainPaths": []
+}

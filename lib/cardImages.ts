@@ -8,7 +8,7 @@
  */
 import type { ImageSourcePropType } from 'react-native';
 
-export const CARD_BACK: ImageSourcePropType = require('../assets/card-back.jpg');
+export const CARD_BACK: ImageSourcePropType = require('../assets/card-back.png');
 
 export const CARD_IMAGES: Record<string, ImageSourcePropType> = {
   '00-el-loco.png': require('../assets/cards/00-el-loco.png'),

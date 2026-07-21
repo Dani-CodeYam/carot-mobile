@@ -1,0 +1,90 @@
+{
+  "capabilities": {
+    "http-mocks": "verified",
+    "interactions-click": "verified",
+    "interactions-touch-gestures": "manual",
+    "layout-web": "verified",
+    "native-clipboard": "manual",
+    "native-geolocation": "manual",
+    "native-haptics": "manual",
+    "native-network": "manual",
+    "native-storage": "manual",
+    "real-device": "manual",
+    "routing": "verified"
+  },
+  "commands": {
+    "dev": "NODE_OPTIONS=--dns-result-order=ipv4first BROWSER=none npx expo start --web --port 8083 --host localhost",
+    "seedAdapter": "npx tsx .codeyam/seed-adapter.ts",
+    "test": "npx jest"
+  },
+  "components": {
+    "fileExtensions": [
+      ".tsx",
+      ".jsx"
+    ],
+    "primitives": [
+      "View",
+      "Text",
+      "TouchableOpacity",
+      "ScrollView",
+      "FlatList",
+      "Image",
+      "TextInput",
+      "Pressable"
+    ]
+  },
+  "data": {
+    "importStatement": "import { storage } from '@/lib/storage'",
+    "seedAdapterType": "localStorage",
+    "type": "async-storage"
+  },
+  "defaultScreenSize": "iPhone 16",
+  "healthCheckSecs": 60,
+  "id": "expo-react-native",
+  "name": "Expo + React Native",
+  "preview": {
+    "defaultPort": 8083,
+    "fallbackKind": "iframe",
+    "fallbackPort": 8083,
+    "kind": "iframe"
+  },
+  "routing": {
+    "isolationRoute": "app/isolated-components",
+    "pagesDir": "app",
+    "type": "file-based"
+  },
+  "screenSizes": {
+    "iPad": {
+      "height": 1180,
+      "width": 820
+    },
+    "iPhone 16": {
+      "height": 852,
+      "width": 393
+    },
+    "iPhone 16 Pro Max": {
+      "height": 932,
+      "width": 430
+    }
+  },
+  "simulator": {
+    "buildSignalRegex": "(Bundling complete|Successfully built|Launching app|Successfully installed)",
+    "buildTimeoutSeconds": 900,
+    "platform": "ios",
+    "preflightChecks": [
+      "xcode-installed",
+      "cocoapods-installed",
+      "ios-platform-sdk",
+      "ios-simulator-runtime"
+    ],
+    "runCommand": [
+      "npx",
+      "expo",
+      "run:ios"
+    ]
+  },
+  "styling": {
+    "tokenFile": "lib/theme.ts",
+    "type": "theme-object"
+  }
+}

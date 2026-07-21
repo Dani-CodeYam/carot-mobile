@@ -1,0 +1,16 @@
+{
+  "name": "Cartas anteriores",
+  "id": "a2fe719f-40dc-466b-9f43-83ded1adadc7",
+  "url": "/history",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.dailyCard": null,
+    "elcarot.history": [],
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/history.tsx"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "CardPicker - Default",
+  "id": "b511ba3a-af72-459a-8eb0-dbe2eb5fab22",
+  "url": "/isolated-components/CardPicker?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "CardPicker",
+  "scenarioType": "component"
+}

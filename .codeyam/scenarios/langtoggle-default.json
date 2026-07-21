@@ -1,0 +1,11 @@
+{
+  "name": "LangToggle - Default",
+  "id": "84a2e885-1f70-4a69-9684-cdcb37fb9a06",
+  "url": "/isolated-components/LangToggle?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "LangToggle",
+  "scenarioType": "component"
+}

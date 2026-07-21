@@ -1,0 +1,11 @@
+{
+  "name": "HomeActions - English",
+  "id": "238ea1bf-b835-42fb-9e4c-cb135f194917",
+  "url": "/isolated-components/HomeActions?s=English",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "HomeActions",
+  "scenarioType": "component"
+}

@@ -71,9 +71,15 @@ export const theme = {
   },
 
   fontFamily: {
-    // Maragsa Display (bundled OTF) for titles; system for body.
+    // Maragsa Display for titles, Josefin Sans for everything else — both
+    // bundled in assets/fonts and registered in app/_layout.
     display: 'MaragsaDisplay',
-    sans: 'System',
+    sans: 'JosefinSans',
+    sansLight: 'JosefinSansLight',
+    sansSemiBold: 'JosefinSansSemiBold',
+    // React Native won't synthesise an italic for a custom face, so the italic
+    // cut is its own family — `fontStyle: 'italic'` alone renders upright.
+    sansItalic: 'JosefinSansItalic',
     mono: 'monospace',
   },
 

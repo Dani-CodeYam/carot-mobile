@@ -1,0 +1,41 @@
+{
+  "name": "Cartas anteriores - Con historial",
+  "id": "54996bf4-c313-4739-a8b3-df3635272c91",
+  "url": "/history",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.dailyCard": {
+      "date": "2026-07-20",
+      "n": 8,
+      "revealed": true
+    },
+    "elcarot.history": [
+      {
+        "date": "2026-07-19",
+        "n": 18
+      },
+      {
+        "date": "2026-07-18",
+        "n": 0
+      },
+      {
+        "date": "2026-07-17",
+        "n": 21
+      },
+      {
+        "date": "2026-07-16",
+        "n": 6
+      },
+      {
+        "date": "2026-07-15",
+        "n": 13
+      }
+    ],
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/history.tsx"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "HistoryRow - Collapsed",
+  "id": "1aa7d3ab-25d4-4db5-ae44-32e17de34358",
+  "url": "/isolated-components/HistoryRow?s=Collapsed",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "HistoryRow",
+  "scenarioType": "component"
+}

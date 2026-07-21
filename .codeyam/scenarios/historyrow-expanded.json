@@ -1,0 +1,11 @@
+{
+  "name": "HistoryRow - Expanded",
+  "id": "b6bf6458-386e-4fb1-b0cd-5b125c137273",
+  "url": "/isolated-components/HistoryRow?s=Expanded",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "HistoryRow",
+  "scenarioType": "component"
+}

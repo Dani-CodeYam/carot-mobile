@@ -1,0 +1,626 @@
+{
+  "tests": [
+    {
+      "description": "The first card ever recorded starts the trail.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "addToHistory › handles an empty history",
+      "line": 118,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Newest day first, so the trail reads backwards from today.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "addToHistory › keeps entries newest-first",
+      "line": 95,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Re-adding a day replaces it rather than duplicating the row.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "addToHistory › never keeps two entries for the same day",
+      "line": 101,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "An out-of-order arrival still sorts into place.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "addToHistory › sorts an older entry into position",
+      "line": 108,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Corrupt or hand-edited storage must not crash the screen.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "cardByIndex › falls back to the first card for an out-of-range index",
+      "line": 87,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The stored draw keeps an arcana index; it must resolve back to its card.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "cardByIndex › finds the card with the given arcana number",
+      "line": 81,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Whatever the date, the result is always a real card in the deck.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "cardForDate › always returns a card from the deck",
+      "line": 72,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The whole promise of the daily card: a date maps to one card, forever.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "cardForDate › is deterministic for a given date",
+      "line": 61,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Different days should not all land on the same card.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "cardForDate › spreads different dates across different cards",
+      "line": 66,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A negative index must not wrap round to the end of the deck.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "cardFromParam › returns null for a negative index",
+      "line": 59,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Past the end of the deck there is no card to show.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "cardFromParam › returns null for an index beyond the last card",
+      "line": 53,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Junk in the URL should land you on the spread, not an error.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "cardFromParam › returns null for non-integer input",
+      "line": 64,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The ordinary case: no deep link, so the screen opens the spread.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "cardFromParam › returns null when no index is given",
+      "line": 42,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A valid index names its card.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "cardFromParam › returns the card at a valid index",
+      "line": 47,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "An unknown filename falls back to the back rather than crashing the render.",
+      "file": "lib/cardImages.test.ts",
+      "format": "vitest",
+      "key": "cardImage › falls back to the card back for an unknown filename",
+      "line": 17,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Every card in the deck must resolve to its own artwork — a card whose image is missing would silently render as a face-down back while claiming to be face-up.",
+      "file": "lib/cardImages.test.ts",
+      "format": "vitest",
+      "key": "cardImage › resolves artwork for all 22 cards",
+      "line": 9,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A missing translation falls back to Spanish rather than rendering blank — an untranslated card should still say something.",
+      "file": "data/cards.test.ts",
+      "format": "vitest",
+      "key": "cardText › falls back to Spanish when a translation is empty",
+      "line": 21,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Every card in the deck must have text in both languages.",
+      "file": "data/cards.test.ts",
+      "format": "vitest",
+      "key": "cardText › has non-empty text for all 22 cards in both languages",
+      "line": 27,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "English reads from the parallel `_en` fields.",
+      "file": "data/cards.test.ts",
+      "format": "vitest",
+      "key": "cardText › returns the English translation when asked for English",
+      "line": 14,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Spanish is the deck's own language — the field is used as written.",
+      "file": "data/cards.test.ts",
+      "format": "vitest",
+      "key": "cardText › returns the Spanish text unchanged",
+      "line": 8,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Outer cards must stop compounding, or they end up upside-down.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "clamp › caps anything further out at one card",
+      "line": 17,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Inside the range a value is its own answer — the centre card and its immediate neighbours must keep their exact positions.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "clamp › leaves values within one card either side untouched",
+      "line": 9,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Spanish lowercases weekdays and months; only the sentence starts capital. CSS `capitalize` would give \"Lunes, 20 De Julio\", which is why this is done in code.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "formatDay › capitalizes only the first letter in Spanish",
+      "line": 18,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The same day, read in English.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "formatDay › formats a day in English",
+      "line": 11,
+      "registeredAt": "2026-07-21T01:35:29.980653+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The daily card's date line, in the reader's language.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "formatDay › formats a day in Spanish",
+      "line": 6,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A date string is parsed as a local calendar day, so the weekday cannot drift by one across timezones.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "formatDay › reads the date as a local day, not UTC",
+      "line": 27,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Single-digit days carry no padding once rendered.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "formatDay › renders single-digit days without a leading zero",
+      "line": 32,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "First visit ever: a card is drawn for today and stored face-down.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadDaily › creates a new face-down draw when nothing is stored",
+      "line": 139,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A stale card never opened is simply dropped — it was never really yours.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadDaily › discards a stale draw that was never revealed",
+      "line": 168,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A stale card that was opened graduates into the trail.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadDaily › moves a revealed stale draw into history",
+      "line": 159,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Returning the same day gives back the same draw, still open if it was.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadDaily › returns the stored draw when it belongs to today",
+      "line": 149,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Before any day has rolled over the trail is empty, not undefined.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadHistory › returns an empty list when nothing is stored",
+      "line": 195,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Otherwise it hands back what was recorded.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "loadHistory › returns the stored entries",
+      "line": 200,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The passed-in draw is not mutated.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "revealToday › leaves the original draw untouched",
+      "line": 186,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Flipping the card face-up records it, so a reload keeps it open.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "revealToday › marks the draw revealed and persists it",
+      "line": 178,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Position must not predict the arcana, or choosing a face-down card would just be picking a number.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "shuffledDeck › does not always put the same card first",
+      "line": 34,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The source deck is module-level and shared; shuffling in place would reorder it for the daily card and the gallery too.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "shuffledDeck › leaves the source deck untouched",
+      "line": 16,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Two shuffles landing in the same order 22! times over is impossible in practice, so identical results across several draws means it is not actually shuffling.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "shuffledDeck › produces a different order across repeated draws",
+      "line": 25,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Every card is dealt exactly once — a spread that dropped or repeated a card would let you choose one that cannot be revealed.",
+      "file": "lib/draw.test.ts",
+      "format": "vitest",
+      "key": "shuffledDeck › returns all 22 arcana with no duplicates and no omissions",
+      "line": 8,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A side card hangs lower, tilts outward and dims — the look the reference spread has.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › drops, tilts and dims the neighbouring slots at rest",
+      "line": 46,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Outer slots are already fully tilted and dimmed, and stay that way while they slide — only their position changes.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › holds outer slots at the capped tilt and dimming",
+      "line": 86,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The whole point of the rewrite: as the rail travels one card, the arriving neighbour must land looking exactly like the centre card did — upright, undimmed, not dropped. The earlier version snapped here instead.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › lands an arriving neighbour in the exact centre pose",
+      "line": 61,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "At rest the centre slot is dead centre, upright, undimmed and not dropped — this is the frame the user actually chooses from.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › puts the centre slot at rest upright, centred and at full opacity",
+      "line": 36,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Each property is sampled at rail-left, rest, rail-right.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › returns three samples for every property",
+      "line": 26,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Symmetrically, the departing centre card must land exactly where the side card was, so resetting the rail to the new index is invisible.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "slotSamples › sends the departing centre card into the exact side pose",
+      "line": 74,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The two languages must actually differ, or a key was copy-pasted.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "t › differs between languages for translated copy",
+      "line": 62,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Every key must exist in both languages — a missing one would render `undefined` on screen rather than falling back.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "t › has a non-empty string for every key in both languages",
+      "line": 50,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The same key resolves to the English copy.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "t › returns the English string for the same key",
+      "line": 44,
+      "registeredAt": "2026-07-21T01:35:29.980653+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Each language returns its own copy.",
+      "file": "lib/lang.test.ts",
+      "format": "vitest",
+      "key": "t › returns the Spanish string for a key",
+      "line": 39,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Local calendar day, not UTC — the day turns over at the user's midnight.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "toDateKey › formats a date as YYYY-MM-DD",
+      "line": 44,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Just before midnight is still today, in local time.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "toDateKey › uses the local day, not UTC",
+      "line": 54,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Single-digit months and days are zero-padded so keys sort lexically.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "toDateKey › zero-pads single-digit months and days",
+      "line": 49,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The scenario seam: a seeded day wins, so a capture taken in August still renders the day it was authored for.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "today › honours a seeded override",
+      "line": 131,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Without a seeded override it reads the clock.",
+      "file": "lib/dailyCard.test.ts",
+      "format": "vitest",
+      "key": "today › returns the real day when nothing is seeded",
+      "line": 125,
+      "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The screen offers \"ver cartas anteriores\" only when there is history.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › counts past cards",
+      "line": 93,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Revealing an open card would rewrite storage for nothing.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › does not write again when the card is already revealed",
+      "line": 73,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Once loaded the card and its day are available.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › exposes the loaded card and its date",
+      "line": 44,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A load that resolves after the screen closes must not set state.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › ignores a load that lands after unmount",
+      "line": 107,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Revealing before the load lands must not throw or write a draw that does not exist yet.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › ignores a reveal that arrives before the card has loaded",
+      "line": 86,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A card already opened earlier today stays open — the reveal is once a day, not once a visit.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › reports an already-revealed card as revealed",
+      "line": 53,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Tapping turns the card immediately and records it.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › reveals optimistically and persists the reveal",
+      "line": 62,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Storage is async, so the first frame has nothing yet — the screen must be able to render that state rather than blanking.",
+      "file": "lib/useDailyCard.test.ts",
+      "format": "vitest",
+      "key": "useDailyCard › starts empty before storage answers",
+      "line": 36,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Leaving the screen mid-turn must not leave a timer to fire into an unmounted component.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › cancels a pending turn when unmounted",
+      "line": 89,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "And still face-down partway through the delay.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › has not turned before the delay has elapsed",
+      "line": 35,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The card must be on screen face-down first — turning immediately would skip the flip the whole reveal is built around.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › is still face-down in the moment the card arrives",
+      "line": 29,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "\"Elegir otra carta\" clears the card; the next one has to start face-down again or the spread would reopen onto an already-revealed card.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › returns to face-down when the card is cleared",
+      "line": 54,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "With no card chosen there is nothing to turn.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › stays face-down when there is no card",
+      "line": 19,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Choosing a different card re-runs the whole turn, rather than inheriting the previous card's face-up state.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › turns again for a newly chosen card",
+      "line": 70,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Then it turns on its own, with no further interaction.",
+      "file": "lib/useTurnUp.test.ts",
+      "format": "vitest",
+      "key": "useTurnUp › turns face-up once the delay has elapsed",
+      "line": 44,
+      "registeredAt": "2026-07-21T00:26:53.542897+00:00",
+      "runner": "tests"
+    }
+  ],
+  "version": 2
+}
