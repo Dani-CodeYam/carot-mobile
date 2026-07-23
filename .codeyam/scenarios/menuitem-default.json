@@ -1,0 +1,11 @@
+{
+  "name": "MenuItem - Default",
+  "id": "c7fa60b3-556f-457f-9278-3d74662d7d02",
+  "url": "/isolated-components/MenuItem?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "MenuItem",
+  "scenarioType": "component"
+}

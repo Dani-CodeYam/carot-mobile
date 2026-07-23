@@ -1,0 +1,11 @@
+{
+  "name": "MenuProvider - Default",
+  "id": "544a58a2-c87c-4270-879f-34968ae59c65",
+  "url": "/isolated-components/MenuProvider?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "MenuProvider",
+  "scenarioType": "component"
+}

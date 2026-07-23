@@ -1,0 +1,11 @@
+{
+  "name": "MenuHeader - Default",
+  "id": "c8ed8ee3-1810-4c9d-b850-3dd2b891a0b7",
+  "url": "/isolated-components/MenuHeader?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "MenuHeader",
+  "scenarioType": "component"
+}

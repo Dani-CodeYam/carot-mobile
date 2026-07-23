@@ -1,0 +1,11 @@
+{
+  "name": "StarLink - Large",
+  "id": "17fa3fc8-44fe-4120-a0fb-0b3d2aabea0b",
+  "url": "/isolated-components/StarLink?s=Large",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "StarLink",
+  "scenarioType": "component"
+}

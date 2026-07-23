@@ -1,224 +1,16 @@
 {
   "schemaVersion": 4,
-  "version": 17,
+  "version": 21,
   "partition": "all",
-  "hash": "fa1ab6a99751bac0",
+  "hash": "6172545ece106683",
   "runners": [
     {
       "name": "tests",
       "format": "jest-json",
-      "output": "{\"numFailedTestSuites\":0,\"numFailedTests\":0,\"numPassedTestSuites\":8,\"numPassedTests\":69,\"numPendingTestSuites\":0,\"numPendingTests\":0,\"numRuntimeErrorTestSuites\":0,\"numTodoTests\":0,\"numTotalTestSuites\":8,\"numTotalTests\":69,\"openHandles\":[],\"snapshot\":{\"added\":0,\"didUpdate\":false,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0},\"startTime\":1784597882959,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":11,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard starts empty before storage answers\",\"invocations\":1,\"location\":{\"column\":5,\"line\":36},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"starts empty before storage answers\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":52,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard exposes the loaded card and its date\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"exposes the loaded card and its date\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":53,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard reports an already-revealed card as revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":53},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reports an already-revealed card as revealed\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":104,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard reveals optimistically and persists the reveal\",\"invocations\":1,\"location\":{\"column\":5,\"line\":62},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reveals optimistically and persists the reveal\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":53,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard does not write again when the card is already revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":73},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"does not write again when the card is already revealed\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard ignores a reveal that arrives before the card has loaded\",\"invocations\":1,\"location\":{\"column\":5,\"line\":86},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"ignores a reveal that arrives before the card has loaded\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":52,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard counts past cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":93},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"counts past cards\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard ignores a load that lands after unmount\",\"invocations\":1,\"location\":{\"column\":5,\"line\":107},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"ignores a load that lands after unmount\"}],\"endTime\":1784597883575,\"message\":\"\",\"name\":\"lib/useDailyCard.test.ts\",\"startTime\":1784597883033,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"formatDay\"],\"duration\":9,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay formats a day in Spanish\",\"invocations\":1,\"location\":{\"column\":5,\"line\":6},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a day in Spanish\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay formats a day in English\",\"invocations\":1,\"location\":{\"column\":5,\"line\":11},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a day in English\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay capitalizes only the first letter in Spanish\",\"invocations\":1,\"location\":{\"column\":5,\"line\":18},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"capitalizes only the first letter in Spanish\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay reads the date as a local day, not UTC\",\"invocations\":1,\"location\":{\"column\":5,\"line\":27},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reads the date as a local day, not UTC\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay renders single-digit days without a leading zero\",\"invocations\":1,\"location\":{\"column\":5,\"line\":32},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"renders single-digit days without a leading zero\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t returns the Spanish string for a key\",\"invocations\":1,\"location\":{\"column\":5,\"line\":39},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the Spanish string for a key\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t returns the English string for the same key\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the English string for the same key\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t has a non-empty string for every key in both languages\",\"invocations\":1,\"location\":{\"column\":5,\"line\":50},\"numPassingAsserts\":26,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has a non-empty string for every key in both languages\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t differs between languages for translated copy\",\"invocations\":1,\"location\":{\"column\":5,\"line\":62},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"differs between languages for translated copy\"}],\"endTime\":1784597883659,\"message\":\"\",\"name\":\"lib/lang.test.ts\",\"startTime\":1784597883593,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"cardImage\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardImage resolves artwork for all 22 cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":9},\"numPassingAsserts\":44,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"resolves artwork for all 22 cards\"},{\"ancestorTitles\":[\"cardImage\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardImage falls back to the card back for an unknown filename\",\"invocations\":1,\"location\":{\"column\":5,\"line\":17},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to the card back for an unknown filename\"}],\"endTime\":1784597883819,\"message\":\"\",\"name\":\"lib/cardImages.test.ts\",\"startTime\":1784597883661,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp stays face-down when there is no card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":19},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"stays face-down when there is no card\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp is still face-down in the moment the card arrives\",\"invocations\":1,\"location\":{\"column\":5,\"line\":29},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"is still face-down in the moment the card arrives\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp has not turned before the delay has elapsed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":35},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has not turned before the delay has elapsed\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp turns face-up once the delay has elapsed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"turns face-up once the delay has elapsed\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp returns to face-down when the card is cleared\",\"invocations\":1,\"location\":{\"column\":5,\"line\":54},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns to face-down when the card is cleared\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp turns again for a newly chosen card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":70},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"turns again for a newly chosen card\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp cancels a pending turn when unmounted\",\"invocations\":1,\"location\":{\"column\":5,\"line\":89},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"cancels a pending turn when unmounted\"}],\"endTime\":1784597883853,\"message\":\"\",\"name\":\"lib/useTurnUp.test.ts\",\"startTime\":1784597883821,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"toDateKey\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey formats a date as YYYY-MM-DD\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a date as YYYY-MM-DD\"},{\"ancestorTitles\":[\"toDateKey\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey zero-pads single-digit months and days\",\"invocations\":1,\"location\":{\"column\":5,\"line\":49},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"zero-pads single-digit months and days\"},{\"ancestorTitles\":[\"toDateKey\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey uses the local day, not UTC\",\"invocations\":1,\"location\":{\"column\":5,\"line\":54},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"uses the local day, not UTC\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate is deterministic for a given date\",\"invocations\":1,\"location\":{\"column\":5,\"line\":61},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"is deterministic for a given date\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate spreads different dates across different cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":66},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"spreads different dates across different cards\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate always returns a card from the deck\",\"invocations\":1,\"location\":{\"column\":5,\"line\":72},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"always returns a card from the deck\"},{\"ancestorTitles\":[\"cardByIndex\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardByIndex finds the card with the given arcana number\",\"invocations\":1,\"location\":{\"column\":5,\"line\":81},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"finds the card with the given arcana number\"},{\"ancestorTitles\":[\"cardByIndex\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardByIndex falls back to the first card for an out-of-range index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":87},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to the first card for an out-of-range index\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory keeps entries newest-first\",\"invocations\":1,\"location\":{\"column\":5,\"line\":95},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"keeps entries newest-first\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":2,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory never keeps two entries for the same day\",\"invocations\":1,\"location\":{\"column\":5,\"line\":101},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"never keeps two entries for the same day\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory sorts an older entry into position\",\"invocations\":1,\"location\":{\"column\":5,\"line\":108},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"sorts an older entry into position\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory handles an empty history\",\"invocations\":1,\"location\":{\"column\":5,\"line\":118},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"handles an empty history\"},{\"ancestorTitles\":[\"today\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"today returns the real day when nothing is seeded\",\"invocations\":1,\"location\":{\"column\":5,\"line\":125},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the real day when nothing is seeded\"},{\"ancestorTitles\":[\"today\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"today honours a seeded override\",\"invocations\":1,\"location\":{\"column\":5,\"line\":131},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"honours a seeded override\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily creates a new face-down draw when nothing is stored\",\"invocations\":1,\"location\":{\"column\":5,\"line\":139},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"creates a new face-down draw when nothing is stored\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily returns the stored draw when it belongs to today\",\"invocations\":1,\"location\":{\"column\":5,\"line\":149},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the stored draw when it belongs to today\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily moves a revealed stale draw into history\",\"invocations\":1,\"location\":{\"column\":5,\"line\":159},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"moves a revealed stale draw into history\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily discards a stale draw that was never revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":168},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"discards a stale draw that was never revealed\"},{\"ancestorTitles\":[\"revealToday\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"revealToday marks the draw revealed and persists it\",\"invocations\":1,\"location\":{\"column\":5,\"line\":178},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"marks the draw revealed and persists it\"},{\"ancestorTitles\":[\"revealToday\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"revealToday leaves the original draw untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":186},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves the original draw untouched\"},{\"ancestorTitles\":[\"loadHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadHistory returns an empty list when nothing is stored\",\"invocations\":1,\"location\":{\"column\":5,\"line\":195},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns an empty list when nothing is stored\"},{\"ancestorTitles\":[\"loadHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadHistory returns the stored entries\",\"invocations\":1,\"location\":{\"column\":5,\"line\":200},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the stored entries\"}],\"endTime\":1784597883883,\"message\":\"\",\"name\":\"lib/dailyCard.test.ts\",\"startTime\":1784597883855,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"clamp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"clamp leaves values within one card either side untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":9},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves values within one card either side untouched\"},{\"ancestorTitles\":[\"clamp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"clamp caps anything further out at one card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":17},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"caps anything further out at one card\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples returns three samples for every property\",\"invocations\":1,\"location\":{\"column\":5,\"line\":26},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns three samples for every property\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples puts the centre slot at rest upright, centred and at full opacity\",\"invocations\":1,\"location\":{\"column\":5,\"line\":36},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"puts the centre slot at rest upright, centred and at full opacity\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples drops, tilts and dims the neighbouring slots at rest\",\"invocations\":1,\"location\":{\"column\":5,\"line\":46},\"numPassingAsserts\":6,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"drops, tilts and dims the neighbouring slots at rest\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples lands an arriving neighbour in the exact centre pose\",\"invocations\":1,\"location\":{\"column\":5,\"line\":61},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"lands an arriving neighbour in the exact centre pose\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples sends the departing centre card into the exact side pose\",\"invocations\":1,\"location\":{\"column\":5,\"line\":74},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"sends the departing centre card into the exact side pose\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples holds outer slots at the capped tilt and dimming\",\"invocations\":1,\"location\":{\"column\":5,\"line\":86},\"numPassingAsserts\":5,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"holds outer slots at the capped tilt and dimming\"}],\"endTime\":1784597883909,\"message\":\"\",\"name\":\"lib/cardPickerLayout.test.ts\",\"startTime\":1784597883885,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"cardText\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText returns the Spanish text unchanged\",\"invocations\":1,\"location\":{\"column\":5,\"line\":8},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the Spanish text unchanged\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText returns the English translation when asked for English\",\"invocations\":1,\"location\":{\"column\":5,\"line\":14},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the English translation when asked for English\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText falls back to Spanish when a translation is empty\",\"invocations\":1,\"location\":{\"column\":5,\"line\":21},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to Spanish when a translation is empty\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":3,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText has non-empty text for all 22 cards in both languages\",\"invocations\":1,\"location\":{\"column\":5,\"line\":27},\"numPassingAsserts\":88,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has non-empty text for all 22 cards in both languages\"}],\"endTime\":1784597883933,\"message\":\"\",\"name\":\"data/cards.test.ts\",\"startTime\":1784597883911,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck returns all 22 arcana with no duplicates and no omissions\",\"invocations\":1,\"location\":{\"column\":5,\"line\":8},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns all 22 arcana with no duplicates and no omissions\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck leaves the source deck untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":16},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves the source deck untouched\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck produces a different order across repeated draws\",\"invocations\":1,\"location\":{\"column\":5,\"line\":25},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"produces a different order across repeated draws\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck does not always put the same card first\",\"invocations\":1,\"location\":{\"column\":5,\"line\":34},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"does not always put the same card first\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null when no index is given\",\"invocations\":1,\"location\":{\"column\":5,\"line\":42},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null when no index is given\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns the card at a valid index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":47},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the card at a valid index\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for an index beyond the last card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":53},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for an index beyond the last card\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for a negative index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":59},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for a negative index\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for non-integer input\",\"invocations\":1,\"location\":{\"column\":5,\"line\":64},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for non-integer input\"}],\"endTime\":1784597883955,\"message\":\"\",\"name\":\"lib/draw.test.ts\",\"startTime\":1784597883935,\"status\":\"passed\",\"summary\":\"\"}],\"wasInterrupted\":false}\n",
+      "output": "{\"numFailedTestSuites\":0,\"numFailedTests\":0,\"numPassedTestSuites\":9,\"numPassedTests\":74,\"numPendingTestSuites\":0,\"numPendingTests\":0,\"numRuntimeErrorTestSuites\":0,\"numTodoTests\":0,\"numTotalTestSuites\":9,\"numTotalTests\":74,\"openHandles\":[],\"snapshot\":{\"added\":0,\"didUpdate\":false,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0},\"startTime\":1784839956272,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"toDateKey\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey formats a date as YYYY-MM-DD\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a date as YYYY-MM-DD\"},{\"ancestorTitles\":[\"toDateKey\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey zero-pads single-digit months and days\",\"invocations\":1,\"location\":{\"column\":5,\"line\":49},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"zero-pads single-digit months and days\"},{\"ancestorTitles\":[\"toDateKey\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"toDateKey uses the local day, not UTC\",\"invocations\":1,\"location\":{\"column\":5,\"line\":54},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"uses the local day, not UTC\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate is deterministic for a given date\",\"invocations\":1,\"location\":{\"column\":5,\"line\":61},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"is deterministic for a given date\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate spreads different dates across different cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":66},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"spreads different dates across different cards\"},{\"ancestorTitles\":[\"cardForDate\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardForDate always returns a card from the deck\",\"invocations\":1,\"location\":{\"column\":5,\"line\":72},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"always returns a card from the deck\"},{\"ancestorTitles\":[\"cardByIndex\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardByIndex finds the card with the given arcana number\",\"invocations\":1,\"location\":{\"column\":5,\"line\":81},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"finds the card with the given arcana number\"},{\"ancestorTitles\":[\"cardByIndex\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardByIndex falls back to the first card for an out-of-range index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":87},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to the first card for an out-of-range index\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":6,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory keeps entries newest-first\",\"invocations\":1,\"location\":{\"column\":5,\"line\":95},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"keeps entries newest-first\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory never keeps two entries for the same day\",\"invocations\":1,\"location\":{\"column\":5,\"line\":101},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"never keeps two entries for the same day\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory sorts an older entry into position\",\"invocations\":1,\"location\":{\"column\":5,\"line\":108},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"sorts an older entry into position\"},{\"ancestorTitles\":[\"addToHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"addToHistory handles an empty history\",\"invocations\":1,\"location\":{\"column\":5,\"line\":118},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"handles an empty history\"},{\"ancestorTitles\":[\"today\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"today returns the real day when nothing is seeded\",\"invocations\":1,\"location\":{\"column\":5,\"line\":125},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the real day when nothing is seeded\"},{\"ancestorTitles\":[\"today\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"today honours a seeded override\",\"invocations\":1,\"location\":{\"column\":5,\"line\":131},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"honours a seeded override\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily creates a new face-down draw when nothing is stored\",\"invocations\":1,\"location\":{\"column\":5,\"line\":139},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"creates a new face-down draw when nothing is stored\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily returns the stored draw when it belongs to today\",\"invocations\":1,\"location\":{\"column\":5,\"line\":149},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the stored draw when it belongs to today\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily moves a revealed stale draw into history\",\"invocations\":1,\"location\":{\"column\":5,\"line\":159},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"moves a revealed stale draw into history\"},{\"ancestorTitles\":[\"loadDaily\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadDaily discards a stale draw that was never revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":168},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"discards a stale draw that was never revealed\"},{\"ancestorTitles\":[\"revealToday\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"revealToday marks the draw revealed and persists it\",\"invocations\":1,\"location\":{\"column\":5,\"line\":178},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"marks the draw revealed and persists it\"},{\"ancestorTitles\":[\"revealToday\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"revealToday leaves the original draw untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":186},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves the original draw untouched\"},{\"ancestorTitles\":[\"loadHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadHistory returns an empty list when nothing is stored\",\"invocations\":1,\"location\":{\"column\":5,\"line\":195},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns an empty list when nothing is stored\"},{\"ancestorTitles\":[\"loadHistory\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"loadHistory returns the stored entries\",\"invocations\":1,\"location\":{\"column\":5,\"line\":200},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the stored entries\"}],\"endTime\":1784839956552,\"message\":\"\",\"name\":\"lib/dailyCard.test.ts\",\"startTime\":1784839956351,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":12,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard starts empty before storage answers\",\"invocations\":1,\"location\":{\"column\":5,\"line\":36},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"starts empty before storage answers\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":105,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard exposes the loaded card and its date\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"exposes the loaded card and its date\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":389,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard reports an already-revealed card as revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":53},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reports an already-revealed card as revealed\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":239,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard reveals optimistically and persists the reveal\",\"invocations\":1,\"location\":{\"column\":5,\"line\":62},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reveals optimistically and persists the reveal\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":156,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard does not write again when the card is already revealed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":73},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"does not write again when the card is already revealed\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":36,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard ignores a reveal that arrives before the card has loaded\",\"invocations\":1,\"location\":{\"column\":5,\"line\":86},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"ignores a reveal that arrives before the card has loaded\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":219,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard counts past cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":93},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"counts past cards\"},{\"ancestorTitles\":[\"useDailyCard\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useDailyCard ignores a load that lands after unmount\",\"invocations\":1,\"location\":{\"column\":5,\"line\":107},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"ignores a load that lands after unmount\"}],\"endTime\":1784839957804,\"message\":\"\",\"name\":\"lib/useDailyCard.test.ts\",\"startTime\":1784839956562,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"clamp\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"clamp leaves values within one card either side untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":9},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves values within one card either side untouched\"},{\"ancestorTitles\":[\"clamp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"clamp caps anything further out at one card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":17},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"caps anything further out at one card\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples returns three samples for every property\",\"invocations\":1,\"location\":{\"column\":5,\"line\":26},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns three samples for every property\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":82,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples puts the centre slot at rest upright, centred and at full opacity\",\"invocations\":1,\"location\":{\"column\":5,\"line\":36},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"puts the centre slot at rest upright, centred and at full opacity\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples drops, tilts and dims the neighbouring slots at rest\",\"invocations\":1,\"location\":{\"column\":5,\"line\":46},\"numPassingAsserts\":6,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"drops, tilts and dims the neighbouring slots at rest\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples lands an arriving neighbour in the exact centre pose\",\"invocations\":1,\"location\":{\"column\":5,\"line\":61},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"lands an arriving neighbour in the exact centre pose\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples sends the departing centre card into the exact side pose\",\"invocations\":1,\"location\":{\"column\":5,\"line\":74},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"sends the departing centre card into the exact side pose\"},{\"ancestorTitles\":[\"slotSamples\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"slotSamples holds outer slots at the capped tilt and dimming\",\"invocations\":1,\"location\":{\"column\":5,\"line\":86},\"numPassingAsserts\":5,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"holds outer slots at the capped tilt and dimming\"}],\"endTime\":1784839958207,\"message\":\"\",\"name\":\"lib/cardPickerLayout.test.ts\",\"startTime\":1784839957906,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":109,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp stays face-down when there is no card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":19},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"stays face-down when there is no card\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":3,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp is still face-down in the moment the card arrives\",\"invocations\":1,\"location\":{\"column\":5,\"line\":29},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"is still face-down in the moment the card arrives\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":2,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp has not turned before the delay has elapsed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":35},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has not turned before the delay has elapsed\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":3,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp turns face-up once the delay has elapsed\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"turns face-up once the delay has elapsed\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":3,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp returns to face-down when the card is cleared\",\"invocations\":1,\"location\":{\"column\":5,\"line\":54},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns to face-down when the card is cleared\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp turns again for a newly chosen card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":70},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"turns again for a newly chosen card\"},{\"ancestorTitles\":[\"useTurnUp\"],\"duration\":4,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"useTurnUp cancels a pending turn when unmounted\",\"invocations\":1,\"location\":{\"column\":5,\"line\":89},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"cancels a pending turn when unmounted\"}],\"endTime\":1784839958709,\"message\":\"\",\"name\":\"lib/useTurnUp.test.ts\",\"startTime\":1784839958209,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck returns all 22 arcana with no duplicates and no omissions\",\"invocations\":1,\"location\":{\"column\":5,\"line\":8},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns all 22 arcana with no duplicates and no omissions\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck leaves the source deck untouched\",\"invocations\":1,\"location\":{\"column\":5,\"line\":16},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"leaves the source deck untouched\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck produces a different order across repeated draws\",\"invocations\":1,\"location\":{\"column\":5,\"line\":25},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"produces a different order across repeated draws\"},{\"ancestorTitles\":[\"shuffledDeck\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"shuffledDeck does not always put the same card first\",\"invocations\":1,\"location\":{\"column\":5,\"line\":34},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"does not always put the same card first\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null when no index is given\",\"invocations\":1,\"location\":{\"column\":5,\"line\":42},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null when no index is given\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns the card at a valid index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":47},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the card at a valid index\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for an index beyond the last card\",\"invocations\":1,\"location\":{\"column\":5,\"line\":53},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for an index beyond the last card\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for a negative index\",\"invocations\":1,\"location\":{\"column\":5,\"line\":59},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for a negative index\"},{\"ancestorTitles\":[\"cardFromParam\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardFromParam returns null for non-integer input\",\"invocations\":1,\"location\":{\"column\":5,\"line\":64},\"numPassingAsserts\":4,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns null for non-integer input\"}],\"endTime\":1784839958952,\"message\":\"\",\"name\":\"lib/draw.test.ts\",\"startTime\":1784839958769,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"cardText\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText returns the Spanish text unchanged\",\"invocations\":1,\"location\":{\"column\":5,\"line\":8},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the Spanish text unchanged\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText returns the English translation when asked for English\",\"invocations\":1,\"location\":{\"column\":5,\"line\":14},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the English translation when asked for English\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText falls back to Spanish when a translation is empty\",\"invocations\":1,\"location\":{\"column\":5,\"line\":21},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to Spanish when a translation is empty\"},{\"ancestorTitles\":[\"cardText\"],\"duration\":19,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardText has non-empty text for all 22 cards in both languages\",\"invocations\":1,\"location\":{\"column\":5,\"line\":27},\"numPassingAsserts\":88,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has non-empty text for all 22 cards in both languages\"}],\"endTime\":1784839959440,\"message\":\"\",\"name\":\"data/cards.test.ts\",\"startTime\":1784839958974,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"cardImage\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardImage resolves artwork for all 22 cards\",\"invocations\":1,\"location\":{\"column\":5,\"line\":9},\"numPassingAsserts\":44,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"resolves artwork for all 22 cards\"},{\"ancestorTitles\":[\"cardImage\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"cardImage falls back to the card back for an unknown filename\",\"invocations\":1,\"location\":{\"column\":5,\"line\":17},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"falls back to the card back for an unknown filename\"}],\"endTime\":1784839961365,\"message\":\"\",\"name\":\"lib/cardImages.test.ts\",\"startTime\":1784839959500,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"formatDay\"],\"duration\":51,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay formats a day in Spanish\",\"invocations\":1,\"location\":{\"column\":5,\"line\":6},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a day in Spanish\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay formats a day in English\",\"invocations\":1,\"location\":{\"column\":5,\"line\":11},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"formats a day in English\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay capitalizes only the first letter in Spanish\",\"invocations\":1,\"location\":{\"column\":5,\"line\":18},\"numPassingAsserts\":3,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"capitalizes only the first letter in Spanish\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay reads the date as a local day, not UTC\",\"invocations\":1,\"location\":{\"column\":5,\"line\":27},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"reads the date as a local day, not UTC\"},{\"ancestorTitles\":[\"formatDay\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"formatDay renders single-digit days without a leading zero\",\"invocations\":1,\"location\":{\"column\":5,\"line\":32},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"renders single-digit days without a leading zero\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t returns the Spanish string for a key\",\"invocations\":1,\"location\":{\"column\":5,\"line\":39},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the Spanish string for a key\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t returns the English string for the same key\",\"invocations\":1,\"location\":{\"column\":5,\"line\":44},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"returns the English string for the same key\"},{\"ancestorTitles\":[\"t\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t has a non-empty string for every key in both languages\",\"invocations\":1,\"location\":{\"column\":5,\"line\":50},\"numPassingAsserts\":26,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"has a non-empty string for every key in both languages\"},{\"ancestorTitles\":[\"t\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"t differs between languages for translated copy\",\"invocations\":1,\"location\":{\"column\":5,\"line\":62},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"differs between languages for translated copy\"}],\"endTime\":1784839962229,\"message\":\"\",\"name\":\"lib/lang.test.ts\",\"startTime\":1784839961391,\"status\":\"passed\",\"summary\":\"\"},{\"assertionResults\":[{\"ancestorTitles\":[\"menuPanelWidth\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"menuPanelWidth takes a fraction of the screen on a narrow phone\",\"invocations\":1,\"location\":{\"column\":5,\"line\":7},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"takes a fraction of the screen on a narrow phone\"},{\"ancestorTitles\":[\"menuPanelWidth\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"menuPanelWidth stays on the fraction just below the cap\",\"invocations\":1,\"location\":{\"column\":5,\"line\":12},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"stays on the fraction just below the cap\"},{\"ancestorTitles\":[\"menuPanelWidth\"],\"duration\":1,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"menuPanelWidth caps the panel on a tablet-width screen\",\"invocations\":1,\"location\":{\"column\":5,\"line\":20},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"caps the panel on a tablet-width screen\"},{\"ancestorTitles\":[\"menuPanelWidth\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"menuPanelWidth never returns more than the cap at the crossover width\",\"invocations\":1,\"location\":{\"column\":5,\"line\":25},\"numPassingAsserts\":2,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"never returns more than the cap at the crossover width\"},{\"ancestorTitles\":[\"menuPanelWidth\"],\"duration\":0,\"failureDetails\":[],\"failureMessages\":[],\"fullName\":\"menuPanelWidth collapses to zero for a zero-width screen\",\"invocations\":1,\"location\":{\"column\":5,\"line\":32},\"numPassingAsserts\":1,\"retryReasons\":[],\"status\":\"passed\",\"title\":\"collapses to zero for a zero-width screen\"}],\"endTime\":1784839962491,\"message\":\"\",\"name\":\"lib/menuLayout.test.ts\",\"startTime\":1784839962241,\"status\":\"passed\",\"summary\":\"\"}],\"wasInterrupted\":false}\n",
       "invoked_command": "npx jest --json --testLocationInResults",
       "exit_code": 0,
       "tests": [
-        {
-          "key": "useDailyCard › starts empty before storage answers",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › exposes the loaded card and its date",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › reports an already-revealed card as revealed",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › reveals optimistically and persists the reveal",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › does not write again when the card is already revealed",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › ignores a reveal that arrives before the card has loaded",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › counts past cards",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useDailyCard › ignores a load that lands after unmount",
-          "status": "passed",
-          "file": "lib/useDailyCard.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatDay › formats a day in Spanish",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatDay › formats a day in English",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatDay › capitalizes only the first letter in Spanish",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatDay › reads the date as a local day, not UTC",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatDay › renders single-digit days without a leading zero",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "t › returns the Spanish string for a key",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "t › returns the English string for the same key",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "t › has a non-empty string for every key in both languages",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "t › differs between languages for translated copy",
-          "status": "passed",
-          "file": "lib/lang.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "cardImage › resolves artwork for all 22 cards",
-          "status": "passed",
-          "file": "lib/cardImages.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "cardImage › falls back to the card back for an unknown filename",
-          "status": "passed",
-          "file": "lib/cardImages.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › stays face-down when there is no card",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › is still face-down in the moment the card arrives",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › has not turned before the delay has elapsed",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › turns face-up once the delay has elapsed",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › returns to face-down when the card is cleared",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › turns again for a newly chosen card",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "useTurnUp › cancels a pending turn when unmounted",
-          "status": "passed",
-          "file": "lib/useTurnUp.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
         {
           "key": "toDateKey › formats a date as YYYY-MM-DD",
           "status": "passed",
@@ -396,6 +188,70 @@
           "format": "vitest"
         },
         {
+          "key": "useDailyCard › starts empty before storage answers",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › exposes the loaded card and its date",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › reports an already-revealed card as revealed",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › reveals optimistically and persists the reveal",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › does not write again when the card is already revealed",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › ignores a reveal that arrives before the card has loaded",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › counts past cards",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useDailyCard › ignores a load that lands after unmount",
+          "status": "passed",
+          "file": "lib/useDailyCard.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
           "key": "clamp › leaves values within one card either side untouched",
           "status": "passed",
           "file": "lib/cardPickerLayout.test.ts",
@@ -460,33 +316,57 @@
           "format": "vitest"
         },
         {
-          "key": "cardText › returns the Spanish text unchanged",
+          "key": "useTurnUp › stays face-down when there is no card",
           "status": "passed",
-          "file": "data/cards.test.ts",
+          "file": "lib/useTurnUp.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"
         },
         {
-          "key": "cardText › returns the English translation when asked for English",
+          "key": "useTurnUp › is still face-down in the moment the card arrives",
           "status": "passed",
-          "file": "data/cards.test.ts",
+          "file": "lib/useTurnUp.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"
         },
         {
-          "key": "cardText › falls back to Spanish when a translation is empty",
+          "key": "useTurnUp › has not turned before the delay has elapsed",
           "status": "passed",
-          "file": "data/cards.test.ts",
+          "file": "lib/useTurnUp.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"
         },
         {
-          "key": "cardText › has non-empty text for all 22 cards in both languages",
+          "key": "useTurnUp › turns face-up once the delay has elapsed",
           "status": "passed",
-          "file": "data/cards.test.ts",
+          "file": "lib/useTurnUp.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useTurnUp › returns to face-down when the card is cleared",
+          "status": "passed",
+          "file": "lib/useTurnUp.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useTurnUp › turns again for a newly chosen card",
+          "status": "passed",
+          "file": "lib/useTurnUp.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "useTurnUp › cancels a pending turn when unmounted",
+          "status": "passed",
+          "file": "lib/useTurnUp.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"
@@ -559,6 +439,166 @@
           "key": "cardFromParam › returns null for non-integer input",
           "status": "passed",
           "file": "lib/draw.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardText › returns the Spanish text unchanged",
+          "status": "passed",
+          "file": "data/cards.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardText › returns the English translation when asked for English",
+          "status": "passed",
+          "file": "data/cards.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardText › falls back to Spanish when a translation is empty",
+          "status": "passed",
+          "file": "data/cards.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardText › has non-empty text for all 22 cards in both languages",
+          "status": "passed",
+          "file": "data/cards.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardImage › resolves artwork for all 22 cards",
+          "status": "passed",
+          "file": "lib/cardImages.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "cardImage › falls back to the card back for an unknown filename",
+          "status": "passed",
+          "file": "lib/cardImages.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatDay › formats a day in Spanish",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatDay › formats a day in English",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatDay › capitalizes only the first letter in Spanish",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatDay › reads the date as a local day, not UTC",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatDay › renders single-digit days without a leading zero",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "t › returns the Spanish string for a key",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "t › returns the English string for the same key",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "t › has a non-empty string for every key in both languages",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "t › differs between languages for translated copy",
+          "status": "passed",
+          "file": "lib/lang.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "menuPanelWidth › takes a fraction of the screen on a narrow phone",
+          "status": "passed",
+          "file": "lib/menuLayout.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "menuPanelWidth › stays on the fraction just below the cap",
+          "status": "passed",
+          "file": "lib/menuLayout.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "menuPanelWidth › caps the panel on a tablet-width screen",
+          "status": "passed",
+          "file": "lib/menuLayout.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "menuPanelWidth › never returns more than the cap at the crossover width",
+          "status": "passed",
+          "file": "lib/menuLayout.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "menuPanelWidth › collapses to zero for a zero-width screen",
+          "status": "passed",
+          "file": "lib/menuLayout.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"

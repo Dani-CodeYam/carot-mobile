@@ -1,0 +1,11 @@
+{
+  "name": "MenuBackdrop - Default",
+  "id": "e342273f-3b30-4073-94ff-0854e4665a43",
+  "url": "/isolated-components/MenuBackdrop?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "MenuBackdrop",
+  "scenarioType": "component"
+}

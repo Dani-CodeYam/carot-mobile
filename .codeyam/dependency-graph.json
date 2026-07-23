@@ -1,145 +1,54 @@
 {
   "files": {
-    "lib/theme.ts": {
-      "imports": [],
+    "components/LangToggle.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/lang.tsx",
+        "lib/theme.ts"
+      ],
       "importedBy": [
-        "app/_layout.tsx",
-        "components/ChooseCardStep.tsx",
-        "components/TarotCard.tsx",
-        "components/Wordmark.tsx",
-        "components/Lede.tsx",
-        "components/ScreenHeader.tsx",
-        "components/ScreenSubtitle.tsx",
+        "app/isolated-components/LangToggle.tsx",
+        "app/isolated-components/LangProvider.tsx",
+        "components/HomeHeader.tsx"
+      ]
+    },
+    "app/question.tsx": {
+      "imports": [
         "components/ActionBar.tsx",
         "components/ActionButton.tsx",
-        "components/DailyOutcome.tsx",
-        "components/CardStage.tsx",
-        "components/CardFan.tsx",
-        "components/CardPicker.tsx",
-        "components/Screen.tsx",
-        "components/CardReveal.tsx",
-        "components/HomeHeader.tsx",
-        "components/ScreenTitle.tsx",
-        "components/HistoryEmpty.tsx",
-        "components/HistoryRow.tsx",
-        "components/LangToggle.tsx",
         "components/AskedQuestion.tsx",
-        "components/HomeActions.tsx",
+        "components/CardReveal.tsx",
+        "components/CardStage.tsx",
+        "components/ChooseCardStep.tsx",
         "components/QuestionForm.tsx",
-        "components/StarRule.tsx"
-      ]
-    },
-    "lib/cardImages.test.ts": {
-      "imports": [
+        "components/Screen.tsx",
+        "components/ScreenHeader.tsx",
+        "components/ScreenTitle.tsx",
         "data/cards.ts",
-        "lib/cardImages.ts"
+        "lib/draw.ts",
+        "lib/lang.tsx",
+        "lib/useTurnUp.ts"
       ],
       "importedBy": []
     },
-    "lib/lang.tsx": {
+    "components/CardStage.tsx": {
       "imports": [
+        "components/TarotCard.tsx",
         "data/cards.ts",
-        "lib/dailyCard.ts",
-        "lib/storage.ts"
+        "lib/theme.ts"
       ],
       "importedBy": [
-        "app/index.tsx",
         "app/question.tsx",
         "app/daily.tsx",
-        "app/history.tsx",
-        "app/isolated-components/LangProvider.tsx",
-        "app/_layout.tsx",
-        "app/reading.tsx",
-        "components/LangToggle.tsx",
-        "lib/lang.test.ts"
+        "app/isolated-components/CardStage.tsx",
+        "app/reading.tsx"
       ]
     },
-    "assets/cards/04-el-emperador.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "lib/useDailyCard.test.ts": {
+    "app/isolated-components/ChooseCardStep.tsx": {
       "imports": [
-        "data/cards.ts",
-        "lib/dailyCard.ts",
-        "lib/useDailyCard.ts"
-      ],
-      "importedBy": []
-    },
-    "app/index.tsx": {
-      "imports": [
-        "components/CardFan.tsx",
-        "components/HomeActions.tsx",
-        "components/HomeHeader.tsx",
-        "components/Screen.tsx",
-        "components/Wordmark.tsx",
-        "lib/lang.tsx"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/extract-session.mjs"
-      ]
-    },
-    "app/isolated-components/HistoryEmpty.tsx": {
-      "imports": [
-        "components/HistoryEmpty.tsx"
-      ],
-      "importedBy": []
-    },
-    "components/ActionButton.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/isolated-components/ActionBar.tsx",
-        "app/isolated-components/ActionButton.tsx",
-        "app/reading.tsx",
-        "components/DailyOutcome.tsx",
-        "components/HomeActions.tsx",
-        "components/QuestionForm.tsx"
-      ]
-    },
-    "components/Wordmark.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/index.tsx",
-        "app/isolated-components/Wordmark.tsx"
-      ]
-    },
-    "components/Lede.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/isolated-components/Lede.tsx",
-        "app/isolated-components/Screen.tsx",
         "components/ChooseCardStep.tsx",
-        "components/QuestionForm.tsx"
-      ]
-    },
-    ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs",
-        ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs"
-      ]
-    },
-    "assets/cards/17-la-estrella.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "babel.config.js": {
-      "imports": [],
+        "data/cards.ts"
+      ],
       "importedBy": []
     },
     "assets/card-back.png": {
@@ -148,64 +57,34 @@
         "lib/cardImages.ts"
       ]
     },
-    "components/TarotCard.tsx": {
-      "imports": [
-        "data/cards.ts",
-        "lib/cardImages.ts",
-        "lib/theme.ts"
-      ],
+    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
+      "imports": [],
       "importedBy": [
-        "app/isolated-components/TarotCard.tsx",
-        "components/CardStage.tsx"
+        ".claude/skills/review-session/scripts/extract-session.mjs"
       ]
     },
-    "assets/cards/19-el-sol.png": {
+    "app/isolated-components/HomeHeader.tsx": {
+      "imports": [
+        "components/HomeHeader.tsx"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/04-el-emperador.png": {
       "imports": [],
       "importedBy": [
         "lib/cardImages.ts"
       ]
     },
-    "components/StarRule.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/isolated-components/StarRule.tsx",
-        "components/CardReveal.tsx"
-      ]
-    },
-    "global.css": {
+    "assets/cards/15-el-diablo.png": {
       "imports": [],
       "importedBy": [
-        "app/_layout.tsx"
+        "lib/cardImages.ts"
       ]
     },
-    ".claude/skills/review-session/scripts/extract-session.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/extract-session-helpers.mjs"
-      ],
-      "importedBy": []
-    },
-    "lib/draw.ts": {
-      "imports": [
-        "data/cards.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/reading.tsx",
-        "lib/draw.test.ts"
-      ]
-    },
-    "app/isolated-components/QuestionForm.tsx": {
-      "imports": [
-        "components/QuestionForm.tsx"
-      ],
-      "importedBy": []
-    },
-    "assets/fonts/JosefinSans-Regular.ttf": {
+    "assets/cards/02-la-sacerdotisa.png": {
       "imports": [],
       "importedBy": [
-        "app/_layout.tsx"
+        "lib/cardImages.ts"
       ]
     },
     "lib/cardImages.ts": {
@@ -236,19 +115,48 @@
       ],
       "importedBy": [
         "components/TarotCard.tsx",
+        "components/GalleryCard.tsx",
         "components/CardFan.tsx",
         "components/CardPicker.tsx",
         "lib/cardImages.test.ts"
       ]
     },
-    "tailwind.config.js": {
-      "imports": [],
-      "importedBy": []
+    "components/Lede.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/gallery.tsx",
+        "app/isolated-components/Lede.tsx",
+        "app/isolated-components/Screen.tsx",
+        "components/ChooseCardStep.tsx",
+        "components/QuestionForm.tsx"
+      ]
     },
-    "assets/fonts/JosefinSans-SemiBold.ttf": {
+    "components/GalleryGrid.tsx": {
+      "imports": [
+        "components/GalleryCard.tsx",
+        "data/cards.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/gallery.tsx",
+        "app/isolated-components/GalleryGrid.tsx"
+      ]
+    },
+    "assets/cards/13-la-muerte.png": {
       "imports": [],
       "importedBy": [
-        "app/_layout.tsx"
+        "lib/cardImages.ts"
+      ]
+    },
+    "components/AskedQuestion.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/isolated-components/AskedQuestion.tsx"
       ]
     },
     "assets/cards/07-el-carro.png": {
@@ -257,166 +165,79 @@
         "lib/cardImages.ts"
       ]
     },
-    "jest.setup.js": {
-      "imports": [],
-      "importedBy": []
-    },
-    "components/ScreenHeader.tsx": {
-      "imports": [
-        "lib/nav.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/daily.tsx",
-        "app/history.tsx",
-        "app/isolated-components/ScreenHeader.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "assets/cards/20-el-juicio.png": {
+    "assets/cards/19-el-sol.png": {
       "imports": [],
       "importedBy": [
         "lib/cardImages.ts"
       ]
     },
-    "components/Screen.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/index.tsx",
-        "app/question.tsx",
-        "app/daily.tsx",
-        "app/history.tsx",
-        "app/isolated-components/Screen.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "app/isolated-components/ActionBar.tsx": {
-      "imports": [
-        "components/ActionBar.tsx",
-        "components/ActionButton.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/_layout.tsx": {
-      "imports": [
-        "global.css",
-        "lib/lang.tsx",
-        "lib/theme.ts",
-        "assets/fonts/Maragsa-Display.otf",
-        "assets/fonts/JosefinSans-Regular.ttf",
-        "assets/fonts/JosefinSans-Light.ttf",
-        "assets/fonts/JosefinSans-SemiBold.ttf",
-        "assets/fonts/JosefinSans-Italic.ttf"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/Screen.tsx": {
-      "imports": [
-        "components/Screen.tsx",
-        "components/ScreenTitle.tsx",
-        "components/Lede.tsx"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/find-last-session.mjs"
-      ]
-    },
-    "app/isolated-components/LangProvider.tsx": {
-      "imports": [
-        "lib/lang.tsx",
-        "components/LangToggle.tsx",
-        "components/CardReveal.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/18-la-luna.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "app/isolated-components/AskedQuestion.tsx": {
-      "imports": [
-        "components/AskedQuestion.tsx"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/10-la-rueda.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "components/CardPicker.tsx": {
-      "imports": [
-        "data/cards.ts",
-        "lib/cardPickerLayout.ts",
-        "lib/cardImages.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/isolated-components/CardPicker.tsx",
-        "components/ChooseCardStep.tsx"
-      ]
-    },
-    "assets/cards/01-el-mago.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "assets/cards/02-la-sacerdotisa.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "components/CardFan.tsx": {
-      "imports": [
-        "data/cards.ts",
-        "lib/cardImages.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/index.tsx",
-        "app/isolated-components/CardFan.tsx"
-      ]
-    },
-    ".claude/hooks/_step_metadata.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    "components/ScreenTitle.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/daily.tsx",
-        "app/history.tsx",
-        "app/isolated-components/Screen.tsx",
-        "app/isolated-components/ScreenTitle.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "assets/fonts/Maragsa-Display.otf": {
+    "assets/fonts/JosefinSans-Light.ttf": {
       "imports": [],
       "importedBy": [
         "app/_layout.tsx"
       ]
     },
-    "assets/cards/00-el-loco.png": {
-      "imports": [],
-      "importedBy": [
+    "app/isolated-components/HomeActions.tsx": {
+      "imports": [
+        "components/HomeActions.tsx"
+      ],
+      "importedBy": []
+    },
+    "lib/cardImages.test.ts": {
+      "imports": [
+        "data/cards.ts",
         "lib/cardImages.ts"
+      ],
+      "importedBy": []
+    },
+    "lib/menuLayout.test.ts": {
+      "imports": [
+        "lib/menuLayout.ts"
+      ],
+      "importedBy": []
+    },
+    "app/gallery.tsx": {
+      "imports": [
+        "components/GalleryGrid.tsx",
+        "components/Lede.tsx",
+        "components/Screen.tsx",
+        "components/ScreenHeader.tsx",
+        "components/ScreenTitle.tsx",
+        "data/cards.ts",
+        "lib/lang.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": []
+    },
+    "components/HistoryRow.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/history.tsx",
+        "app/isolated-components/HistoryRow.tsx"
       ]
+    },
+    "components/CardReveal.tsx": {
+      "imports": [
+        "components/StarRule.tsx",
+        "data/cards.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/daily.tsx",
+        "app/isolated-components/CardReveal.tsx",
+        "app/isolated-components/LangProvider.tsx",
+        "app/reading.tsx"
+      ]
+    },
+    ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs": {
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs"
+      ],
+      "importedBy": []
     },
     "assets/cards/06-los-enamorados.png": {
       "imports": [],
@@ -435,406 +256,11 @@
         "app/isolated-components/DailyOutcome.tsx"
       ]
     },
-    ".claude/skills/review-session/scripts/find-last-session.mjs": {
+    "app/isolated-components/GalleryGrid.tsx": {
       "imports": [
-        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
-      ],
-      "importedBy": []
-    },
-    "lib/useDailyCard.ts": {
-      "imports": [
-        "data/cards.ts",
-        "lib/dailyCard.ts"
-      ],
-      "importedBy": [
-        "app/daily.tsx",
-        "lib/useDailyCard.test.ts"
-      ]
-    },
-    "components/ChooseCardStep.tsx": {
-      "imports": [
-        "components/CardPicker.tsx",
-        "components/Lede.tsx",
-        "data/cards.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/isolated-components/ChooseCardStep.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "app/isolated-components/Wordmark.tsx": {
-      "imports": [
-        "components/Wordmark.tsx"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs"
-      ]
-    },
-    "assets/cards/05-el-papa.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "assets/fonts/JosefinSans-Italic.ttf": {
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx"
-      ]
-    },
-    "app/isolated-components/ChooseCardStep.tsx": {
-      "imports": [
-        "components/ChooseCardStep.tsx",
+        "components/GalleryGrid.tsx",
         "data/cards.ts"
       ],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs": {
-      "imports": [
-        ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/14-la-templanza.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    ".claude/hooks/editor-pretool-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/isolated-components/HomeActions.tsx": {
-      "imports": [
-        "components/HomeActions.tsx"
-      ],
-      "importedBy": []
-    },
-    "components/HistoryRow.tsx": {
-      "imports": [
-        "data/cards.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/history.tsx",
-        "app/isolated-components/HistoryRow.tsx"
-      ]
-    },
-    "app/isolated-components/CardPicker.tsx": {
-      "imports": [
-        "components/CardPicker.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "components/QuestionForm.tsx": {
-      "imports": [
-        "components/ActionButton.tsx",
-        "components/ActionBar.tsx",
-        "components/Lede.tsx",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/isolated-components/QuestionForm.tsx"
-      ]
-    },
-    "expo-env.d.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "assets/cards/09-el-ermitano.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "app/question.tsx": {
-      "imports": [
-        "components/ActionBar.tsx",
-        "components/ActionButton.tsx",
-        "components/AskedQuestion.tsx",
-        "components/CardReveal.tsx",
-        "components/CardStage.tsx",
-        "components/ChooseCardStep.tsx",
-        "components/QuestionForm.tsx",
-        "components/Screen.tsx",
-        "components/ScreenHeader.tsx",
-        "components/ScreenTitle.tsx",
-        "data/cards.ts",
-        "lib/draw.ts",
-        "lib/lang.tsx",
-        "lib/useTurnUp.ts"
-      ],
-      "importedBy": []
-    },
-    "components/ScreenSubtitle.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/daily.tsx",
-        "app/isolated-components/ScreenSubtitle.tsx"
-      ]
-    },
-    "app/isolated-components/CardFan.tsx": {
-      "imports": [
-        "components/CardFan.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/TarotCard.tsx": {
-      "imports": [
-        "components/TarotCard.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.ts": {
-      "imports": [
-        "data/cards.ts",
-        "lib/storage.ts"
-      ],
-      "importedBy": [
-        "app/history.tsx",
-        "lib/useDailyCard.test.ts",
-        "lib/lang.tsx",
-        "lib/useDailyCard.ts",
-        "lib/dailyCard.test.ts"
-      ]
-    },
-    "app/isolated-components/CardReveal.tsx": {
-      "imports": [
-        "components/CardReveal.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    ".expo/types/router.d.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs": {
-      "imports": [
-        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/ScreenTitle.tsx": {
-      "imports": [
-        "components/ScreenTitle.tsx"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/21-el-mundo.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "components/CardReveal.tsx": {
-      "imports": [
-        "components/StarRule.tsx",
-        "data/cards.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/daily.tsx",
-        "app/isolated-components/CardReveal.tsx",
-        "app/isolated-components/LangProvider.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "app/isolated-components/Lede.tsx": {
-      "imports": [
-        "components/Lede.tsx"
-      ],
-      "importedBy": []
-    },
-    "data/cards.test.ts": {
-      "imports": [
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "app/history.tsx": {
-      "imports": [
-        "components/HistoryEmpty.tsx",
-        "components/HistoryRow.tsx",
-        "components/Screen.tsx",
-        "components/ScreenHeader.tsx",
-        "components/ScreenTitle.tsx",
-        "lib/dailyCard.ts",
-        "lib/lang.tsx"
-      ],
-      "importedBy": []
-    },
-    "lib/cardPickerLayout.ts": {
-      "imports": [],
-      "importedBy": [
-        "components/CardPicker.tsx",
-        "lib/cardPickerLayout.test.ts"
-      ]
-    },
-    "app/isolated-components/HomeHeader.tsx": {
-      "imports": [
-        "components/HomeHeader.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/ScreenHeader.tsx": {
-      "imports": [
-        "components/ScreenHeader.tsx"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.test.ts": {
-      "imports": [
-        "data/cards.ts",
-        "lib/dailyCard.ts",
-        "lib/storage.ts"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/CardStage.tsx": {
-      "imports": [
-        "components/CardStage.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "components/ActionBar.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/isolated-components/ActionBar.tsx",
-        "app/reading.tsx",
-        "components/DailyOutcome.tsx",
-        "components/QuestionForm.tsx"
-      ]
-    },
-    ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs": {
-      "imports": [
-        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs"
-      ],
-      "importedBy": []
-    },
-    "components/CardStage.tsx": {
-      "imports": [
-        "components/TarotCard.tsx",
-        "data/cards.ts",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/daily.tsx",
-        "app/isolated-components/CardStage.tsx",
-        "app/reading.tsx"
-      ]
-    },
-    "components/LangToggle.tsx": {
-      "imports": [
-        "data/cards.ts",
-        "lib/lang.tsx",
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/isolated-components/LangToggle.tsx",
-        "app/isolated-components/LangProvider.tsx",
-        "components/HomeHeader.tsx"
-      ]
-    },
-    "components/HistoryEmpty.tsx": {
-      "imports": [
-        "lib/theme.ts"
-      ],
-      "importedBy": [
-        "app/history.tsx",
-        "app/isolated-components/HistoryEmpty.tsx"
-      ]
-    },
-    "nativewind-env.d.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "assets/cards/13-la-muerte.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "assets/cards/12-el-colgado.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "assets/cards/16-la-torre.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "app/isolated-components/ScreenSubtitle.tsx": {
-      "imports": [
-        "components/ScreenSubtitle.tsx"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/08-la-justicia.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    "assets/cards/11-la-fuerza.png": {
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts"
-      ]
-    },
-    ".claude/skills/codeyam-memory/scripts/lib/read-json-field.mjs": {
-      "imports": [],
-      "importedBy": []
-    },
-    "lib/useTurnUp.ts": {
-      "imports": [
-        "data/cards.ts"
-      ],
-      "importedBy": [
-        "app/question.tsx",
-        "app/reading.tsx",
-        "lib/useTurnUp.test.ts"
-      ]
-    },
-    "app/isolated-components/DailyOutcome.tsx": {
-      "imports": [
-        "components/DailyOutcome.tsx"
-      ],
-      "importedBy": []
-    },
-    "lib/nav.ts": {
-      "imports": [],
-      "importedBy": [
-        "components/ScreenHeader.tsx"
-      ]
-    },
-    ".claude/hooks/editor-step-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/session-mining/cleanup.mjs": {
-      "imports": [],
       "importedBy": []
     },
     "app/reading.tsx": {
@@ -854,26 +280,97 @@
       ],
       "importedBy": []
     },
+    "lib/useDailyCard.test.ts": {
+      "imports": [
+        "data/cards.ts",
+        "lib/dailyCard.ts",
+        "lib/useDailyCard.ts"
+      ],
+      "importedBy": []
+    },
+    "app/_layout.tsx": {
+      "imports": [
+        "global.css",
+        "components/NavMenu.tsx",
+        "lib/lang.tsx",
+        "lib/menu.tsx",
+        "lib/theme.ts",
+        "assets/fonts/Maragsa-Display.otf",
+        "assets/fonts/JosefinSans-Regular.ttf",
+        "assets/fonts/JosefinSans-Light.ttf",
+        "assets/fonts/JosefinSans-SemiBold.ttf",
+        "assets/fonts/JosefinSans-Italic.ttf"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MenuItem.tsx": {
+      "imports": [
+        "components/MenuItem.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": []
+    },
+    "lib/menuLayout.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/NavMenu.tsx",
+        "lib/menuLayout.test.ts"
+      ]
+    },
     "app/isolated-components/LangToggle.tsx": {
       "imports": [
         "components/LangToggle.tsx"
       ],
       "importedBy": []
     },
-    "assets/fonts/JosefinSans-Light.ttf": {
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx"
-      ]
+    "app/isolated-components/ScreenSubtitle.tsx": {
+      "imports": [
+        "components/ScreenSubtitle.tsx"
+      ],
+      "importedBy": []
     },
-    "components/AskedQuestion.tsx": {
+    "components/Wordmark.tsx": {
       "imports": [
         "lib/theme.ts"
       ],
       "importedBy": [
-        "app/question.tsx",
-        "app/isolated-components/AskedQuestion.tsx"
+        "app/index.tsx",
+        "app/isolated-components/Wordmark.tsx"
       ]
+    },
+    "components/ChooseCardStep.tsx": {
+      "imports": [
+        "components/CardPicker.tsx",
+        "components/Lede.tsx",
+        "data/cards.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/isolated-components/ChooseCardStep.tsx",
+        "app/reading.tsx"
+      ]
+    },
+    "components/ScreenHeader.tsx": {
+      "imports": [
+        "components/StarLink.tsx",
+        "lib/nav.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/gallery.tsx",
+        "app/question.tsx",
+        "app/daily.tsx",
+        "app/history.tsx",
+        "app/isolated-components/ScreenHeader.tsx",
+        "app/reading.tsx"
+      ]
+    },
+    "app/isolated-components/ScreenTitle.tsx": {
+      "imports": [
+        "components/ScreenTitle.tsx"
+      ],
+      "importedBy": []
     },
     "app/daily.tsx": {
       "imports": [
@@ -889,22 +386,99 @@
       ],
       "importedBy": []
     },
-    "app/isolated-components/ActionButton.tsx": {
+    "components/NavMenu.tsx": {
       "imports": [
-        "components/ActionButton.tsx"
+        "components/MenuBackdrop.tsx",
+        "components/MenuHeader.tsx",
+        "components/MenuItem.tsx",
+        "lib/lang.tsx",
+        "lib/menuLayout.ts",
+        "lib/menu.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/MenuProvider.tsx",
+        "app/isolated-components/NavMenu.tsx",
+        "app/_layout.tsx"
+      ]
+    },
+    ".claude/hooks/editor-step-hook.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "assets/cards/11-la-fuerza.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/NavMenu.tsx": {
+      "imports": [
+        "components/NavMenu.tsx",
+        "lib/menu.tsx"
       ],
       "importedBy": []
     },
-    "metro.config.js": {
+    "components/QuestionForm.tsx": {
+      "imports": [
+        "components/ActionButton.tsx",
+        "components/ActionBar.tsx",
+        "components/Lede.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/isolated-components/QuestionForm.tsx"
+      ]
+    },
+    "components/MenuItem.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/MenuItem.tsx",
+        "components/NavMenu.tsx"
+      ]
+    },
+    "components/HomeActions.tsx": {
+      "imports": [
+        "components/ActionButton.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/index.tsx",
+        "app/isolated-components/HomeActions.tsx"
+      ]
+    },
+    "assets/cards/17-la-estrella.png": {
       "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "lib/dailyCard.test.ts": {
+      "imports": [
+        "data/cards.ts",
+        "lib/dailyCard.ts",
+        "lib/storage.ts"
+      ],
       "importedBy": []
+    },
+    "assets/cards/05-el-papa.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
     },
     "data/cards.ts": {
       "imports": [],
       "importedBy": [
+        "app/gallery.tsx",
         "app/question.tsx",
         "app/isolated-components/ChooseCardStep.tsx",
         "app/isolated-components/TarotCard.tsx",
+        "app/isolated-components/GalleryGrid.tsx",
+        "app/isolated-components/GalleryCard.tsx",
         "app/isolated-components/CardStage.tsx",
         "app/isolated-components/CardPicker.tsx",
         "app/isolated-components/CardReveal.tsx",
@@ -913,6 +487,8 @@
         "app/reading.tsx",
         "components/ChooseCardStep.tsx",
         "components/TarotCard.tsx",
+        "components/GalleryGrid.tsx",
+        "components/GalleryCard.tsx",
         "components/CardStage.tsx",
         "components/CardFan.tsx",
         "components/CardPicker.tsx",
@@ -932,11 +508,94 @@
         "data/cards.test.ts"
       ]
     },
-    "lib/lang.test.ts": {
+    "app/isolated-components/GalleryCard.tsx": {
       "imports": [
-        "lib/lang.tsx"
+        "components/GalleryCard.tsx",
+        "data/cards.ts"
       ],
       "importedBy": []
+    },
+    "app/isolated-components/QuestionForm.tsx": {
+      "imports": [
+        "components/QuestionForm.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MenuBackdrop.tsx": {
+      "imports": [
+        "components/MenuBackdrop.tsx"
+      ],
+      "importedBy": []
+    },
+    "lib/theme.ts": {
+      "imports": [],
+      "importedBy": [
+        "app/gallery.tsx",
+        "app/isolated-components/MenuHeader.tsx",
+        "app/isolated-components/MenuItem.tsx",
+        "app/_layout.tsx",
+        "components/ChooseCardStep.tsx",
+        "components/TarotCard.tsx",
+        "components/GalleryGrid.tsx",
+        "components/Wordmark.tsx",
+        "components/Lede.tsx",
+        "components/ScreenHeader.tsx",
+        "components/MenuHeader.tsx",
+        "components/ScreenSubtitle.tsx",
+        "components/GalleryCard.tsx",
+        "components/ActionBar.tsx",
+        "components/ActionButton.tsx",
+        "components/DailyOutcome.tsx",
+        "components/MenuItem.tsx",
+        "components/CardStage.tsx",
+        "components/CardFan.tsx",
+        "components/CardPicker.tsx",
+        "components/Screen.tsx",
+        "components/CardReveal.tsx",
+        "components/NavMenu.tsx",
+        "components/HomeHeader.tsx",
+        "components/ScreenTitle.tsx",
+        "components/HistoryEmpty.tsx",
+        "components/HistoryRow.tsx",
+        "components/LangToggle.tsx",
+        "components/AskedQuestion.tsx",
+        "components/HomeActions.tsx",
+        "components/QuestionForm.tsx",
+        "components/StarRule.tsx",
+        "components/StarLink.tsx"
+      ]
+    },
+    "components/ScreenTitle.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/gallery.tsx",
+        "app/question.tsx",
+        "app/daily.tsx",
+        "app/history.tsx",
+        "app/isolated-components/Screen.tsx",
+        "app/isolated-components/ScreenTitle.tsx",
+        "app/reading.tsx"
+      ]
+    },
+    "app/isolated-components/HistoryEmpty.tsx": {
+      "imports": [
+        "components/HistoryEmpty.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs"
+      ]
+    },
+    "lib/nav.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/ScreenHeader.tsx"
+      ]
     },
     "lib/storage.ts": {
       "imports": [],
@@ -946,29 +605,106 @@
         "lib/dailyCard.test.ts"
       ]
     },
-    "assets/cards/15-el-diablo.png": {
-      "imports": [],
+    "components/CardFan.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/cardImages.ts",
+        "lib/theme.ts"
+      ],
       "importedBy": [
-        "lib/cardImages.ts"
+        "app/index.tsx",
+        "app/isolated-components/CardFan.tsx"
       ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs": {
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "components/StarLink.tsx": {
+      "imports": [
+        "lib/lang.tsx",
+        "lib/menu.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/StarLink.tsx",
+        "components/ScreenHeader.tsx",
+        "components/HomeHeader.tsx"
+      ]
+    },
+    ".claude/skills/codeyam-memory/scripts/session-mining/cleanup.mjs": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/GalleryCard.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/cardImages.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/GalleryCard.tsx",
+        "components/GalleryGrid.tsx"
+      ]
+    },
+    "app/isolated-components/TarotCard.tsx": {
+      "imports": [
+        "components/TarotCard.tsx",
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Screen.tsx": {
+      "imports": [
+        "components/Screen.tsx",
+        "components/ScreenTitle.tsx",
+        "components/Lede.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ActionBar.tsx": {
+      "imports": [
+        "components/ActionBar.tsx",
+        "components/ActionButton.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/index.tsx": {
+      "imports": [
+        "components/CardFan.tsx",
+        "components/HomeActions.tsx",
+        "components/HomeHeader.tsx",
+        "components/Screen.tsx",
+        "components/Wordmark.tsx",
+        "lib/lang.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/TarotCard.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/cardImages.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/TarotCard.tsx",
+        "components/CardStage.tsx"
+      ]
+    },
+    "metro.config.js": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/lib/read-json-field.mjs": {
+      "imports": [],
+      "importedBy": []
     },
     "lib/draw.test.ts": {
       "imports": [
         "data/cards.ts",
         "lib/draw.ts"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/HistoryRow.tsx": {
-      "imports": [
-        "components/HistoryRow.tsx",
-        "data/cards.ts"
-      ],
-      "importedBy": []
-    },
-    "lib/cardPickerLayout.test.ts": {
-      "imports": [
-        "lib/cardPickerLayout.ts"
       ],
       "importedBy": []
     },
@@ -978,19 +714,61 @@
         "lib/cardImages.ts"
       ]
     },
-    "components/HomeHeader.tsx": {
+    "components/ActionButton.tsx": {
       "imports": [
-        "components/LangToggle.tsx",
         "lib/theme.ts"
       ],
       "importedBy": [
-        "app/index.tsx",
-        "app/isolated-components/HomeHeader.tsx"
+        "app/question.tsx",
+        "app/isolated-components/ActionBar.tsx",
+        "app/isolated-components/ActionButton.tsx",
+        "app/reading.tsx",
+        "components/DailyOutcome.tsx",
+        "components/HomeActions.tsx",
+        "components/QuestionForm.tsx"
       ]
     },
-    "app/isolated-components/StarRule.tsx": {
+    ".expo/types/router.d.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/MenuBackdrop.tsx": {
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/MenuBackdrop.tsx",
+        "components/NavMenu.tsx"
+      ]
+    },
+    "assets/cards/18-la-luna.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/CardStage.tsx": {
       "imports": [
-        "components/StarRule.tsx"
+        "components/CardStage.tsx",
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/CardPicker.tsx": {
+      "imports": [
+        "components/CardPicker.tsx",
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/12-el-colgado.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/CardReveal.tsx": {
+      "imports": [
+        "components/CardReveal.tsx",
+        "data/cards.ts"
       ],
       "importedBy": []
     },
@@ -1001,99 +779,437 @@
       ],
       "importedBy": []
     },
-    "components/HomeActions.tsx": {
+    "lib/useDailyCard.ts": {
       "imports": [
-        "components/ActionButton.tsx",
+        "data/cards.ts",
+        "lib/dailyCard.ts"
+      ],
+      "importedBy": [
+        "app/daily.tsx",
+        "lib/useDailyCard.test.ts"
+      ]
+    },
+    "app/isolated-components/ScreenHeader.tsx": {
+      "imports": [
+        "components/ScreenHeader.tsx"
+      ],
+      "importedBy": []
+    },
+    "assets/fonts/Maragsa-Display.otf": {
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx"
+      ]
+    },
+    "app/isolated-components/StarLink.tsx": {
+      "imports": [
+        "components/StarLink.tsx"
+      ],
+      "importedBy": []
+    },
+    "expo-env.d.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "lib/cardPickerLayout.test.ts": {
+      "imports": [
+        "lib/cardPickerLayout.ts"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/14-la-templanza.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "assets/cards/20-el-juicio.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/LangProvider.tsx": {
+      "imports": [
+        "lib/lang.tsx",
+        "components/LangToggle.tsx",
+        "components/CardReveal.tsx",
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/09-el-ermitano.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/CardFan.tsx": {
+      "imports": [
+        "components/CardFan.tsx"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/10-la-rueda.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "assets/cards/00-el-loco.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "global.css": {
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx"
+      ]
+    },
+    ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs",
+        ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs"
+      ]
+    },
+    "lib/dailyCard.ts": {
+      "imports": [
+        "data/cards.ts",
+        "lib/storage.ts"
+      ],
+      "importedBy": [
+        "app/history.tsx",
+        "lib/useDailyCard.test.ts",
+        "lib/lang.tsx",
+        "lib/useDailyCard.ts",
+        "lib/dailyCard.test.ts"
+      ]
+    },
+    "lib/lang.test.ts": {
+      "imports": [
+        "lib/lang.tsx"
+      ],
+      "importedBy": []
+    },
+    "assets/fonts/JosefinSans-SemiBold.ttf": {
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx"
+      ]
+    },
+    "assets/cards/01-el-mago.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "assets/fonts/JosefinSans-Regular.ttf": {
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx"
+      ]
+    },
+    "tailwind.config.js": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/HomeHeader.tsx": {
+      "imports": [
+        "components/LangToggle.tsx",
+        "components/StarLink.tsx",
         "lib/theme.ts"
       ],
       "importedBy": [
         "app/index.tsx",
-        "app/isolated-components/HomeActions.tsx"
+        "app/isolated-components/HomeHeader.tsx"
       ]
+    },
+    "components/HistoryEmpty.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/history.tsx",
+        "app/isolated-components/HistoryEmpty.tsx"
+      ]
+    },
+    "app/isolated-components/AskedQuestion.tsx": {
+      "imports": [
+        "components/AskedQuestion.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/MenuHeader.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/MenuHeader.tsx",
+        "components/NavMenu.tsx"
+      ]
+    },
+    "jest.setup.js": {
+      "imports": [],
+      "importedBy": []
+    },
+    "data/cards.test.ts": {
+      "imports": [
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/08-la-justicia.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "app/isolated-components/MenuProvider.tsx": {
+      "imports": [
+        "lib/menu.tsx",
+        "components/NavMenu.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/DailyOutcome.tsx": {
+      "imports": [
+        "components/DailyOutcome.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/extract-session.mjs": {
+      "imports": [
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MenuHeader.tsx": {
+      "imports": [
+        "components/MenuHeader.tsx",
+        "lib/theme.ts"
+      ],
+      "importedBy": []
+    },
+    "components/CardPicker.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/cardPickerLayout.ts",
+        "lib/cardImages.ts",
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/CardPicker.tsx",
+        "components/ChooseCardStep.tsx"
+      ]
+    },
+    "assets/fonts/JosefinSans-Italic.ttf": {
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx"
+      ]
+    },
+    "components/ScreenSubtitle.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/daily.tsx",
+        "app/isolated-components/ScreenSubtitle.tsx"
+      ]
+    },
+    "app/history.tsx": {
+      "imports": [
+        "components/HistoryEmpty.tsx",
+        "components/HistoryRow.tsx",
+        "components/Screen.tsx",
+        "components/ScreenHeader.tsx",
+        "components/ScreenTitle.tsx",
+        "lib/dailyCard.ts",
+        "lib/lang.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/HistoryRow.tsx": {
+      "imports": [
+        "components/HistoryRow.tsx",
+        "data/cards.ts"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs": {
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs"
+      ],
+      "importedBy": []
+    },
+    "components/Screen.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/index.tsx",
+        "app/gallery.tsx",
+        "app/question.tsx",
+        "app/daily.tsx",
+        "app/history.tsx",
+        "app/isolated-components/Screen.tsx",
+        "app/reading.tsx"
+      ]
+    },
+    "nativewind-env.d.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "assets/cards/16-la-torre.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "lib/useTurnUp.ts": {
+      "imports": [
+        "data/cards.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/reading.tsx",
+        "lib/useTurnUp.test.ts"
+      ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/find-last-session.mjs"
+      ]
+    },
+    "lib/lang.tsx": {
+      "imports": [
+        "data/cards.ts",
+        "lib/dailyCard.ts",
+        "lib/storage.ts"
+      ],
+      "importedBy": [
+        "app/index.tsx",
+        "app/gallery.tsx",
+        "app/question.tsx",
+        "app/daily.tsx",
+        "app/history.tsx",
+        "app/isolated-components/LangProvider.tsx",
+        "app/_layout.tsx",
+        "app/reading.tsx",
+        "components/NavMenu.tsx",
+        "components/LangToggle.tsx",
+        "components/StarLink.tsx",
+        "lib/lang.test.ts"
+      ]
+    },
+    "babel.config.js": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".claude/hooks/_step_metadata.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "assets/cards/21-el-mundo.png": {
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts"
+      ]
+    },
+    "components/StarRule.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/isolated-components/StarRule.tsx",
+        "components/CardReveal.tsx"
+      ]
+    },
+    "app/isolated-components/Wordmark.tsx": {
+      "imports": [
+        "components/Wordmark.tsx"
+      ],
+      "importedBy": []
+    },
+    "lib/draw.ts": {
+      "imports": [
+        "data/cards.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/reading.tsx",
+        "lib/draw.test.ts"
+      ]
+    },
+    "app/isolated-components/StarRule.tsx": {
+      "imports": [
+        "components/StarRule.tsx"
+      ],
+      "importedBy": []
+    },
+    "lib/cardPickerLayout.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/CardPicker.tsx",
+        "lib/cardPickerLayout.test.ts"
+      ]
+    },
+    "components/ActionBar.tsx": {
+      "imports": [
+        "lib/theme.ts"
+      ],
+      "importedBy": [
+        "app/question.tsx",
+        "app/isolated-components/ActionBar.tsx",
+        "app/reading.tsx",
+        "components/DailyOutcome.tsx",
+        "components/QuestionForm.tsx"
+      ]
+    },
+    "app/isolated-components/Lede.tsx": {
+      "imports": [
+        "components/Lede.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs": {
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs"
+      ],
+      "importedBy": []
+    },
+    "lib/menu.tsx": {
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/MenuProvider.tsx",
+        "app/isolated-components/NavMenu.tsx",
+        "app/_layout.tsx",
+        "components/NavMenu.tsx",
+        "components/StarLink.tsx"
+      ]
+    },
+    ".claude/hooks/editor-pretool-hook.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/ActionButton.tsx": {
+      "imports": [
+        "components/ActionButton.tsx"
+      ],
+      "importedBy": []
     }
   },
   "entities": {
-    "lib/dailyCard.ts::cardByIndex": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "cardByIndex",
+    "components/MenuItem.tsx::MenuItem": {
+      "filePath": "components/MenuItem.tsx",
+      "name": "MenuItem",
       "imports": [],
       "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "lib/useTurnUp.ts::useTurnUp": {
-      "filePath": "lib/useTurnUp.ts",
-      "name": "useTurnUp",
-      "imports": [],
-      "importedBy": [
-        "lib/useTurnUp.test.ts::__file_root__"
-      ]
-    },
-    "components/ActionBar.tsx::ActionBar": {
-      "filePath": "components/ActionBar.tsx",
-      "name": "ActionBar",
-      "imports": [],
-      "importedBy": [
-        "components/DailyOutcome.tsx::__file_root__",
-        "components/QuestionForm.tsx::__file_root__"
-      ]
-    },
-    "assets/cards/02-la-sacerdotisa.png::__file_root__": {
-      "filePath": "assets/cards/02-la-sacerdotisa.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "assets/cards/07-el-carro.png::__file_root__": {
-      "filePath": "assets/cards/07-el-carro.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/Lede.tsx::__file_root__": {
-      "filePath": "app/isolated-components/Lede.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/Lede.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/card-back.png::__file_root__": {
-      "filePath": "assets/card-back.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::CARD_BACK"
-      ]
-    },
-    "lib/cardPickerLayout.test.ts::__file_root__": {
-      "filePath": "lib/cardPickerLayout.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "lib/cardPickerLayout.ts::SpreadGeometry",
-        "lib/cardPickerLayout.ts::clamp",
-        "lib/cardPickerLayout.ts::slotSamples"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/00-el-loco.png::__file_root__": {
-      "filePath": "assets/cards/00-el-loco.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "assets/fonts/JosefinSans-Italic.ttf::__file_root__": {
-      "filePath": "assets/fonts/JosefinSans-Italic.ttf",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::RootLayout"
+        "components/NavMenu.tsx::__file_root__"
       ]
     },
     "lib/draw.ts::cardFromParam": {
@@ -1104,169 +1220,13 @@
         "lib/draw.test.ts::__file_root__"
       ]
     },
-    "lib/dailyCard.ts::toDateKey": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "toDateKey",
-      "imports": [],
-      "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/TarotCard.tsx::__file_root__": {
-      "filePath": "app/isolated-components/TarotCard.tsx",
+    "app/isolated-components/StarRule.tsx::__file_root__": {
+      "filePath": "app/isolated-components/StarRule.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/TarotCard.tsx::__file_root__",
-        "data/cards.ts::__file_root__"
+        "components/StarRule.tsx::__file_root__"
       ],
       "importedBy": []
-    },
-    "components/CardStage.tsx::__file_root__": {
-      "filePath": "components/CardStage.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/TarotCard.tsx::TarotCard",
-        "data/cards.ts::Card",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/_layout.tsx::__file_root__": {
-      "filePath": "app/_layout.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "global.css::__file_root__",
-        "lib/lang.tsx::LangProvider",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/CardPicker.tsx::__file_root__": {
-      "filePath": "components/CardPicker.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::Card",
-        "lib/cardPickerLayout.ts::SpreadGeometry",
-        "lib/cardPickerLayout.ts::slotSamples",
-        "lib/cardImages.ts::CARD_BACK",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/index.tsx::__file_root__": {
-      "filePath": "app/index.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/CardFan.tsx::CardFan",
-        "components/HomeActions.tsx::HomeActions",
-        "components/HomeHeader.tsx::HomeHeader",
-        "components/Screen.tsx::Screen",
-        "components/Wordmark.tsx::Wordmark",
-        "lib/lang.tsx::t",
-        "lib/lang.tsx::useLang"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/CardFan.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CardFan.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/CardFan.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/ActionButton.tsx::__file_root__": {
-      "filePath": "components/ActionButton.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/LangProvider.tsx::__file_root__": {
-      "filePath": "app/isolated-components/LangProvider.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/lang.tsx::__file_root__",
-        "components/LangToggle.tsx::LangToggle",
-        "components/CardReveal.tsx::CardReveal",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/fonts/JosefinSans-Regular.ttf::__file_root__": {
-      "filePath": "assets/fonts/JosefinSans-Regular.ttf",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::RootLayout"
-      ]
-    },
-    "app/isolated-components/ScreenHeader.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ScreenHeader.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/ScreenHeader.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/19-el-sol.png::__file_root__": {
-      "filePath": "assets/cards/19-el-sol.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "lib/dailyCard.ts::loadDaily": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "loadDaily",
-      "imports": [],
-      "importedBy": [
-        "lib/useDailyCard.ts::__file_root__",
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "assets/cards/16-la-torre.png::__file_root__": {
-      "filePath": "assets/cards/16-la-torre.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/CardStage.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CardStage.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/CardStage.tsx::__file_root__",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/ScreenTitle.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ScreenTitle.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/ScreenTitle.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/04-el-emperador.png::__file_root__": {
-      "filePath": "assets/cards/04-el-emperador.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "assets/fonts/Maragsa-Display.otf::__file_root__": {
-      "filePath": "assets/fonts/Maragsa-Display.otf",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::RootLayout"
-      ]
     },
     "app/isolated-components/ActionBar.tsx::__file_root__": {
       "filePath": "app/isolated-components/ActionBar.tsx",
@@ -1277,111 +1237,44 @@
       ],
       "importedBy": []
     },
-    "lib/useTurnUp.ts::__file_root__": {
-      "filePath": "lib/useTurnUp.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::Card"
-      ],
-      "importedBy": [
-        "lib/useTurnUp.test.ts::__file_root__"
-      ]
-    },
-    "lib/draw.ts::shuffledDeck": {
-      "filePath": "lib/draw.ts",
-      "name": "shuffledDeck",
-      "imports": [],
-      "importedBy": [
-        "lib/draw.test.ts::__file_root__"
-      ]
-    },
-    "lib/dailyCard.ts::loadHistory": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "loadHistory",
-      "imports": [],
-      "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/AskedQuestion.tsx::__file_root__": {
-      "filePath": "app/isolated-components/AskedQuestion.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/AskedQuestion.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/HistoryEmpty.tsx::__file_root__": {
-      "filePath": "components/HistoryEmpty.tsx",
+    "components/Lede.tsx::__file_root__": {
+      "filePath": "components/Lede.tsx",
       "name": "__file_root__",
       "imports": [
         "lib/theme.ts::__file_root__"
       ],
       "importedBy": []
     },
-    "app/history.tsx::__file_root__": {
-      "filePath": "app/history.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/HistoryEmpty.tsx::HistoryEmpty",
-        "components/HistoryRow.tsx::HistoryRow",
-        "components/Screen.tsx::Screen",
-        "components/ScreenHeader.tsx::ScreenHeader",
-        "components/ScreenTitle.tsx::ScreenTitle",
-        "lib/dailyCard.ts::HistoryEntry",
-        "lib/dailyCard.ts::cardByIndex",
-        "lib/dailyCard.ts::loadHistory",
-        "lib/lang.tsx::formatDay",
-        "lib/lang.tsx::t",
-        "lib/lang.tsx::useLang"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/14-la-templanza.png::__file_root__": {
-      "filePath": "assets/cards/14-la-templanza.png",
+    "assets/cards/10-la-rueda.png::__file_root__": {
+      "filePath": "assets/cards/10-la-rueda.png",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
         "lib/cardImages.ts::__file_root__"
       ]
     },
-    "components/Wordmark.tsx::__file_root__": {
-      "filePath": "components/Wordmark.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/HomeHeader.tsx::__file_root__": {
-      "filePath": "app/isolated-components/HomeHeader.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/HomeHeader.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.ts::DailyDraw": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "DailyDraw",
+    "components/Lede.tsx::Lede": {
+      "filePath": "components/Lede.tsx",
+      "name": "Lede",
       "imports": [],
       "importedBy": [
-        "lib/useDailyCard.ts::__file_root__"
+        "components/QuestionForm.tsx::__file_root__"
       ]
     },
-    ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs::__file_root__": {
-      "filePath": ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs",
+    "data/cards.test.ts::__file_root__": {
+      "filePath": "data/cards.test.ts",
       "name": "__file_root__",
       "imports": [
-        ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs::filterSessionLine"
+        "data/cards.ts::__file_root__",
+        "data/cards.ts::cardText"
       ],
       "importedBy": []
     },
-    "app/isolated-components/ActionButton.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ActionButton.tsx",
+    "app/isolated-components/ScreenHeader.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ScreenHeader.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/ActionButton.tsx::__file_root__"
+        "components/ScreenHeader.tsx::__file_root__"
       ],
       "importedBy": []
     },
@@ -1396,170 +1289,113 @@
       ],
       "importedBy": []
     },
-    "components/TarotCard.tsx::TarotCard": {
-      "filePath": "components/TarotCard.tsx",
-      "name": "TarotCard",
-      "imports": [],
-      "importedBy": [
-        "components/CardStage.tsx::__file_root__"
-      ]
-    },
-    "lib/lang.test.ts::__file_root__": {
-      "filePath": "lib/lang.test.ts",
+    "app/isolated-components/ScreenTitle.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ScreenTitle.tsx",
       "name": "__file_root__",
       "imports": [
-        "lib/lang.tsx::formatDay",
-        "lib/lang.tsx::t"
+        "components/ScreenTitle.tsx::__file_root__"
       ],
       "importedBy": []
     },
-    "components/HistoryRow.tsx::__file_root__": {
-      "filePath": "components/HistoryRow.tsx",
+    "app/isolated-components/TarotCard.tsx::__file_root__": {
+      "filePath": "app/isolated-components/TarotCard.tsx",
       "name": "__file_root__",
       "imports": [
-        "data/cards.ts::Card",
-        "data/cards.ts::Lang",
-        "data/cards.ts::cardText",
-        "lib/theme.ts::__file_root__"
+        "components/TarotCard.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
       ],
       "importedBy": []
     },
-    "assets/fonts/JosefinSans-Light.ttf::__file_root__": {
-      "filePath": "assets/fonts/JosefinSans-Light.ttf",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::RootLayout"
-      ]
-    },
-    "lib/dailyCard.ts::today": {
+    "lib/dailyCard.ts::HistoryEntry": {
       "filePath": "lib/dailyCard.ts",
-      "name": "today",
+      "name": "HistoryEntry",
       "imports": [],
       "importedBy": [
         "lib/dailyCard.test.ts::__file_root__"
       ]
     },
-    "components/HomeActions.tsx::__file_root__": {
-      "filePath": "components/HomeActions.tsx",
+    "lib/dailyCard.test.ts::__file_root__": {
+      "filePath": "lib/dailyCard.test.ts",
       "name": "__file_root__",
       "imports": [
-        "components/ActionButton.tsx::ActionButton",
-        "lib/theme.ts::__file_root__"
+        "data/cards.ts::__file_root__",
+        "lib/dailyCard.ts::HistoryEntry",
+        "lib/dailyCard.ts::__file_root__",
+        "lib/dailyCard.ts::addToHistory",
+        "lib/dailyCard.ts::cardByIndex",
+        "lib/dailyCard.ts::cardForDate",
+        "lib/dailyCard.ts::loadDaily",
+        "lib/dailyCard.ts::loadHistory",
+        "lib/dailyCard.ts::revealToday",
+        "lib/dailyCard.ts::toDateKey",
+        "lib/dailyCard.ts::today",
+        "lib/storage.ts::__file_root__"
       ],
       "importedBy": []
     },
-    "components/ScreenTitle.tsx::__file_root__": {
-      "filePath": "components/ScreenTitle.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/Wordmark.tsx::__file_root__": {
-      "filePath": "app/isolated-components/Wordmark.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/Wordmark.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.ts::revealToday": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "revealToday",
-      "imports": [],
-      "importedBy": [
-        "lib/useDailyCard.ts::__file_root__",
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/CardPicker.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CardPicker.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/CardPicker.tsx::__file_root__",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/01-el-mago.png::__file_root__": {
-      "filePath": "assets/cards/01-el-mago.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "components/AskedQuestion.tsx::__file_root__": {
-      "filePath": "components/AskedQuestion.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/06-los-enamorados.png::__file_root__": {
-      "filePath": "assets/cards/06-los-enamorados.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "components/QuestionForm.tsx::__file_root__": {
-      "filePath": "components/QuestionForm.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/ActionButton.tsx::ActionButton",
-        "components/ActionBar.tsx::ActionBar",
-        "components/Lede.tsx::Lede",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/HomeHeader.tsx::__file_root__": {
-      "filePath": "components/HomeHeader.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/LangToggle.tsx::LangToggle",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/ChooseCardStep.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ChooseCardStep.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/ChooseCardStep.tsx::__file_root__",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/ScreenSubtitle.tsx::__file_root__": {
-      "filePath": "components/ScreenSubtitle.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/11-la-fuerza.png::__file_root__": {
-      "filePath": "assets/cards/11-la-fuerza.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "components/TarotCard.tsx::__file_root__": {
-      "filePath": "components/TarotCard.tsx",
+    "lib/draw.ts::__file_root__": {
+      "filePath": "lib/draw.ts",
       "name": "__file_root__",
       "imports": [
         "data/cards.ts::Card",
-        "lib/cardImages.ts::CARD_BACK",
-        "lib/cardImages.ts::cardImage",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/14-la-templanza.png::__file_root__": {
+      "filePath": "assets/cards/14-la-templanza.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "lib/dailyCard.ts::cardByIndex": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "cardByIndex",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/MenuBackdrop.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MenuBackdrop.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/MenuBackdrop.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/StarRule.tsx::__file_root__": {
+      "filePath": "components/StarRule.tsx",
+      "name": "__file_root__",
+      "imports": [
         "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/GalleryGrid.tsx::__file_root__": {
+      "filePath": "app/isolated-components/GalleryGrid.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/GalleryGrid.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/StarLink.tsx::__file_root__": {
+      "filePath": "app/isolated-components/StarLink.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/StarLink.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
+      "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath"
       ],
       "importedBy": []
     },
@@ -1592,82 +1428,54 @@
       ],
       "importedBy": []
     },
-    "app/isolated-components/DailyOutcome.tsx::__file_root__": {
-      "filePath": "app/isolated-components/DailyOutcome.tsx",
+    "components/Screen.tsx::__file_root__": {
+      "filePath": "components/Screen.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/DailyOutcome.tsx::__file_root__"
+        "lib/theme.ts::__file_root__"
       ],
       "importedBy": []
     },
-    "lib/storage.ts::__file_root__": {
-      "filePath": "lib/storage.ts",
+    "components/GalleryCard.tsx::__file_root__": {
+      "filePath": "components/GalleryCard.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Card",
+        "lib/cardImages.ts::cardImage",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/CardPicker.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CardPicker.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/CardPicker.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/19-el-sol.png::__file_root__": {
+      "filePath": "assets/cards/19-el-sol.png",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
+        "lib/cardImages.ts::__file_root__"
       ]
     },
-    "components/DailyOutcome.tsx::__file_root__": {
-      "filePath": "components/DailyOutcome.tsx",
+    "components/HomeActions.tsx::__file_root__": {
+      "filePath": "components/HomeActions.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/ActionBar.tsx::ActionBar",
         "components/ActionButton.tsx::ActionButton",
         "lib/theme.ts::__file_root__"
       ],
       "importedBy": []
     },
-    ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs::__file_root__": {
-      "filePath": ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs",
+    "components/Wordmark.tsx::__file_root__": {
+      "filePath": "components/Wordmark.tsx",
       "name": "__file_root__",
       "imports": [
-        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/LangToggle.tsx::__file_root__": {
-      "filePath": "app/isolated-components/LangToggle.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/LangToggle.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs::filterSessionLine": {
-      "filePath": ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs",
-      "name": "filterSessionLine",
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs::__file_root__"
-      ]
-    },
-    "components/ActionButton.tsx::ActionButton": {
-      "filePath": "components/ActionButton.tsx",
-      "name": "ActionButton",
-      "imports": [],
-      "importedBy": [
-        "components/DailyOutcome.tsx::__file_root__",
-        "components/HomeActions.tsx::__file_root__",
-        "components/QuestionForm.tsx::__file_root__"
-      ]
-    },
-    "components/StarRule.tsx::__file_root__": {
-      "filePath": "components/StarRule.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/CardReveal.tsx::__file_root__": {
-      "filePath": "components/CardReveal.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/StarRule.tsx::StarRule",
-        "data/cards.ts::Card",
-        "data/cards.ts::Lang",
-        "data/cards.ts::cardText",
         "lib/theme.ts::__file_root__"
       ],
       "importedBy": []
@@ -1681,13 +1489,83 @@
       ],
       "importedBy": []
     },
-    "data/cards.ts::__file_root__": {
-      "filePath": "data/cards.ts",
+    "lib/dailyCard.ts::loadDaily": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "loadDaily",
+      "imports": [],
+      "importedBy": [
+        "lib/useDailyCard.ts::__file_root__",
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "components/ChooseCardStep.tsx::__file_root__": {
+      "filePath": "components/ChooseCardStep.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/CardPicker.tsx::CardPicker",
+        "components/Lede.tsx::Lede",
+        "data/cards.ts::Card",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/ScreenTitle.tsx::__file_root__": {
+      "filePath": "components/ScreenTitle.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/fonts/JosefinSans-SemiBold.ttf::__file_root__": {
+      "filePath": "assets/fonts/JosefinSans-SemiBold.ttf",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
-        "data/cards.test.ts::__file_root__"
+        "app/_layout.tsx::RootLayout"
       ]
+    },
+    "components/ActionButton.tsx::ActionButton": {
+      "filePath": "components/ActionButton.tsx",
+      "name": "ActionButton",
+      "imports": [],
+      "importedBy": [
+        "components/DailyOutcome.tsx::__file_root__",
+        "components/HomeActions.tsx::__file_root__",
+        "components/QuestionForm.tsx::__file_root__"
+      ]
+    },
+    "assets/fonts/JosefinSans-Light.ttf::__file_root__": {
+      "filePath": "assets/fonts/JosefinSans-Light.ttf",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx::RootLayout"
+      ]
+    },
+    "components/TarotCard.tsx::TarotCard": {
+      "filePath": "components/TarotCard.tsx",
+      "name": "TarotCard",
+      "imports": [],
+      "importedBy": [
+        "components/CardStage.tsx::__file_root__"
+      ]
+    },
+    "global.css::__file_root__": {
+      "filePath": "global.css",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/AskedQuestion.tsx::__file_root__": {
+      "filePath": "app/isolated-components/AskedQuestion.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/AskedQuestion.tsx::__file_root__"
+      ],
+      "importedBy": []
     },
     "lib/dailyCard.ts::__file_root__": {
       "filePath": "lib/dailyCard.ts",
@@ -1701,174 +1579,6 @@
         "lib/lang.tsx::__file_root__",
         "lib/dailyCard.test.ts::__file_root__"
       ]
-    },
-    "components/CardFan.tsx::__file_root__": {
-      "filePath": "components/CardFan.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "lib/cardImages.ts::cardImage",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/reading.tsx::__file_root__": {
-      "filePath": "app/reading.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/ActionBar.tsx::ActionBar",
-        "components/ActionButton.tsx::ActionButton",
-        "components/CardReveal.tsx::CardReveal",
-        "components/CardStage.tsx::CardStage",
-        "components/ChooseCardStep.tsx::ChooseCardStep",
-        "components/Screen.tsx::Screen",
-        "components/ScreenHeader.tsx::ScreenHeader",
-        "components/ScreenTitle.tsx::ScreenTitle",
-        "data/cards.ts::Card",
-        "lib/draw.ts::cardFromParam",
-        "lib/draw.ts::shuffledDeck",
-        "lib/lang.tsx::t",
-        "lib/lang.tsx::useLang",
-        "lib/useTurnUp.ts::useTurnUp"
-      ],
-      "importedBy": []
-    },
-    "components/LangToggle.tsx::__file_root__": {
-      "filePath": "components/LangToggle.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::Lang",
-        "lib/lang.tsx::useLang",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "lib/draw.ts::__file_root__": {
-      "filePath": "lib/draw.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::Card",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/StarRule.tsx::__file_root__": {
-      "filePath": "app/isolated-components/StarRule.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/StarRule.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "data/cards.test.ts::__file_root__": {
-      "filePath": "data/cards.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "data/cards.ts::cardText"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/18-la-luna.png::__file_root__": {
-      "filePath": "assets/cards/18-la-luna.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "lib/useDailyCard.test.ts::__file_root__": {
-      "filePath": "lib/useDailyCard.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "lib/dailyCard.ts::DailyState",
-        "lib/dailyCard.ts::loadDaily",
-        "lib/dailyCard.ts::revealToday",
-        "lib/useDailyCard.ts::useDailyCard"
-      ],
-      "importedBy": []
-    },
-    "assets/fonts/JosefinSans-SemiBold.ttf::__file_root__": {
-      "filePath": "assets/fonts/JosefinSans-SemiBold.ttf",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::RootLayout"
-      ]
-    },
-    ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__": {
-      "filePath": ".claude/skills/review-session/scripts/extract-session.mjs",
-      "name": "__file_root__",
-      "imports": [
-        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormat",
-        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormatFromPath"
-      ],
-      "importedBy": []
-    },
-    "lib/cardImages.ts::CARD_BACK": {
-      "filePath": "lib/cardImages.ts",
-      "name": "CARD_BACK",
-      "imports": [
-        "assets/card-back.png::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/_layout.tsx::RootLayout": {
-      "filePath": "app/_layout.tsx",
-      "name": "RootLayout",
-      "imports": [
-        "assets/fonts/Maragsa-Display.otf::__file_root__",
-        "assets/fonts/JosefinSans-Regular.ttf::__file_root__",
-        "assets/fonts/JosefinSans-Light.ttf::__file_root__",
-        "assets/fonts/JosefinSans-SemiBold.ttf::__file_root__",
-        "assets/fonts/JosefinSans-Italic.ttf::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/ChooseCardStep.tsx::__file_root__": {
-      "filePath": "components/ChooseCardStep.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/CardPicker.tsx::CardPicker",
-        "components/Lede.tsx::Lede",
-        "data/cards.ts::Card",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/HistoryRow.tsx::__file_root__": {
-      "filePath": "app/isolated-components/HistoryRow.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/HistoryRow.tsx::__file_root__",
-        "data/cards.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/15-el-diablo.png::__file_root__": {
-      "filePath": "assets/cards/15-el-diablo.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
-      "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
-      "name": "__file_root__",
-      "imports": [
-        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs::__file_root__": {
-      "filePath": ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs",
-      "name": "__file_root__",
-      "imports": [
-        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch"
-      ],
-      "importedBy": []
     },
     "app/isolated-components/HomeActions.tsx::__file_root__": {
       "filePath": "app/isolated-components/HomeActions.tsx",
@@ -1886,202 +1596,21 @@
       ],
       "importedBy": []
     },
-    "components/ActionBar.tsx::__file_root__": {
-      "filePath": "components/ActionBar.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/08-la-justicia.png::__file_root__": {
-      "filePath": "assets/cards/08-la-justicia.png",
+    "assets/cards/16-la-torre.png::__file_root__": {
+      "filePath": "assets/cards/16-la-torre.png",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
         "lib/cardImages.ts::__file_root__"
       ]
     },
-    "app/isolated-components/Screen.tsx::__file_root__": {
-      "filePath": "app/isolated-components/Screen.tsx",
+    "app/isolated-components/HomeHeader.tsx::__file_root__": {
+      "filePath": "app/isolated-components/HomeHeader.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/Screen.tsx::__file_root__",
-        "components/ScreenTitle.tsx::ScreenTitle",
-        "components/Lede.tsx::Lede"
+        "components/HomeHeader.tsx::__file_root__"
       ],
       "importedBy": []
-    },
-    "lib/dailyCard.test.ts::__file_root__": {
-      "filePath": "lib/dailyCard.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "lib/dailyCard.ts::HistoryEntry",
-        "lib/dailyCard.ts::__file_root__",
-        "lib/dailyCard.ts::addToHistory",
-        "lib/dailyCard.ts::cardByIndex",
-        "lib/dailyCard.ts::cardForDate",
-        "lib/dailyCard.ts::loadDaily",
-        "lib/dailyCard.ts::loadHistory",
-        "lib/dailyCard.ts::revealToday",
-        "lib/dailyCard.ts::toDateKey",
-        "lib/dailyCard.ts::today",
-        "lib/storage.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/Lede.tsx::Lede": {
-      "filePath": "components/Lede.tsx",
-      "name": "Lede",
-      "imports": [],
-      "importedBy": [
-        "components/QuestionForm.tsx::__file_root__"
-      ]
-    },
-    "lib/lang.tsx::__file_root__": {
-      "filePath": "lib/lang.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::Lang",
-        "lib/dailyCard.ts::__file_root__",
-        "lib/storage.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/12-el-colgado.png::__file_root__": {
-      "filePath": "assets/cards/12-el-colgado.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "components/Screen.tsx::__file_root__": {
-      "filePath": "components/Screen.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "data/cards.ts::cardText": {
-      "filePath": "data/cards.ts",
-      "name": "cardText",
-      "imports": [],
-      "importedBy": [
-        "data/cards.test.ts::__file_root__"
-      ]
-    },
-    ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch": {
-      "filePath": ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs",
-      "name": "ripgrepSearch",
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs::__file_root__",
-        ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs::__file_root__"
-      ]
-    },
-    "lib/cardImages.test.ts::__file_root__": {
-      "filePath": "lib/cardImages.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "lib/cardImages.ts::CARD_BACK",
-        "lib/cardImages.ts::cardImage"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.ts::HistoryEntry": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "HistoryEntry",
-      "imports": [],
-      "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "components/ScreenHeader.tsx::__file_root__": {
-      "filePath": "components/ScreenHeader.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/nav.ts::goBackTo",
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "lib/dailyCard.ts::cardForDate": {
-      "filePath": "lib/dailyCard.ts",
-      "name": "cardForDate",
-      "imports": [],
-      "importedBy": [
-        "lib/dailyCard.test.ts::__file_root__"
-      ]
-    },
-    "lib/draw.test.ts::__file_root__": {
-      "filePath": "lib/draw.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "data/cards.ts::__file_root__",
-        "lib/draw.ts::cardFromParam",
-        "lib/draw.ts::shuffledDeck"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/20-el-juicio.png::__file_root__": {
-      "filePath": "assets/cards/20-el-juicio.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/QuestionForm.tsx::__file_root__": {
-      "filePath": "app/isolated-components/QuestionForm.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/QuestionForm.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/21-el-mundo.png::__file_root__": {
-      "filePath": "assets/cards/21-el-mundo.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "assets/cards/17-la-estrella.png::__file_root__": {
-      "filePath": "assets/cards/17-la-estrella.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "components/Lede.tsx::__file_root__": {
-      "filePath": "components/Lede.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "lib/theme.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "assets/cards/03-la-emperatriz.png::__file_root__": {
-      "filePath": "assets/cards/03-la-emperatriz.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
-    },
-    "assets/cards/09-el-ermitano.png::__file_root__": {
-      "filePath": "assets/cards/09-el-ermitano.png",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "lib/cardImages.ts::__file_root__"
-      ]
     },
     "assets/cards/13-la-muerte.png::__file_root__": {
       "filePath": "assets/cards/13-la-muerte.png",
@@ -2091,38 +1620,65 @@
         "lib/cardImages.ts::__file_root__"
       ]
     },
-    "global.css::__file_root__": {
-      "filePath": "global.css",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/_layout.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/ScreenSubtitle.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ScreenSubtitle.tsx",
+    "app/isolated-components/MenuItem.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MenuItem.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/ScreenSubtitle.tsx::__file_root__"
+        "components/MenuItem.tsx::__file_root__",
+        "lib/theme.ts::__file_root__"
       ],
       "importedBy": []
     },
-    "assets/cards/05-el-papa.png::__file_root__": {
-      "filePath": "assets/cards/05-el-papa.png",
-      "name": "__file_root__",
+    "lib/dailyCard.ts::revealToday": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "revealToday",
       "imports": [],
       "importedBy": [
-        "lib/cardImages.ts::__file_root__"
+        "lib/useDailyCard.ts::__file_root__",
+        "lib/dailyCard.test.ts::__file_root__"
       ]
     },
-    "lib/useTurnUp.test.ts::__file_root__": {
-      "filePath": "lib/useTurnUp.test.ts",
+    "lib/useTurnUp.ts::__file_root__": {
+      "filePath": "lib/useTurnUp.ts",
       "name": "__file_root__",
       "imports": [
-        "data/cards.ts::Card",
-        "data/cards.ts::__file_root__",
-        "lib/useTurnUp.ts::__file_root__",
-        "lib/useTurnUp.ts::useTurnUp"
+        "data/cards.ts::Card"
+      ],
+      "importedBy": [
+        "lib/useTurnUp.test.ts::__file_root__"
+      ]
+    },
+    "lib/dailyCard.ts::toDateKey": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "toDateKey",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "components/MenuHeader.tsx::MenuHeader": {
+      "filePath": "components/MenuHeader.tsx",
+      "name": "MenuHeader",
+      "imports": [],
+      "importedBy": [
+        "components/NavMenu.tsx::__file_root__"
+      ]
+    },
+    "components/ScreenSubtitle.tsx::__file_root__": {
+      "filePath": "components/ScreenSubtitle.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/cardPickerLayout.test.ts::__file_root__": {
+      "filePath": "lib/cardPickerLayout.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "lib/cardPickerLayout.ts::SpreadGeometry",
+        "lib/cardPickerLayout.ts::clamp",
+        "lib/cardPickerLayout.ts::slotSamples"
       ],
       "importedBy": []
     },
@@ -2148,6 +1704,366 @@
       ],
       "importedBy": []
     },
+    "components/CardPicker.tsx::__file_root__": {
+      "filePath": "components/CardPicker.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Card",
+        "lib/cardPickerLayout.ts::SpreadGeometry",
+        "lib/cardPickerLayout.ts::slotSamples",
+        "lib/cardImages.ts::CARD_BACK",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/QuestionForm.tsx::__file_root__": {
+      "filePath": "app/isolated-components/QuestionForm.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/QuestionForm.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/fonts/JosefinSans-Italic.ttf::__file_root__": {
+      "filePath": "assets/fonts/JosefinSans-Italic.ttf",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx::RootLayout"
+      ]
+    },
+    "components/StarLink.tsx::__file_root__": {
+      "filePath": "components/StarLink.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang",
+        "lib/menu.tsx::useMenu",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/20-el-juicio.png::__file_root__": {
+      "filePath": "assets/cards/20-el-juicio.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs::__file_root__": {
+      "filePath": ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch"
+      ],
+      "importedBy": []
+    },
+    "data/cards.ts::__file_root__": {
+      "filePath": "data/cards.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "data/cards.test.ts::__file_root__"
+      ]
+    },
+    "assets/fonts/Maragsa-Display.otf::__file_root__": {
+      "filePath": "assets/fonts/Maragsa-Display.otf",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx::RootLayout"
+      ]
+    },
+    "app/isolated-components/Wordmark.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Wordmark.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/Wordmark.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/LangToggle.tsx::__file_root__": {
+      "filePath": "app/isolated-components/LangToggle.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/LangToggle.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/AskedQuestion.tsx::__file_root__": {
+      "filePath": "components/AskedQuestion.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/QuestionForm.tsx::__file_root__": {
+      "filePath": "components/QuestionForm.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ActionButton.tsx::ActionButton",
+        "components/ActionBar.tsx::ActionBar",
+        "components/Lede.tsx::Lede",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/DailyOutcome.tsx::__file_root__": {
+      "filePath": "app/isolated-components/DailyOutcome.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/DailyOutcome.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/06-los-enamorados.png::__file_root__": {
+      "filePath": "assets/cards/06-los-enamorados.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "components/ActionBar.tsx::__file_root__": {
+      "filePath": "components/ActionBar.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/NavMenu.tsx::__file_root__": {
+      "filePath": "components/NavMenu.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/MenuBackdrop.tsx::MenuBackdrop",
+        "components/MenuHeader.tsx::MenuHeader",
+        "components/MenuItem.tsx::MenuItem",
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang",
+        "lib/menuLayout.ts::menuPanelWidth",
+        "lib/menu.tsx::useMenu",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/CardStage.tsx::__file_root__": {
+      "filePath": "components/CardStage.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/TarotCard.tsx::TarotCard",
+        "data/cards.ts::Card",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/LangProvider.tsx::__file_root__": {
+      "filePath": "app/isolated-components/LangProvider.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/lang.tsx::__file_root__",
+        "components/LangToggle.tsx::LangToggle",
+        "components/CardReveal.tsx::CardReveal",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/NavMenu.tsx::__file_root__": {
+      "filePath": "app/isolated-components/NavMenu.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/NavMenu.tsx::__file_root__",
+        "lib/menu.tsx::useMenu"
+      ],
+      "importedBy": []
+    },
+    "components/MenuHeader.tsx::__file_root__": {
+      "filePath": "components/MenuHeader.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/15-el-diablo.png::__file_root__": {
+      "filePath": "assets/cards/15-el-diablo.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/MenuHeader.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MenuHeader.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/MenuHeader.tsx::__file_root__",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/draw.ts::shuffledDeck": {
+      "filePath": "lib/draw.ts",
+      "name": "shuffledDeck",
+      "imports": [],
+      "importedBy": [
+        "lib/draw.test.ts::__file_root__"
+      ]
+    },
+    "lib/draw.test.ts::__file_root__": {
+      "filePath": "lib/draw.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::__file_root__",
+        "lib/draw.ts::cardFromParam",
+        "lib/draw.ts::shuffledDeck"
+      ],
+      "importedBy": []
+    },
+    "components/GalleryGrid.tsx::__file_root__": {
+      "filePath": "components/GalleryGrid.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/GalleryCard.tsx::GalleryCard",
+        "data/cards.ts::Card",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/dailyCard.ts::addToHistory": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "addToHistory",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/GalleryCard.tsx::__file_root__": {
+      "filePath": "app/isolated-components/GalleryCard.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/GalleryCard.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "data/cards.ts::cardText": {
+      "filePath": "data/cards.ts",
+      "name": "cardText",
+      "imports": [],
+      "importedBy": [
+        "data/cards.test.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/ScreenSubtitle.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ScreenSubtitle.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ScreenSubtitle.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/HistoryRow.tsx::__file_root__": {
+      "filePath": "app/isolated-components/HistoryRow.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/HistoryRow.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/HistoryEmpty.tsx::__file_root__": {
+      "filePath": "components/HistoryEmpty.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/18-la-luna.png::__file_root__": {
+      "filePath": "assets/cards/18-la-luna.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "app/reading.tsx::__file_root__": {
+      "filePath": "app/reading.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ActionBar.tsx::ActionBar",
+        "components/ActionButton.tsx::ActionButton",
+        "components/CardReveal.tsx::CardReveal",
+        "components/CardStage.tsx::CardStage",
+        "components/ChooseCardStep.tsx::ChooseCardStep",
+        "components/Screen.tsx::Screen",
+        "components/ScreenHeader.tsx::ScreenHeader",
+        "components/ScreenTitle.tsx::ScreenTitle",
+        "data/cards.ts::Card",
+        "lib/draw.ts::cardFromParam",
+        "lib/draw.ts::shuffledDeck",
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang",
+        "lib/useTurnUp.ts::useTurnUp"
+      ],
+      "importedBy": []
+    },
+    "lib/useDailyCard.test.ts::__file_root__": {
+      "filePath": "lib/useDailyCard.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::__file_root__",
+        "lib/dailyCard.ts::DailyState",
+        "lib/dailyCard.ts::loadDaily",
+        "lib/dailyCard.ts::revealToday",
+        "lib/useDailyCard.ts::useDailyCard"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/00-el-loco.png::__file_root__": {
+      "filePath": "assets/cards/00-el-loco.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "assets/cards/21-el-mundo.png::__file_root__": {
+      "filePath": "assets/cards/21-el-mundo.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__": {
+      "filePath": ".claude/skills/review-session/scripts/extract-session.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormat",
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormatFromPath"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/04-el-emperador.png::__file_root__": {
+      "filePath": "assets/cards/04-el-emperador.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "lib/storage.ts::__file_root__": {
+      "filePath": "lib/storage.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
     "app/daily.tsx::__file_root__": {
       "filePath": "app/daily.tsx",
       "name": "__file_root__",
@@ -2166,22 +2082,476 @@
       ],
       "importedBy": []
     },
-    "assets/cards/10-la-rueda.png::__file_root__": {
-      "filePath": "assets/cards/10-la-rueda.png",
+    "assets/cards/07-el-carro.png::__file_root__": {
+      "filePath": "assets/cards/07-el-carro.png",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
         "lib/cardImages.ts::__file_root__"
       ]
     },
-    "lib/dailyCard.ts::addToHistory": {
+    "lib/cardImages.ts::CARD_BACK": {
+      "filePath": "lib/cardImages.ts",
+      "name": "CARD_BACK",
+      "imports": [
+        "assets/card-back.png::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/ActionBar.tsx::ActionBar": {
+      "filePath": "components/ActionBar.tsx",
+      "name": "ActionBar",
+      "imports": [],
+      "importedBy": [
+        "components/DailyOutcome.tsx::__file_root__",
+        "components/QuestionForm.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/Lede.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Lede.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/Lede.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/11-la-fuerza.png::__file_root__": {
+      "filePath": "assets/cards/11-la-fuerza.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "app/_layout.tsx::RootLayout": {
+      "filePath": "app/_layout.tsx",
+      "name": "RootLayout",
+      "imports": [
+        "assets/fonts/Maragsa-Display.otf::__file_root__",
+        "assets/fonts/JosefinSans-Regular.ttf::__file_root__",
+        "assets/fonts/JosefinSans-Light.ttf::__file_root__",
+        "assets/fonts/JosefinSans-SemiBold.ttf::__file_root__",
+        "assets/fonts/JosefinSans-Italic.ttf::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/useTurnUp.test.ts::__file_root__": {
+      "filePath": "lib/useTurnUp.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Card",
+        "data/cards.ts::__file_root__",
+        "lib/useTurnUp.ts::__file_root__",
+        "lib/useTurnUp.ts::useTurnUp"
+      ],
+      "importedBy": []
+    },
+    "lib/dailyCard.ts::loadHistory": {
       "filePath": "lib/dailyCard.ts",
-      "name": "addToHistory",
+      "name": "loadHistory",
       "imports": [],
       "importedBy": [
         "lib/dailyCard.test.ts::__file_root__"
       ]
+    },
+    "assets/fonts/JosefinSans-Regular.ttf::__file_root__": {
+      "filePath": "assets/fonts/JosefinSans-Regular.ttf",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/_layout.tsx::RootLayout"
+      ]
+    },
+    "components/CardFan.tsx::__file_root__": {
+      "filePath": "components/CardFan.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::__file_root__",
+        "lib/cardImages.ts::cardImage",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/08-la-justicia.png::__file_root__": {
+      "filePath": "assets/cards/08-la-justicia.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "app/history.tsx::__file_root__": {
+      "filePath": "app/history.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/HistoryEmpty.tsx::HistoryEmpty",
+        "components/HistoryRow.tsx::HistoryRow",
+        "components/Screen.tsx::Screen",
+        "components/ScreenHeader.tsx::ScreenHeader",
+        "components/ScreenTitle.tsx::ScreenTitle",
+        "lib/dailyCard.ts::HistoryEntry",
+        "lib/dailyCard.ts::cardByIndex",
+        "lib/dailyCard.ts::loadHistory",
+        "lib/lang.tsx::formatDay",
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang"
+      ],
+      "importedBy": []
+    },
+    "components/CardReveal.tsx::__file_root__": {
+      "filePath": "components/CardReveal.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/StarRule.tsx::StarRule",
+        "data/cards.ts::Card",
+        "data/cards.ts::Lang",
+        "data/cards.ts::cardText",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/12-el-colgado.png::__file_root__": {
+      "filePath": "assets/cards/12-el-colgado.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "lib/lang.test.ts::__file_root__": {
+      "filePath": "lib/lang.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "lib/lang.tsx::formatDay",
+        "lib/lang.tsx::t"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs::__file_root__": {
+      "filePath": ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs::filterSessionLine"
+      ],
+      "importedBy": []
+    },
+    "app/_layout.tsx::__file_root__": {
+      "filePath": "app/_layout.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "global.css::__file_root__",
+        "components/NavMenu.tsx::NavMenu",
+        "lib/lang.tsx::LangProvider",
+        "lib/menu.tsx::MenuProvider",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/gallery.tsx::__file_root__": {
+      "filePath": "app/gallery.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/GalleryGrid.tsx::GalleryGrid",
+        "components/Lede.tsx::Lede",
+        "components/Screen.tsx::Screen",
+        "components/ScreenHeader.tsx::ScreenHeader",
+        "components/ScreenTitle.tsx::ScreenTitle",
+        "data/cards.ts::Card",
+        "data/cards.ts::__file_root__",
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs::filterSessionLine": {
+      "filePath": ".claude/skills/codeyam-memory/scripts/session-mining/filter-session.mjs",
+      "name": "filterSessionLine",
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/codeyam-memory/scripts/session-mining/preprocess.mjs::__file_root__"
+      ]
+    },
+    "lib/cardImages.test.ts::__file_root__": {
+      "filePath": "lib/cardImages.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::__file_root__",
+        "lib/cardImages.ts::CARD_BACK",
+        "lib/cardImages.ts::cardImage"
+      ],
+      "importedBy": []
+    },
+    "components/ActionButton.tsx::__file_root__": {
+      "filePath": "components/ActionButton.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/card-back.png::__file_root__": {
+      "filePath": "assets/card-back.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::CARD_BACK"
+      ]
+    },
+    "app/index.tsx::__file_root__": {
+      "filePath": "app/index.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/CardFan.tsx::CardFan",
+        "components/HomeActions.tsx::HomeActions",
+        "components/HomeHeader.tsx::HomeHeader",
+        "components/Screen.tsx::Screen",
+        "components/Wordmark.tsx::Wordmark",
+        "lib/lang.tsx::t",
+        "lib/lang.tsx::useLang"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/CardFan.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CardFan.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/CardFan.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/CardStage.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CardStage.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/CardStage.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/menuLayout.test.ts::__file_root__": {
+      "filePath": "lib/menuLayout.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "lib/menuLayout.ts::__file_root__",
+        "lib/menuLayout.ts::menuPanelWidth"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Screen.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Screen.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/Screen.tsx::__file_root__",
+        "components/ScreenTitle.tsx::ScreenTitle",
+        "components/Lede.tsx::Lede"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch": {
+      "filePath": ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs",
+      "name": "ripgrepSearch",
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/codeyam-memory/scripts/holistic-analysis/detect-deprecated-patterns.mjs::__file_root__",
+        ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs::__file_root__"
+      ]
+    },
+    "app/isolated-components/ActionButton.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ActionButton.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ActionButton.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/ScreenHeader.tsx::__file_root__": {
+      "filePath": "components/ScreenHeader.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/StarLink.tsx::StarLink",
+        "lib/nav.ts::goBackTo",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/05-el-papa.png::__file_root__": {
+      "filePath": "assets/cards/05-el-papa.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "assets/cards/01-el-mago.png::__file_root__": {
+      "filePath": "assets/cards/01-el-mago.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "assets/cards/09-el-ermitano.png::__file_root__": {
+      "filePath": "assets/cards/09-el-ermitano.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "assets/cards/02-la-sacerdotisa.png::__file_root__": {
+      "filePath": "assets/cards/02-la-sacerdotisa.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "lib/dailyCard.ts::cardForDate": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "cardForDate",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "components/MenuItem.tsx::__file_root__": {
+      "filePath": "components/MenuItem.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/HomeHeader.tsx::__file_root__": {
+      "filePath": "components/HomeHeader.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/LangToggle.tsx::LangToggle",
+        "components/StarLink.tsx::StarLink",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/TarotCard.tsx::__file_root__": {
+      "filePath": "components/TarotCard.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Card",
+        "lib/cardImages.ts::CARD_BACK",
+        "lib/cardImages.ts::cardImage",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/dailyCard.ts::today": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "today",
+      "imports": [],
+      "importedBy": [
+        "lib/dailyCard.test.ts::__file_root__"
+      ]
+    },
+    "lib/lang.tsx::__file_root__": {
+      "filePath": "lib/lang.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Lang",
+        "lib/dailyCard.ts::__file_root__",
+        "lib/storage.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "lib/useTurnUp.ts::useTurnUp": {
+      "filePath": "lib/useTurnUp.ts",
+      "name": "useTurnUp",
+      "imports": [],
+      "importedBy": [
+        "lib/useTurnUp.test.ts::__file_root__"
+      ]
+    },
+    "lib/dailyCard.ts::DailyDraw": {
+      "filePath": "lib/dailyCard.ts",
+      "name": "DailyDraw",
+      "imports": [],
+      "importedBy": [
+        "lib/useDailyCard.ts::__file_root__"
+      ]
+    },
+    "assets/cards/17-la-estrella.png::__file_root__": {
+      "filePath": "assets/cards/17-la-estrella.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs::__file_root__": {
+      "filePath": ".claude/skills/codeyam-memory/scripts/holistic-analysis/find-exports.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/codeyam-memory/scripts/lib/ripgrep-fallback.mjs::ripgrepSearch"
+      ],
+      "importedBy": []
+    },
+    "assets/cards/03-la-emperatriz.png::__file_root__": {
+      "filePath": "assets/cards/03-la-emperatriz.png",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "lib/cardImages.ts::__file_root__"
+      ]
+    },
+    "components/DailyOutcome.tsx::__file_root__": {
+      "filePath": "components/DailyOutcome.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ActionBar.tsx::ActionBar",
+        "components/ActionButton.tsx::ActionButton",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MenuProvider.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MenuProvider.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "lib/menu.tsx::__file_root__",
+        "lib/menu.tsx::useMenu",
+        "components/NavMenu.tsx::NavMenu"
+      ],
+      "importedBy": []
+    },
+    "components/LangToggle.tsx::__file_root__": {
+      "filePath": "components/LangToggle.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Lang",
+        "lib/lang.tsx::useLang",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/HistoryRow.tsx::__file_root__": {
+      "filePath": "components/HistoryRow.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "data/cards.ts::Card",
+        "data/cards.ts::Lang",
+        "data/cards.ts::cardText",
+        "lib/theme.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ChooseCardStep.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ChooseCardStep.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/ChooseCardStep.tsx::__file_root__",
+        "data/cards.ts::__file_root__"
+      ],
+      "importedBy": []
     }
   },
-  "lastUpdated": "2026-07-21T01:38:32Z"
+  "lastUpdated": "2026-07-23T20:53:18Z"
 }

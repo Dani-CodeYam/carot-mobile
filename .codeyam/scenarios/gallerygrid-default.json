@@ -1,0 +1,11 @@
+{
+  "name": "GalleryGrid - Default",
+  "id": "a132536f-9904-4fe2-9f69-be47b3569660",
+  "url": "/isolated-components/GalleryGrid?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "GalleryGrid",
+  "scenarioType": "component"
+}

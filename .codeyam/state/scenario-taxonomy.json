@@ -1,0 +1,37 @@
+{
+  "views": {
+    "GalleryScreen": {
+      "empty": {
+        "status": "n-a",
+        "reason": "The gallery renders the fixed 22-arcana deck from a static import; it is never empty."
+      },
+      "single": {
+        "status": "n-a",
+        "reason": "The deck is always the full 22 cards; a single-item state cannot occur."
+      },
+      "typical": {
+        "status": "covered"
+      },
+      "many": {
+        "status": "n-a",
+        "reason": "The deck count is fixed at 22; there is no variable or larger set to demonstrate overflow beyond the typical view, which already scrolls."
+      },
+      "loading": {
+        "status": "n-a",
+        "reason": "CAROT_CARDS is a static import; the view fetches nothing, so there is no loading state."
+      },
+      "edge": {
+        "status": "n-a",
+        "reason": "Card content is fixed and curated; no variable-length or user-supplied fields render here."
+      },
+      "error": {
+        "status": "n-a",
+        "reason": "No data fetching or failure path exists on this read-only view."
+      },
+      "key-interaction": {
+        "status": "n-a",
+        "reason": "The only action is tapping a card, which navigates to that card's /reading route — a navigation, not an in-place state; the reading scenarios cover the destination."
+      }
+    }
+  }
+}

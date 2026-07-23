@@ -298,6 +298,51 @@
       "runner": "tests"
     },
     {
+      "description": "On a wide screen the fraction would exceed the cap, so the cap governs and the panel stops growing.",
+      "file": "lib/menuLayout.test.ts",
+      "format": "vitest",
+      "key": "menuPanelWidth › caps the panel on a tablet-width screen",
+      "line": 20,
+      "registeredAt": "2026-07-23T19:54:21Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A degenerate zero width collapses to zero rather than a negative or the cap.",
+      "file": "lib/menuLayout.test.ts",
+      "format": "vitest",
+      "key": "menuPanelWidth › collapses to zero for a zero-width screen",
+      "line": 32,
+      "registeredAt": "2026-07-23T19:54:21Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Right where the fraction meets the cap it should not exceed it.",
+      "file": "lib/menuLayout.test.ts",
+      "format": "vitest",
+      "key": "menuPanelWidth › never returns more than the cap at the crossover width",
+      "line": 25,
+      "registeredAt": "2026-07-23T19:54:21Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A typical phone is still under the cap, so the fraction still governs.",
+      "file": "lib/menuLayout.test.ts",
+      "format": "vitest",
+      "key": "menuPanelWidth › stays on the fraction just below the cap",
+      "line": 12,
+      "registeredAt": "2026-07-23T19:54:21Z",
+      "runner": "tests"
+    },
+    {
+      "description": "On a narrow phone the fraction wins — the panel is a slice of the screen, leaving a strip of the page visible at the left edge.",
+      "file": "lib/menuLayout.test.ts",
+      "format": "vitest",
+      "key": "menuPanelWidth › takes a fraction of the screen on a narrow phone",
+      "line": 7,
+      "registeredAt": "2026-07-23T19:54:21Z",
+      "runner": "tests"
+    },
+    {
       "description": "The passed-in draw is not mutated.",
       "file": "lib/dailyCard.test.ts",
       "format": "vitest",

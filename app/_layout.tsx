@@ -3,7 +3,9 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NavMenu } from '@/components/NavMenu';
 import { LangProvider } from '@/lib/lang';
+import { MenuProvider } from '@/lib/menu';
 import { theme } from '@/lib/theme';
 
 export default function RootLayout() {
@@ -22,14 +24,20 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <LangProvider>
-        <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.bgBase }}>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-              contentStyle: { backgroundColor: theme.colors.bgBase },
-            }}
-          />
-        </SafeAreaView>
+        <MenuProvider>
+          <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.bgBase }}>
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                contentStyle: { backgroundColor: theme.colors.bgBase },
+              }}
+            />
+          </SafeAreaView>
+          {/* Mounted outside SafeAreaView so the menu overlays the whole
+              screen, and inside MenuProvider so the header star can open it
+              from any route. */}
+          <NavMenu />
+        </MenuProvider>
       </LangProvider>
       <StatusBar style="light" />
     </SafeAreaProvider>

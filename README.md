@@ -55,6 +55,9 @@ codeyam editor
 This project is built with [codeyam-editor](https://codeyam.com) — code and runnable data scenarios are authored side by side against a live preview.
 
 ```bash
+# Clone the repo
+git clone https://github.com/Dani-CodeYam/carot-mobile && cd carot-mobile
+
 # Install codeyam-editor
 npm install -g @codeyam-editor/codeyam-editor@latest
 
@@ -95,4 +98,8 @@ States captured as runnable scenarios with codeyam-editor:
 ### Tengo una pregunta específica
 
 <img src=".codeyam/scenarios/screenshots/tengo-una-pregunta-específica--iphone-16.png" alt="Tengo una pregunta específica" width="280">
+
+### Todas las cartas
+
+<img src=".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png" alt="Todas las cartas" width="280">
 <!-- codeyam:scenario-gallery:end -->

@@ -6,6 +6,7 @@
  * with the card.
  */
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StarLink } from '@/components/StarLink';
 import { goBackTo } from '@/lib/nav';
 import { theme } from '@/lib/theme';
 
@@ -27,7 +28,7 @@ export function ScreenHeader({ back = '/' }: { back?: string }) {
 
       {/* Balances the back arrow so the wordmark sits optically centred. */}
       <View style={[styles.side, styles.right]}>
-        <Text style={styles.star}>✳</Text>
+        <StarLink />
       </View>
     </View>
   );
@@ -55,9 +56,5 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.display,
     fontSize: theme.fontSize.lg,
     letterSpacing: 2,
-  },
-  star: {
-    color: theme.colors.sageLight,
-    fontSize: theme.fontSize.lg,
   },
 });

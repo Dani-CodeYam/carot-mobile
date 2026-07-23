@@ -7,6 +7,7 @@
  */
 import { StyleSheet, Text, View } from 'react-native';
 import { LangToggle } from '@/components/LangToggle';
+import { StarLink } from '@/components/StarLink';
 import { theme } from '@/lib/theme';
 
 export function HomeHeader({ welcome }: { welcome: string }) {
@@ -19,7 +20,7 @@ export function HomeHeader({ welcome }: { welcome: string }) {
       {/* Balances the toggle so the greeting sits optically centred whichever
           language is showing. */}
       <View style={[styles.side, styles.right]}>
-        <Text style={styles.star}>✳</Text>
+        <StarLink size={theme.fontSize.xl} />
       </View>
     </View>
   );
@@ -42,10 +43,5 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.display,
     fontSize: theme.fontSize.lg,
     textAlign: 'center',
-  },
-  // No fontFamily: a symbol glyph, and Josefin Sans has no coverage for it.
-  star: {
-    color: theme.colors.sageLight,
-    fontSize: theme.fontSize.xl,
   },
 });

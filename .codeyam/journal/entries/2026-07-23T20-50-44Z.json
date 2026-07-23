@@ -1,0 +1,459 @@
+{
+  "timestamp": "2026-07-23T20:50:44Z",
+  "title": "Card Gallery",
+  "type": "feature",
+  "userRequest": "pone tengo una pregunta especifica arriba de quiero recibir un mensaje. despues quiero que el usuario pueda entrar y ver un historial de cartas del dia y de cartas que sacò o preguntas que hizl. despues tambien quiero que desde el menu se puedan ver todas las cartas, y que al abrir cada carta tengas su explicacion, y ademas tags de amor, dinero, trabajo, familia, carrera, espiritualidad, salud, y que hagas una interpretacion basada ne la internet y la data de cada carta en cada una de esas categoria.",
+  "description": "Todas las cartas — a browsable gallery of the full 22-arcana deck, reached from a new slide-in app menu. The gallery renders every card face-up in a three-column grid and tapping one deep-links to its reading; it draws and stores nothing. The menu, opened by the header star, slides in over any screen from shared context. This session refactored NavMenu into MenuBackdrop, MenuHeader and MenuItem sub-components, reduced the gallery page to pure composition, and extracted a tested menuPanelWidth helper.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": "\".codeyam/scenarios/carta-del-d\\303\\255a.json\"",
+      "status": "modified"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a--iphone-16.png\"",
+      "status": "modified"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a--iphone-16.png.hash\"",
+      "status": "modified"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/carta-del-d\\303\\255a-revelada--iphone-16.png.hash\"",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langprovider-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langtoggle-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screenheader-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": "\".codeyam/scenarios/screenshots/tengo-una-pregunta-espec\\303\\255fica--iphone-16.png.hash\"",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/daily.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/HomeHeader.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/ScreenHeader.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "lib/lang.tsx",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/gallerycard-alternate.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/gallerycard-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/gallerygrid-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menubackdrop-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menuheader-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menuheader-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menuitem-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menuitem-english.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/menuprovider-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/navmenu-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-alternate--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-alternate--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerygrid-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerygrid-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menubackdrop-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menubackdrop-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-english--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-english--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuprovider-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuprovider-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-open--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-open--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-large--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-large--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/starlink-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/starlink-large.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/todas-las-cartas.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/scenario-taxonomy.json",
+      "status": "added"
+    },
+    {
+      "path": "app/gallery.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GalleryCard.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GalleryGrid.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MenuBackdrop.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MenuHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MenuItem.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MenuProvider.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/NavMenu.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/StarLink.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/GalleryCard.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/GalleryGrid.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/MenuBackdrop.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/MenuHeader.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/MenuItem.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/NavMenu.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/StarLink.tsx",
+      "status": "added"
+    },
+    {
+      "path": "lib/menu.tsx",
+      "status": "added"
+    },
+    {
+      "path": "lib/menuLayout.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "lib/menuLayout.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Carta del día",
+      "screenshotPath": "carta-del-día--iphone-16.png"
+    },
+    {
+      "name": "Carta del día - Revelada",
+      "screenshotPath": "carta-del-día-revelada--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores",
+      "screenshotPath": "cartas-anteriores--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Con historial",
+      "screenshotPath": "cartas-anteriores-con-historial--iphone-16.png"
+    },
+    {
+      "name": "Home",
+      "screenshotPath": "home--iphone-16.png"
+    },
+    {
+      "name": "Quiero recibir un mensaje",
+      "screenshotPath": "quiero-recibir-un-mensaje--iphone-16.png"
+    },
+    {
+      "name": "Tengo una pregunta específica",
+      "screenshotPath": "tengo-una-pregunta-específica--iphone-16.png"
+    },
+    {
+      "name": "Todas las cartas",
+      "screenshotPath": "todas-las-cartas--iphone-16.png"
+    },
+    {
+      "name": "GalleryCard - Alternate",
+      "screenshotPath": "gallerycard-alternate--iphone-16.png"
+    },
+    {
+      "name": "GalleryCard - Default",
+      "screenshotPath": "gallerycard-default--iphone-16.png"
+    },
+    {
+      "name": "GalleryGrid - Default",
+      "screenshotPath": "gallerygrid-default--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - Default",
+      "screenshotPath": "homeheader-default--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - English",
+      "screenshotPath": "homeheader-english--iphone-16.png"
+    },
+    {
+      "name": "LangProvider - Default",
+      "screenshotPath": "langprovider-default--iphone-16.png"
+    },
+    {
+      "name": "LangToggle - Default",
+      "screenshotPath": "langtoggle-default--iphone-16.png"
+    },
+    {
+      "name": "MenuBackdrop - Default",
+      "screenshotPath": "menubackdrop-default--iphone-16.png"
+    },
+    {
+      "name": "MenuHeader - Default",
+      "screenshotPath": "menuheader-default--iphone-16.png"
+    },
+    {
+      "name": "MenuHeader - English",
+      "screenshotPath": "menuheader-english--iphone-16.png"
+    },
+    {
+      "name": "MenuItem - Default",
+      "screenshotPath": "menuitem-default--iphone-16.png"
+    },
+    {
+      "name": "MenuItem - English",
+      "screenshotPath": "menuitem-english--iphone-16.png"
+    },
+    {
+      "name": "MenuProvider - Default",
+      "screenshotPath": "menuprovider-default--iphone-16.png"
+    },
+    {
+      "name": "NavMenu - Open",
+      "screenshotPath": "navmenu-open--iphone-16.png"
+    },
+    {
+      "name": "ScreenHeader - Default",
+      "screenshotPath": "screenheader-default--iphone-16.png"
+    },
+    {
+      "name": "StarLink - Default",
+      "screenshotPath": "starlink-default--iphone-16.png"
+    },
+    {
+      "name": "StarLink - Large",
+      "screenshotPath": "starlink-large--iphone-16.png"
+    }
+  ],
+  "testResults": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 14,
+        "passed": 14
+      }
+    ]
+  }
+}

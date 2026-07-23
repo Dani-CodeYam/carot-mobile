@@ -1,0 +1,11 @@
+{
+  "name": "Todas las cartas",
+  "id": "566212a4-be42-4a2c-ab65-47aca4e239db",
+  "url": "/gallery",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/gallery.tsx"
+}

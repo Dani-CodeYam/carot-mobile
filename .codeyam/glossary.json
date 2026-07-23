@@ -88,6 +88,31 @@
     ]
   },
   {
+    "description": "One arcana in the gallery grid: its artwork, face-up and tappable. No visible label — the grid is read by the images and the name waits on the reading you tap through to; the accessibility label carries arcana and character.",
+    "filePath": "components/GalleryCard.tsx",
+    "name": "GalleryCard",
+    "scenarios": [
+      "gallerycard-default",
+      "gallerycard-alternate"
+    ]
+  },
+  {
+    "description": "The whole deck as a wrapped flex-row grid — 22 arcana in fixed order. Derives cell width from the available width and a fixed column count so the gutters hold on any screen size; a plain wrap rather than a FlatList so it does not fight the screen's ScrollView.",
+    "filePath": "components/GalleryGrid.tsx",
+    "name": "GalleryGrid",
+    "scenarios": [
+      "gallerygrid-default"
+    ]
+  },
+  {
+    "description": "Todas las cartas — the whole deck browsable. Composes the screen header, title and intro over a GalleryGrid of all 22 arcana face-up; tapping a card deep-links to its /reading. Read-only: shows the fixed deck, draws and stores nothing.",
+    "filePath": "app/gallery.tsx",
+    "name": "GalleryScreen",
+    "scenarios": [
+      "todas-las-cartas"
+    ]
+  },
+  {
     "description": "What the history shows before there is any: not an error, just a day that has not turned over yet.",
     "filePath": "components/HistoryEmpty.tsx",
     "name": "HistoryEmpty",
@@ -161,6 +186,48 @@
     ]
   },
   {
+    "description": "The dim behind the slide-in menu — a full-screen Pressable that closes the menu on tap, its black overlay fading in on the opacity NavMenu passes from the shared open animation.",
+    "filePath": "components/MenuBackdrop.tsx",
+    "name": "MenuBackdrop",
+    "scenarios": [
+      "menubackdrop-default"
+    ]
+  },
+  {
+    "description": "The top of the menu panel: a small uppercase label and a × to close. The × does the same thing as tapping the backdrop, kept as an explicit affordance on a panel this wide.",
+    "filePath": "components/MenuHeader.tsx",
+    "name": "MenuHeader",
+    "scenarios": [
+      "menuheader-default",
+      "menuheader-english"
+    ]
+  },
+  {
+    "description": "One row in the menu — a route you can tap to, with a ruled line above so the items read as a stacked list. The label arrives already localised; the row draws it and reports the tap.",
+    "filePath": "components/MenuItem.tsx",
+    "name": "MenuItem",
+    "scenarios": [
+      "menuitem-default",
+      "menuitem-english"
+    ]
+  },
+  {
+    "description": "Holds the app menu open/closed state in context so the header star and the root-mounted overlay, which live in different parts of the tree, share one source of truth rather than per-screen state.",
+    "filePath": "lib/menu.tsx",
+    "name": "MenuProvider",
+    "scenarios": [
+      "menuprovider-default"
+    ]
+  },
+  {
+    "description": "The app menu: a panel that slides in from the right over any screen, opened by the header ✳. Mounted once at the app root and driven by shared menu context; one Animated value fades the backdrop and slides the panel, kept mounted through the close so the slide-out is seen. Composes MenuBackdrop, MenuHeader and a MenuItem per route.",
+    "filePath": "components/NavMenu.tsx",
+    "name": "NavMenu",
+    "scenarios": [
+      "navmenu-open"
+    ]
+  },
+  {
     "description": "Where the question gets written. Nothing is drawn until it is: the submit button stays disabled on an empty field rather than quietly drawing for a question never posed.",
     "filePath": "components/QuestionForm.tsx",
     "name": "QuestionForm",
@@ -226,6 +293,15 @@
     "scenarios": [
       "screentitle-default",
       "screentitle-two-lines"
+    ]
+  },
+  {
+    "description": "The ✳ in the header — the button that opens the app menu. Shared by both headers so they wire one handler and one label; size is a prop because Home sets the star larger than the shared ScreenHeader.",
+    "filePath": "components/StarLink.tsx",
+    "name": "StarLink",
+    "scenarios": [
+      "starlink-default",
+      "starlink-large"
     ]
   },
   {
@@ -323,6 +399,12 @@
     "testFile": "lib/dailyCard.test.ts"
   },
   {
+    "description": "Computes the slide-in menu panel width for a given screen width — a fixed share of the screen, capped at a maximum column width so it does not sprawl on wide screens.",
+    "filePath": "lib/menuLayout.ts",
+    "name": "menuPanelWidth",
+    "testFile": "lib/menuLayout.test.ts"
+  },
+  {
     "description": "Flips today's card face-up and records it, so a reload keeps it open. Returns a new draw rather than mutating the one passed in.",
     "filePath": "lib/dailyCard.ts",
     "name": "revealToday",
@@ -379,6 +461,15 @@
     "name": "useLang",
     "untestabilityReason": {
       "justification": "A one-line useContext read with no logic of its own. What it returns is provided by LangProvider, whose behaviour is shown by the langprovider-default scenario and asserted through the `t` and formatDay tests.",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Reads the app menu open/close context — the accessor the header star and overlay use to share menu state.",
+    "filePath": "lib/menu.tsx",
+    "name": "useMenu",
+    "untestabilityReason": {
+      "justification": "One-line hook returning useContext(MenuContext); the open/close state it exposes lives in MenuProvider, which is scenario-covered.",
       "kind": "trivial-wrapper"
     }
   },

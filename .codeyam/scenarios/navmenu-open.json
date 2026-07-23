@@ -1,0 +1,11 @@
+{
+  "name": "NavMenu - Open",
+  "id": "0931aed0-6a35-49a6-80ff-850f353984d9",
+  "url": "/isolated-components/NavMenu?s=Open",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "NavMenu",
+  "scenarioType": "component"
+}

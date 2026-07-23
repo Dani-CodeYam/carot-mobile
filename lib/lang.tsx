@@ -100,6 +100,16 @@ const COPY = {
     askCards: 'Consultar a las cartas',
     youAsked: 'Preguntaste',
     askAnother: 'Hacer otra pregunta',
+
+    // Gallery
+    galleryTitle: 'Todas las cartas',
+    galleryIntro: 'Los 22 arcanos mayores. Tocá una carta para leerla.',
+
+    // Menu
+    menuLabel: 'Menú',
+    menuClose: 'Cerrar menú',
+    galleryEntry: 'Ver todas las cartas',
+    historyEntry: 'Historial',
   },
   en: {
     dailyTitle: 'Card of the day',
@@ -130,6 +140,16 @@ const COPY = {
     askCards: 'Ask the cards',
     youAsked: 'You asked',
     askAnother: 'Ask another question',
+
+    // Gallery
+    galleryTitle: 'All the cards',
+    galleryIntro: 'The 22 major arcana. Tap a card to read it.',
+
+    // Menu
+    menuLabel: 'Menu',
+    menuClose: 'Close menu',
+    galleryEntry: 'See all cards',
+    historyEntry: 'History',
   },
 } as const;
 

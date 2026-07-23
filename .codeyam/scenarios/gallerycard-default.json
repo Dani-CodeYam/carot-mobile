@@ -1,0 +1,11 @@
+{
+  "name": "GalleryCard - Default",
+  "id": "268a8e86-b9c4-489a-9d8c-8be965222642",
+  "url": "/isolated-components/GalleryCard?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "GalleryCard",
+  "scenarioType": "component"
+}
