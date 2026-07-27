@@ -1,0 +1,11 @@
+{
+  "name": "SignInPanel - Error",
+  "id": "309a6621-b60d-468c-ad17-9184e53e6ab0",
+  "url": "/isolated-components/SignInPanel?s=Error",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "SignInPanel",
+  "scenarioType": "component"
+}

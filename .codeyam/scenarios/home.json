@@ -7,5 +7,8 @@
   ],
   "mocks": {},
   "scenarioType": "application",
-  "pageFilePath": "app/index.tsx"
+  "pageFilePath": "app/index.tsx",
+  "seed": {
+    "elcarot.session": null
+  }
 }

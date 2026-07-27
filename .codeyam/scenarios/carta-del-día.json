@@ -9,7 +9,8 @@
   "seed": {
     "elcarot.dailyCard": null,
     "elcarot.history": [],
-    "elcarot.todayOverride": "2026-07-23"
+    "elcarot.todayOverride": "2026-07-23",
+    "elcarot.session": null
   },
   "scenarioType": "application",
   "pageFilePath": "app/daily.tsx"

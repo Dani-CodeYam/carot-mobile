@@ -1,6 +1,123 @@
 {
   "tests": [
     {
+      "description": "Signing out must clear the session from BOTH memory and storage — a session left on disk would come back on the next launch.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › clears the session from memory and storage on sign out",
+      "line": 60,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Corrupt or hand-edited storage must not crash the app into a broken session — it degrades to signed out, which always works.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › ignores a stored value that is not a session",
+      "line": 108,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Signing out is never destructive: the cards stay on disk, so signing back in finds the trail exactly as it was left.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › leaves stored cards untouched when signing out",
+      "line": 75,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Availability is data, not an error: the UI reads these to explain why a provider can't be used rather than offering a button that dies on tap.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › reports Apple unavailable where the platform does not support it",
+      "line": 92,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Google needs client ids that live outside the repo; with none set the button reports unconfigured instead of failing on tap.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › reports Google unconfigured when no client id is set",
+      "line": 100,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A session written on a previous launch is picked back up.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › restores a stored session",
+      "line": 50,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The production default: a fresh install has no session and the app is fully usable in that state.",
+      "file": "lib/auth.test.tsx",
+      "format": "vitest",
+      "key": "AuthProvider › settles signed out when storage holds no session",
+      "line": 43,
+      "registeredAt": "2026-07-27T15:31:34.790359+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Apple withholds the name on every sign-in after the first, so the row falls back to a neutral label rather than rendering an empty row.",
+      "file": "components/NavMenu.test.tsx",
+      "format": "vitest",
+      "key": "NavMenu account rows › falls back to a neutral label when the account has no name",
+      "line": 93,
+      "registeredAt": "2026-07-27T15:41:23.294427+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The ways to read are always present — signing in adds to the menu, it never takes anything away.",
+      "file": "components/NavMenu.test.tsx",
+      "format": "vitest",
+      "key": "NavMenu account rows › keeps every reading entry available whether signed in or out",
+      "line": 102,
+      "registeredAt": "2026-07-27T15:41:23.294427+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed out — the state a fresh install is in — offers the way in and must not show a sign-out for a session that does not exist.",
+      "file": "components/NavMenu.test.tsx",
+      "format": "vitest",
+      "key": "NavMenu account rows › offers Iniciar sesión when no account is signed in",
+      "line": 74,
+      "registeredAt": "2026-07-27T15:41:23.294427+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed in, the same rows become who you are plus the way out. This pair of assertions is what catches a capture rendering the wrong menu — the exact failure a scenario inheriting another scenario's session produced.",
+      "file": "components/NavMenu.test.tsx",
+      "format": "vitest",
+      "key": "NavMenu account rows › shows the account name and Cerrar sesión when signed in",
+      "line": 83,
+      "registeredAt": "2026-07-27T15:41:23.294427+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Apple and Google mint subjects independently, so the same string can legitimately arrive from both — they must not collide.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "accountId › keeps the same subject distinct across providers",
+      "line": 30,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The provider prefix is what makes the id unique.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "accountId › namespaces the subject by provider",
+      "line": 23,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
       "description": "The first card ever recorded starts the trail.",
       "file": "lib/dailyCard.test.ts",
       "format": "vitest",
@@ -199,6 +316,78 @@
       "runner": "tests"
     },
     {
+      "description": "Apple withholds the name on every sign-in after the first.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "displayName › returns null when the provider withheld the name",
+      "line": 69,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed out — no session at all.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "displayName › returns null when there is no session",
+      "line": 64,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The ordinary case.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "displayName › returns the name when there is one",
+      "line": 59,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Providers hand back empty and whitespace-only strings rather than omitting the field; both must read as \"no name\", not as a blank greeting.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "displayName › treats empty and whitespace-only names as no name",
+      "line": 75,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Stray whitespace should not reach the greeting.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "displayName › trims and collapses internal whitespace",
+      "line": 81,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A single-word name is already the given name.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "firstName › returns a one-word name unchanged",
+      "line": 113,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No session and no name both mean no greeting name.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "firstName › returns null when there is no usable name",
+      "line": 118,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A four-part name is ordinary in Spanish; a greeting uses the first.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "firstName › takes only the given name from a long full name",
+      "line": 108,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
       "description": "Spanish lowercases weekdays and months; only the sentence starts capital. CSS `capitalize` would give \"Lunes, 20 De Julio\", which is why this is done in code.",
       "file": "lib/lang.test.ts",
       "format": "vitest",
@@ -241,6 +430,78 @@
       "key": "formatDay › renders single-digit days without a leading zero",
       "line": 32,
       "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Apple hands the name over in two parts.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "fullName › joins the given and family names",
+      "line": 88,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Nothing usable left means no name, not an empty string.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "fullName › returns null when both parts are missing or blank",
+      "line": 99,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Either part may be missing on its own.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "fullName › returns whichever single part is present",
+      "line": 93,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed out: the greeting El Carot has always shown.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "greeting › falls back to the plain welcome when signed out",
+      "line": 131,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed in but nameless must look exactly like signed out — never \"¡Bienvenida, !\" with a hole where a person should be.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "greeting › falls back to the plain welcome when the name was withheld",
+      "line": 137,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Greets by the given name, so a long name cannot overrun the header.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "greeting › greets a long full name by its first name only",
+      "line": 144,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed in with a name: the personalised line, name substituted.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "greeting › uses the named greeting when a name is available",
+      "line": 126,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The copy arrives already localised; this picks, it does not translate.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "greeting › works the same in the other language",
+      "line": 150,
+      "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
     {
@@ -358,6 +619,105 @@
       "key": "revealToday › marks the draw revealed and persists it",
       "line": 178,
       "registeredAt": "2026-07-21T01:34:07.581096+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Two accounts on one phone must never read each other's cards.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "scopedKey › gives different accounts different keys",
+      "line": 50,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed out is the default and must use the untouched original key — this is what makes login non-destructive for existing readers.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "scopedKey › returns the bare key when no account is signed in",
+      "line": 38,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Signed in, each account gets its own drawer.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "scopedKey › suffixes the key with the account id when signed in",
+      "line": 43,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The user may hide their name while still sharing an email.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › accepts a partial credential",
+      "line": 208,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "First authorization ever: Apple sends everything.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › builds a session from a first-time credential",
+      "line": 157,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A remembered name belongs to ONE account — a different Apple account signing in on the same phone must not inherit the first person's name.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › does not borrow a name from a different account",
+      "line": 187,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The rule this function exists for: every sign-in after the first comes back with name and email null, and must NOT blank out what we know.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › keeps the remembered name when Apple omits it on a later sign-in",
+      "line": 173,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A fresh name always wins over a remembered one.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › prefers a newly offered name over the remembered one",
+      "line": 219,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Nothing remembered and nothing offered — a nameless account is ordinary.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromApple › yields a nameless session when nothing is offered or remembered",
+      "line": 201,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Google returns the profile on every sign-in.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromGoogleProfile › builds a session from a full profile",
+      "line": 236,
+      "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Absent fields normalise to null so a stored session keeps one shape.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "sessionFromGoogleProfile › normalises missing fields to null",
+      "line": 252,
+      "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
     {

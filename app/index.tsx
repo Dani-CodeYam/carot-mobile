@@ -9,14 +9,21 @@ import { HomeActions } from '@/components/HomeActions';
 import { HomeHeader } from '@/components/HomeHeader';
 import { Screen } from '@/components/Screen';
 import { Wordmark } from '@/components/Wordmark';
+import { greeting } from '@/lib/account';
+import { useAuth } from '@/lib/auth';
 import { t, useLang } from '@/lib/lang';
 
 export default function HomeScreen() {
   const { lang } = useLang();
+  const { session } = useAuth();
 
   return (
     <Screen centered>
-      <HomeHeader welcome={t(lang, 'welcome')} />
+      {/* Falls back to the plain welcome whenever there is no usable name —
+          signed out, or signed in with a provider that withheld it. */}
+      <HomeHeader
+        welcome={greeting(session, t(lang, 'welcome'), t(lang, 'welcomeNamed'))}
+      />
 
       <Wordmark />
 

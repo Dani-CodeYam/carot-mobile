@@ -1,0 +1,17 @@
+{
+  "$comment": "Apple returned no name. This is the COMMON case, not an exotic one: Apple hands back the full name only on the very first authorization, and the user may hide it outright. Every later sign-in yields null. The greeting must fall back to the generic welcome rather than render 'Bienvenida, ' with a hole in it.",
+  "type": "application",
+  "seed": {
+    "elcarot.todayOverride": "2026-07-20",
+    "elcarot.session": {
+      "provider": "apple",
+      "id": "apple:000719.4b2e8a1c6d9f0e3a7b5c2d8e1f4a6b09.1477",
+      "name": null,
+      "email": null
+    },
+    "elcarot.history.apple:000719.4b2e8a1c6d9f0e3a7b5c2d8e1f4a6b09.1477": [
+      { "date": "2026-07-19", "n": 21 },
+      { "date": "2026-07-18", "n": 1 }
+    ]
+  }
+}

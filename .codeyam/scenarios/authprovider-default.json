@@ -1,0 +1,11 @@
+{
+  "name": "AuthProvider - Default",
+  "id": "b84f820b-37cc-4e4d-bba5-12896d9904ca",
+  "url": "/isolated-components/AuthProvider?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AuthProvider",
+  "scenarioType": "component"
+}

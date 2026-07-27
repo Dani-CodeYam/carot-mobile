@@ -1,0 +1,20 @@
+{
+  "name": "Tu cuenta - Sin nombre",
+  "id": "a20e769c-93c4-40a9-8408-a6a3ab85f8f0",
+  "url": "/login",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.session": {
+      "email": null,
+      "id": "apple:000719.4b2e8a1c6d9f0e3a7b5c2d8e1f4a6b09.1477",
+      "name": null,
+      "provider": "apple"
+    },
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/login.tsx"
+}

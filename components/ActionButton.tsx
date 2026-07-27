@@ -32,10 +32,18 @@ export function ActionButton({
       style={[
         styles.base,
         outline ? styles.outline : styles.filled,
-        disabled && styles.disabled,
+        disabled ? (outline ? styles.disabledOutline : styles.disabledFilled) : null,
       ]}
     >
-      <Text style={[styles.label, outline && styles.labelOutline]}>{label}</Text>
+      <Text
+        style={[
+          styles.label,
+          outline && styles.labelOutline,
+          disabled && styles.labelDisabled,
+        ]}
+      >
+        {label}
+      </Text>
     </Pressable>
   );
 }
@@ -57,8 +65,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.colors.border,
   },
-  disabled: {
-    opacity: 0.4,
+  // Spelled out as colours rather than an opacity: a translucent sage over the
+  // charcoal ground composites to mud, and the button stops reading as a
+  // button at all. Sitting the disabled fill between the ground and the live
+  // sage keeps the shape legible while making it obviously not for tapping.
+  disabledFilled: {
+    backgroundColor: theme.colors.textMuted,
+  },
+  disabledOutline: {
+    borderColor: theme.colors.bgInverse,
   },
   label: {
     color: theme.colors.textOnCream,
@@ -67,5 +82,8 @@ const styles = StyleSheet.create({
   },
   labelOutline: {
     color: theme.colors.textPrimary,
+  },
+  labelDisabled: {
+    color: theme.colors.textSecondary,
   },
 });

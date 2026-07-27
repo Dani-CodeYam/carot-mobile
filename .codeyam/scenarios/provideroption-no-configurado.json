@@ -1,0 +1,11 @@
+{
+  "name": "ProviderOption - No configurado",
+  "id": "29ab5dd5-11ba-4e61-9eda-51040ff9f7f5",
+  "url": "/isolated-components/ProviderOption?s=NoConfigurado",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ProviderOption",
+  "scenarioType": "component"
+}

@@ -1,0 +1,17 @@
+{
+  "$comment": "Signed in with Google, brand new account — the scoped history key is absent entirely, so the greeting says her name while the history screen shows its empty state. Proves the two are independent: having a name does not mean having a trail.",
+  "type": "application",
+  "seed": {
+    "elcarot.todayOverride": "2026-07-20",
+    "elcarot.session": {
+      "provider": "google",
+      "id": "google:118217459023847561092",
+      "name": "Malena Figueroa",
+      "email": "malena.figueroa@gmail.com"
+    },
+    "elcarot.history": [
+      { "date": "2026-07-19", "n": 6 },
+      { "date": "2026-07-18", "n": 15 }
+    ]
+  }
+}

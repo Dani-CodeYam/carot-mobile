@@ -10,12 +10,15 @@
  * so the day-rollover rules can be unit-tested without mounting a screen.
  */
 import { CAROT_CARDS, type Card } from '@/data/cards';
+import { scopedKey } from '@/lib/account';
 import { storage } from '@/lib/storage';
 
 export const KEYS = {
   daily: 'elcarot.dailyCard',
   history: 'elcarot.history',
   lang: 'elcarot.lang',
+  /** The signed-in account, absent while reading anonymously. See lib/auth. */
+  session: 'elcarot.session',
   /**
    * Test/scenario seam. Never written by the app — when a scenario seeds it,
    * `today()` returns it instead of reading the clock, so a capture taken in
@@ -90,11 +93,19 @@ export interface DailyState {
  *
  * A stale draw that was revealed graduates into history; a stale draw the user
  * never opened is simply dropped — an unopened card was never really theirs.
+ *
+ * `account` scopes the read and every write that follows. Passing null — the
+ * default, and what a signed-out reader always passes — uses the bare keys the
+ * app has always used, so a reader who never signs in is completely unaffected
+ * by any of this.
  */
-export async function loadDaily(): Promise<DailyState> {
+export async function loadDaily(account: string | null = null): Promise<DailyState> {
+  const dailyKey = scopedKey(KEYS.daily, account);
+  const historyKey = scopedKey(KEYS.history, account);
+
   const day = await today();
-  const stored = await storage.get<DailyDraw | null>(KEYS.daily, null);
-  let history = await storage.get<HistoryEntry[]>(KEYS.history, []);
+  const stored = await storage.get<DailyDraw | null>(dailyKey, null);
+  let history = await storage.get<HistoryEntry[]>(historyKey, []);
 
   if (stored && stored.date === day) {
     return { draw: stored, card: cardByIndex(stored.n), history, isNew: false };
@@ -102,23 +113,26 @@ export async function loadDaily(): Promise<DailyState> {
 
   if (stored && stored.revealed) {
     history = addToHistory(history, { date: stored.date, n: stored.n });
-    await storage.set(KEYS.history, history);
+    await storage.set(historyKey, history);
   }
 
   const card = cardForDate(day);
   const draw: DailyDraw = { date: day, n: card.n, revealed: false };
-  await storage.set(KEYS.daily, draw);
+  await storage.set(dailyKey, draw);
   return { draw, card, history, isNew: true };
 }
 
 /** Flip today's card face-up and remember that it happened. */
-export async function revealToday(draw: DailyDraw): Promise<DailyDraw> {
+export async function revealToday(
+  draw: DailyDraw,
+  account: string | null = null,
+): Promise<DailyDraw> {
   const revealed: DailyDraw = { ...draw, revealed: true };
-  await storage.set(KEYS.daily, revealed);
+  await storage.set(scopedKey(KEYS.daily, account), revealed);
   return revealed;
 }
 
 /** Past days only — today's card lives in `DailyState.draw`, not here. */
-export async function loadHistory(): Promise<HistoryEntry[]> {
-  return storage.get<HistoryEntry[]>(KEYS.history, []);
+export async function loadHistory(account: string | null = null): Promise<HistoryEntry[]> {
+  return storage.get<HistoryEntry[]>(scopedKey(KEYS.history, account), []);
 }

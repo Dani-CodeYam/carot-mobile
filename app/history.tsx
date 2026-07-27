@@ -11,23 +11,29 @@ import { HistoryRow } from '@/components/HistoryRow';
 import { Screen } from '@/components/Screen';
 import { ScreenHeader } from '@/components/ScreenHeader';
 import { ScreenTitle } from '@/components/ScreenTitle';
+import { useAuth } from '@/lib/auth';
 import { cardByIndex, loadHistory, type HistoryEntry } from '@/lib/dailyCard';
 import { formatDay, t, useLang } from '@/lib/lang';
 
 export default function HistoryScreen() {
   const { lang } = useLang();
+  const { session, loading } = useAuth();
+  const account = session?.id ?? null;
   const [history, setHistory] = useState<HistoryEntry[] | null>(null);
   const [openDate, setOpenDate] = useState<string | null>(null);
 
+  // Re-reads when the account changes, so signing out swaps the trail back to
+  // the signed-out reader's own without leaving the screen.
   useEffect(() => {
     let active = true;
-    loadHistory().then((entries) => {
+    if (loading) return;
+    loadHistory(account).then((entries) => {
       if (active) setHistory(entries);
     });
     return () => {
       active = false;
     };
-  }, []);
+  }, [account, loading]);
 
   return (
     <Screen>

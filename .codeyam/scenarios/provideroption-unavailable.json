@@ -1,0 +1,11 @@
+{
+  "name": "ProviderOption - Unavailable",
+  "id": "9f8bf3d1-3d02-4d24-80f7-760752b8873e",
+  "url": "/isolated-components/ProviderOption?s=Unavailable",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ProviderOption",
+  "scenarioType": "component"
+}

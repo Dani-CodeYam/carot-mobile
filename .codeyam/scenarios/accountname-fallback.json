@@ -1,0 +1,11 @@
+{
+  "name": "AccountName - Fallback",
+  "id": "af35a410-2f87-474d-a153-519e8691b23d",
+  "url": "/isolated-components/AccountName?s=Fallback",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AccountName",
+  "scenarioType": "component"
+}

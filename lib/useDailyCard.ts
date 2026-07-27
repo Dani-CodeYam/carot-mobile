@@ -11,6 +11,7 @@
  */
 import { useCallback, useEffect, useState } from 'react';
 import type { Card } from '@/data/cards';
+import { useAuth } from '@/lib/auth';
 import { loadDaily, revealToday, type DailyDraw } from '@/lib/dailyCard';
 
 export interface DailyCardState {
@@ -23,6 +24,8 @@ export interface DailyCardState {
 }
 
 export function useDailyCard(): DailyCardState {
+  const { session, loading } = useAuth();
+  const account = session?.id ?? null;
   const [draw, setDraw] = useState<DailyDraw | null>(null);
   const [card, setCard] = useState<Card | null>(null);
   const [historyCount, setHistoryCount] = useState(0);
@@ -31,7 +34,11 @@ export function useDailyCard(): DailyCardState {
     // Guarded so a load landing after the screen closes can't set state on an
     // unmounted component.
     let active = true;
-    loadDaily().then((state) => {
+    // Wait for the stored session to answer before touching storage: loading
+    // signed-out first and correcting afterwards would write today's draw to
+    // the anonymous key on behalf of someone who is actually signed in.
+    if (loading) return;
+    loadDaily(account).then((state) => {
       if (!active) return;
       setDraw(state.draw);
       setCard(state.card);
@@ -40,15 +47,15 @@ export function useDailyCard(): DailyCardState {
     return () => {
       active = false;
     };
-  }, []);
+  }, [account, loading]);
 
   const reveal = useCallback(() => {
     // Already open, or nothing loaded yet — either way there is nothing to do,
     // and re-revealing would rewrite storage for no reason.
     if (!draw || draw.revealed) return;
     setDraw({ ...draw, revealed: true });
-    revealToday(draw);
-  }, [draw]);
+    revealToday(draw, account);
+  }, [draw, account]);
 
   return {
     card,

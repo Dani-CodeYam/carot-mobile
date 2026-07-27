@@ -1,0 +1,11 @@
+{
+  "name": "AccountName - Default",
+  "id": "cd83437c-287d-47d1-b8f5-97c5704de6f1",
+  "url": "/isolated-components/AccountName?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AccountName",
+  "scenarioType": "component"
+}

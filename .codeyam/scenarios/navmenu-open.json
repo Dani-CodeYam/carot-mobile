@@ -1,11 +1,15 @@
 {
   "name": "NavMenu - Open",
-  "id": "0931aed0-6a35-49a6-80ff-850f353984d9",
+  "id": "283afe7d-3d22-4347-a961-50053cb7cee6",
   "url": "/isolated-components/NavMenu?s=Open",
   "dimensions": [
     "iPhone 16"
   ],
   "mocks": {},
+  "seed": {
+    "elcarot.session": null,
+    "elcarot.todayOverride": "2026-07-20"
+  },
   "componentName": "NavMenu",
   "scenarioType": "component"
 }

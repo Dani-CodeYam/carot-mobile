@@ -6,7 +6,10 @@ question, or come back for the card of the day, which is pinned to the date and
 cannot be rerolled.
 
 Everything runs on the device: draws are local, the question you type never
-leaves the phone, and there is no backend.
+leaves the phone, and there is no backend. Signing in with Apple or Google is
+offered but never required — the whole app works without an account, and an
+account only adds your name to the greeting and keeps your cards in their own
+drawer.
 
 ## Setup
 
@@ -16,6 +19,28 @@ npm run setup
 
 No API keys or services to configure — a fresh clone runs with
 `git clone` → `npm run setup` → `npm run dev`.
+
+### Enabling sign-in (optional)
+
+The app is complete without this. The Apple and Google buttons render disabled,
+each saying why, until you supply credentials:
+
+- **Apple** — needs a paid Apple Developer membership to enable the Sign in with
+  Apple capability. `app.json` already declares the plugin and
+  `ios.usesAppleSignIn`, so `npx expo prebuild` emits the entitlement. Apple's
+  button is iOS-only and is always disabled on web and Android.
+- **Google** — needs OAuth client ids from a Google Cloud project, read from the
+  environment at build time:
+
+  ```bash
+  EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID=...
+  EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID=...
+  EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...
+  ```
+
+Neither provider authenticates in the web preview — native sign-in needs a real
+device or simulator build. The signed-in states are shown in the preview through
+seeded scenarios instead.
 
 ## Development
 
@@ -83,23 +108,23 @@ States captured as runnable scenarios with codeyam-editor:
 
 <img src=".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png" alt="Cartas anteriores" width="280">
 
+### Cartas anteriores - Con cuenta
+
+<img src=".codeyam/scenarios/screenshots/cartas-anteriores-con-cuenta--iphone-16.png" alt="Cartas anteriores - Con cuenta" width="280">
+
 ### Cartas anteriores - Con historial
 
 <img src=".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png" alt="Cartas anteriores - Con historial" width="280">
 
+### Cartas anteriores - Un mes
+
+<img src=".codeyam/scenarios/screenshots/cartas-anteriores-un-mes--iphone-16.png" alt="Cartas anteriores - Un mes" width="280">
+
+### Cartas anteriores - Una sola
+
+<img src=".codeyam/scenarios/screenshots/cartas-anteriores-una-sola--iphone-16.png" alt="Cartas anteriores - Una sola" width="280">
+
 ### Home
 
 <img src=".codeyam/scenarios/screenshots/home--iphone-16.png" alt="Home" width="280">
-
-### Quiero recibir un mensaje
-
-<img src=".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png" alt="Quiero recibir un mensaje" width="280">
-
-### Tengo una pregunta específica
-
-<img src=".codeyam/scenarios/screenshots/tengo-una-pregunta-específica--iphone-16.png" alt="Tengo una pregunta específica" width="280">
-
-### Todas las cartas
-
-<img src=".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png" alt="Todas las cartas" width="280">
 <!-- codeyam:scenario-gallery:end -->

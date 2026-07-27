@@ -1,10 +1,394 @@
 {
-  "addToHistory › handles an empty history": {
-    "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+  "AuthProvider › clears the session from memory and storage on sign out": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › ignores a stored value that is not a session": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › leaves stored cards untouched when signing out": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › reports Apple unavailable where the platform does not support it": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › reports Google unconfigured when no client id is set": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › restores a stored session": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "AuthProvider › settles signed out when storage holds no session": {
+    "file": "lib/auth.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:34.790359+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "NavMenu account rows › falls back to a neutral label when the account has no name": {
+    "file": "components/NavMenu.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:23.294427+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "NavMenu account rows › keeps every reading entry available whether signed in or out": {
+    "file": "components/NavMenu.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:23.294427+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "NavMenu account rows › offers Iniciar sesión when no account is signed in": {
+    "file": "components/NavMenu.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:23.294427+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "NavMenu account rows › shows the account name and Cerrar sesión when signed in": {
+    "file": "components/NavMenu.test.tsx",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:23.294427+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "accountId › keeps the same subject distinct across providers": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "accountId › namespaces the subject by provider": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "addToHistory › handles an empty history": {
+    "file": "lib/dailyCard.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -12,16 +396,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -29,10 +403,50 @@
   },
   "addToHistory › keeps entries newest-first": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -40,16 +454,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -57,10 +461,50 @@
   },
   "addToHistory › never keeps two entries for the same day": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -68,16 +512,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -85,10 +519,50 @@
   },
   "addToHistory › sorts an older entry into position": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -96,16 +570,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -113,10 +577,50 @@
   },
   "cardByIndex › falls back to the first card for an out-of-range index": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -124,16 +628,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -141,10 +635,50 @@
   },
   "cardByIndex › finds the card with the given arcana number": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -152,16 +686,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -169,10 +693,50 @@
   },
   "cardForDate › always returns a card from the deck": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -180,16 +744,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -197,10 +751,50 @@
   },
   "cardForDate › is deterministic for a given date": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -208,16 +802,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -225,10 +809,50 @@
   },
   "cardForDate › spreads different dates across different cards": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -236,16 +860,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -253,10 +867,50 @@
   },
   "cardFromParam › returns null for a negative index": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -264,41 +918,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -306,10 +925,50 @@
   },
   "cardFromParam › returns null for an index beyond the last card": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -317,41 +976,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -359,10 +983,50 @@
   },
   "cardFromParam › returns null for non-integer input": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -370,41 +1034,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -412,10 +1041,50 @@
   },
   "cardFromParam › returns null when no index is given": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -423,41 +1092,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -465,10 +1099,50 @@
   },
   "cardFromParam › returns the card at a valid index": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -476,41 +1150,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -518,10 +1157,50 @@
   },
   "cardImage › falls back to the card back for an unknown filename": {
     "file": "lib/cardImages.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -529,16 +1208,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -546,10 +1215,50 @@
   },
   "cardImage › resolves artwork for all 22 cards": {
     "file": "lib/cardImages.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -557,16 +1266,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -574,10 +1273,50 @@
   },
   "cardText › falls back to Spanish when a translation is empty": {
     "file": "data/cards.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -585,16 +1324,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -602,10 +1331,50 @@
   },
   "cardText › has non-empty text for all 22 cards in both languages": {
     "file": "data/cards.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -613,16 +1382,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -630,10 +1389,50 @@
   },
   "cardText › returns the English translation when asked for English": {
     "file": "data/cards.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -641,16 +1440,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -658,10 +1447,50 @@
   },
   "cardText › returns the Spanish text unchanged": {
     "file": "data/cards.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -669,16 +1498,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -686,10 +1505,50 @@
   },
   "clamp › caps anything further out at one card": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -697,41 +1556,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -739,10 +1563,50 @@
   },
   "clamp › leaves values within one card either side untouched": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -752,39 +1616,308 @@
         "at": "2026-07-21T01:38:04.237644+00:00",
         "kind": "full",
         "status": "pass"
-      },
+      }
+    ]
+  },
+  "displayName › returns null when the provider withheld the name": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
       {
-        "at": "2026-07-21T01:35:24.435233+00:00",
+        "at": "2026-07-27T15:42:21.408476+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:32:13.674151+00:00",
+        "at": "2026-07-27T15:41:13.642733+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:31:16.791558+00:00",
+        "at": "2026-07-27T15:37:13.255837+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:30:42.965546+00:00",
+        "at": "2026-07-27T15:31:19.539353+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:22:48.103892+00:00",
+        "at": "2026-07-27T15:23:32.745582+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T00:49:20.887397+00:00",
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "displayName › returns null when there is no session": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T00:26:53.542897+00:00",
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "displayName › returns the name when there is one": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "displayName › treats empty and whitespace-only names as no name": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "displayName › trims and collapses internal whitespace": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "firstName › returns a one-word name unchanged": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "firstName › returns null when there is no usable name": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "firstName › takes only the given name from a long full name": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -792,10 +1925,50 @@
   },
   "formatDay › capitalizes only the first letter in Spanish": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -804,36 +1977,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "formatDay › formats a day in English": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -842,31 +2035,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:29.980653+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "formatDay › formats a day in Spanish": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -875,36 +2093,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "formatDay › reads the date as a local day, not UTC": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -913,36 +2151,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "formatDay › renders single-digit days without a leading zero": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -952,24 +2210,308 @@
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
         "status": "pass"
-      },
+      }
+    ]
+  },
+  "fullName › joins the given and family names": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
       {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
+        "at": "2026-07-27T15:42:21.408476+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:35:24.435233+00:00",
+        "at": "2026-07-27T15:41:13.642733+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:34:07.581096+00:00",
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "fullName › returns null when both parts are missing or blank": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "fullName › returns whichever single part is present": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "greeting › falls back to the plain welcome when signed out": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "greeting › falls back to the plain welcome when the name was withheld": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "greeting › greets a long full name by its first name only": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "greeting › uses the named greeting when a name is available": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "greeting › works the same in the other language": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -977,10 +2519,50 @@
   },
   "loadDaily › creates a new face-down draw when nothing is stored": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -988,16 +2570,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1005,10 +2577,50 @@
   },
   "loadDaily › discards a stale draw that was never revealed": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1016,16 +2628,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1033,10 +2635,50 @@
   },
   "loadDaily › moves a revealed stale draw into history": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1044,16 +2686,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1061,10 +2693,50 @@
   },
   "loadDaily › returns the stored draw when it belongs to today": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1072,16 +2744,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1089,10 +2751,50 @@
   },
   "loadHistory › returns an empty list when nothing is stored": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1100,16 +2802,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1117,10 +2809,50 @@
   },
   "loadHistory › returns the stored entries": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1130,25 +2862,55 @@
         "at": "2026-07-21T01:38:04.237644+00:00",
         "kind": "full",
         "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
-        "status": "pass"
       }
     ]
   },
   "menuPanelWidth › caps the panel on a tablet-width screen": {
     "file": "lib/menuLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1158,10 +2920,50 @@
   },
   "menuPanelWidth › collapses to zero for a zero-width screen": {
     "file": "lib/menuLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1171,10 +2973,50 @@
   },
   "menuPanelWidth › never returns more than the cap at the crossover width": {
     "file": "lib/menuLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1184,10 +3026,50 @@
   },
   "menuPanelWidth › stays on the fraction just below the cap": {
     "file": "lib/menuLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1197,10 +3079,50 @@
   },
   "menuPanelWidth › takes a fraction of the screen on a narrow phone": {
     "file": "lib/menuLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1210,10 +3132,50 @@
   },
   "revealToday › leaves the original draw untouched": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1221,16 +3183,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1238,10 +3190,50 @@
   },
   "revealToday › marks the draw revealed and persists it": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1251,14 +3243,422 @@
         "at": "2026-07-21T01:38:04.237644+00:00",
         "kind": "full",
         "status": "pass"
-      },
+      }
+    ]
+  },
+  "scopedKey › gives different accounts different keys": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
       {
-        "at": "2026-07-21T01:35:24.435233+00:00",
+        "at": "2026-07-27T15:42:21.408476+00:00",
         "kind": "full",
         "status": "pass"
       },
       {
-        "at": "2026-07-21T01:34:07.581096+00:00",
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "scopedKey › returns the bare key when no account is signed in": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "scopedKey › suffixes the key with the account id when signed in": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › accepts a partial credential": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › builds a session from a first-time credential": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › does not borrow a name from a different account": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › keeps the remembered name when Apple omits it on a later sign-in": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › prefers a newly offered name over the remembered one": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromApple › yields a nameless session when nothing is offered or remembered": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromGoogleProfile › builds a session from a full profile": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      }
+    ]
+  },
+  "sessionFromGoogleProfile › normalises missing fields to null": {
+    "file": "lib/account.test.ts",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
+    "lastRunKind": "full",
+    "lastStatus": "pass",
+    "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1266,10 +3666,50 @@
   },
   "shuffledDeck › does not always put the same card first": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1277,41 +3717,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1319,10 +3724,50 @@
   },
   "shuffledDeck › leaves the source deck untouched": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1330,41 +3775,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1372,10 +3782,50 @@
   },
   "shuffledDeck › produces a different order across repeated draws": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1383,41 +3833,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1425,10 +3840,50 @@
   },
   "shuffledDeck › returns all 22 arcana with no duplicates and no omissions": {
     "file": "lib/draw.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1436,41 +3891,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1478,10 +3898,50 @@
   },
   "slotSamples › drops, tilts and dims the neighbouring slots at rest": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1489,41 +3949,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1531,10 +3956,50 @@
   },
   "slotSamples › holds outer slots at the capped tilt and dimming": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1542,41 +4007,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1584,10 +4014,50 @@
   },
   "slotSamples › lands an arriving neighbour in the exact centre pose": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1595,41 +4065,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1637,10 +4072,50 @@
   },
   "slotSamples › puts the centre slot at rest upright, centred and at full opacity": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1648,41 +4123,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1690,10 +4130,50 @@
   },
   "slotSamples › returns three samples for every property": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1701,41 +4181,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1743,10 +4188,50 @@
   },
   "slotSamples › sends the departing centre card into the exact side pose": {
     "file": "lib/cardPickerLayout.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1754,41 +4239,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1796,10 +4246,50 @@
   },
   "t › differs between languages for translated copy": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1808,36 +4298,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "t › has a non-empty string for every key in both languages": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1846,36 +4356,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "t › returns the English string for the same key": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1884,31 +4414,56 @@
       {
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:29.980653+00:00",
-        "kind": "full",
         "status": "pass"
       }
     ]
   },
   "t › returns the Spanish string for a key": {
     "file": "lib/lang.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1918,35 +4473,55 @@
         "at": "2026-07-23T19:53:53.974214+00:00",
         "kind": "changed",
         "status": "pass"
-      },
-      {
-        "at": "2026-07-23T19:52:31.868042+00:00",
-        "kind": "changed",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
-        "kind": "full",
-        "status": "pass"
       }
     ]
   },
   "toDateKey › formats a date as YYYY-MM-DD": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1954,16 +4529,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1971,10 +4536,50 @@
   },
   "toDateKey › uses the local day, not UTC": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -1982,16 +4587,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -1999,10 +4594,50 @@
   },
   "toDateKey › zero-pads single-digit months and days": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2010,16 +4645,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2027,10 +4652,50 @@
   },
   "today › honours a seeded override": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2038,16 +4703,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2055,10 +4710,50 @@
   },
   "today › returns the real day when nothing is seeded": {
     "file": "lib/dailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2066,16 +4761,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:34:07.581096+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2083,10 +4768,50 @@
   },
   "useDailyCard › counts past cards": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2094,41 +4819,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2136,10 +4826,50 @@
   },
   "useDailyCard › does not write again when the card is already revealed": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2147,41 +4877,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2189,10 +4884,50 @@
   },
   "useDailyCard › exposes the loaded card and its date": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2200,41 +4935,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2242,10 +4942,50 @@
   },
   "useDailyCard › ignores a load that lands after unmount": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2253,41 +4993,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2295,10 +5000,50 @@
   },
   "useDailyCard › ignores a reveal that arrives before the card has loaded": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2306,41 +5051,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2348,10 +5058,50 @@
   },
   "useDailyCard › reports an already-revealed card as revealed": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2359,41 +5109,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2401,10 +5116,50 @@
   },
   "useDailyCard › reveals optimistically and persists the reveal": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2412,41 +5167,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2454,10 +5174,50 @@
   },
   "useDailyCard › starts empty before storage answers": {
     "file": "lib/useDailyCard.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2465,41 +5225,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2507,10 +5232,50 @@
   },
   "useTurnUp › cancels a pending turn when unmounted": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2518,41 +5283,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2560,10 +5290,50 @@
   },
   "useTurnUp › has not turned before the delay has elapsed": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2571,41 +5341,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2613,10 +5348,50 @@
   },
   "useTurnUp › is still face-down in the moment the card arrives": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2624,41 +5399,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2666,10 +5406,50 @@
   },
   "useTurnUp › returns to face-down when the card is cleared": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2677,41 +5457,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2719,10 +5464,50 @@
   },
   "useTurnUp › stays face-down when there is no card": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2730,41 +5515,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2772,10 +5522,50 @@
   },
   "useTurnUp › turns again for a newly chosen card": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2783,41 +5573,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }
@@ -2825,10 +5580,50 @@
   },
   "useTurnUp › turns face-up once the delay has elapsed": {
     "file": "lib/useTurnUp.test.ts",
-    "lastRunAt": "2026-07-23T20:52:42.631882+00:00",
+    "lastRunAt": "2026-07-27T15:42:21.408476+00:00",
     "lastRunKind": "full",
     "lastStatus": "pass",
     "recentStatuses": [
+      {
+        "at": "2026-07-27T15:42:21.408476+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:41:13.642733+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:37:13.255837+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:31:19.539353+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:32.745582+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T15:23:10.866533+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:31:27.115577+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
+      {
+        "at": "2026-07-27T14:27:53.606739+00:00",
+        "kind": "full",
+        "status": "pass"
+      },
       {
         "at": "2026-07-23T20:52:42.631882+00:00",
         "kind": "full",
@@ -2836,41 +5631,6 @@
       },
       {
         "at": "2026-07-21T01:38:04.237644+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:35:24.435233+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:32:13.674151+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:31:16.791558+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:30:42.965546+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T01:22:48.103892+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:49:20.887397+00:00",
-        "kind": "full",
-        "status": "pass"
-      },
-      {
-        "at": "2026-07-21T00:26:53.542897+00:00",
         "kind": "full",
         "status": "pass"
       }

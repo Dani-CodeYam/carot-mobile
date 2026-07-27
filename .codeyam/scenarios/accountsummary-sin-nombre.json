@@ -1,0 +1,11 @@
+{
+  "name": "AccountSummary - Sin nombre",
+  "id": "4cc9373b-4b8c-4c08-899a-654588561697",
+  "url": "/isolated-components/AccountSummary?s=SinNombre",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AccountSummary",
+  "scenarioType": "component"
+}

@@ -110,6 +110,22 @@ const COPY = {
     menuClose: 'Cerrar menú',
     galleryEntry: 'Ver todas las cartas',
     historyEntry: 'Historial',
+
+    // Cuenta
+    welcomeNamed: '¡Bienvenida, {name}!',
+    signInEntry: 'Iniciar sesión',
+    signOutEntry: 'Cerrar sesión',
+    loginTitle: 'Tu cuenta',
+    loginIntro:
+      'Entrá y tus cartas te siguen a donde vayas.\nEl Carot funciona igual sin cuenta.',
+    continueApple: 'Continuar con Apple',
+    continueGoogle: 'Continuar con Google',
+    continueWithout: 'Seguir sin cuenta',
+    loginOnPhone: 'Disponible en la app del teléfono.',
+    loginNotConfigured: 'Todavía sin configurar.',
+    loginFailed: 'No pudimos entrar. Probá de nuevo.',
+    signedInIntro: 'Estás usando El Carot con tu cuenta.',
+    signedInNoName: 'Tu cuenta',
   },
   en: {
     dailyTitle: 'Card of the day',
@@ -150,6 +166,22 @@ const COPY = {
     menuClose: 'Close menu',
     galleryEntry: 'See all cards',
     historyEntry: 'History',
+
+    // Account
+    welcomeNamed: 'Welcome, {name}!',
+    signInEntry: 'Sign in',
+    signOutEntry: 'Sign out',
+    loginTitle: 'Your account',
+    loginIntro:
+      'Sign in and your cards follow you wherever you go.\nEl Carot works just the same without an account.',
+    continueApple: 'Continue with Apple',
+    continueGoogle: 'Continue with Google',
+    continueWithout: 'Continue without an account',
+    loginOnPhone: 'Available in the phone app.',
+    loginNotConfigured: 'Not set up yet.',
+    loginFailed: "We couldn't sign you in. Try again.",
+    signedInIntro: "You're using El Carot with your account.",
+    signedInNoName: 'Your account',
   },
 } as const;
 

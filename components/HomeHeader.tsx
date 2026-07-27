@@ -16,7 +16,12 @@ export function HomeHeader({ welcome }: { welcome: string }) {
       <View style={styles.side}>
         <LangToggle />
       </View>
-      <Text style={styles.welcome}>{welcome}</Text>
+      {/* Bounded and single-line: the greeting carries a name now, and an
+          unconstrained Text grows straight over the toggle and the star
+          instead of yielding to them. */}
+      <Text style={styles.welcome} numberOfLines={1}>
+        {welcome}
+      </Text>
       {/* Balances the toggle so the greeting sits optically centred whichever
           language is showing. */}
       <View style={[styles.side, styles.right]}>
@@ -43,5 +48,9 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.display,
     fontSize: theme.fontSize.lg,
     textAlign: 'center',
+    // Yields to the toggle and the star rather than overrunning them when a
+    // name makes the greeting long.
+    flexShrink: 1,
+    paddingHorizontal: theme.spacing.sm,
   },
 });

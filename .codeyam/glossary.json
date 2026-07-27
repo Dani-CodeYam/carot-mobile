@@ -1,5 +1,26 @@
 [
   {
+    "description": "Who you are signed in as — the one thing the account screen exists to say, set in the display face because for that screen it is the title. Clamped to two lines so a full Spanish name of two given names and two surnames settles instead of pushing the sign-out button off the screen.",
+    "filePath": "components/AccountName.tsx",
+    "name": "AccountName",
+    "scenarios": [
+      "accountname-default",
+      "accountname-largo",
+      "accountname-fallback"
+    ]
+  },
+  {
+    "description": "What the account screen shows once you are in: who you are, and the way out. The name is nullable on purpose — Apple hands it over only on the first authorization and lets the reader hide it entirely — so it falls back to a neutral label rather than leaving a blank line where a person should be.",
+    "filePath": "components/AccountSummary.tsx",
+    "name": "AccountSummary",
+    "scenarios": [
+      "accountsummary-default",
+      "accountsummary-sin-nombre",
+      "accountsummary-nombre-largo",
+      "accountsummary-english"
+    ]
+  },
+  {
     "description": "Gives a screen's closing action the full column width, so a button inside a centred reveal still matches the bars on Home instead of shrinking to its label.",
     "filePath": "components/ActionBar.tsx",
     "name": "ActionBar",
@@ -25,6 +46,14 @@
     "scenarios": [
       "askedquestion-default",
       "askedquestion-long-question"
+    ]
+  },
+  {
+    "description": "Holds the session and owns every provider detail, so no screen imports expo-apple-authentication or expo-auth-session itself. Its resting state is signed out and every screen renders fine in it; signing in only adds a name to the greeting and a private drawer for the cards. Availability is exposed as data rather than as failure, so the UI can say why a provider is unusable instead of offering a button that dies on tap.",
+    "filePath": "lib/auth.tsx",
+    "name": "AuthProvider",
+    "scenarios": [
+      "authprovider-default"
     ]
   },
   {
@@ -134,7 +163,11 @@
     "filePath": "app/history.tsx",
     "name": "HistoryScreen",
     "scenarios": [
-      "cartas-anteriores"
+      "cartas-anteriores",
+      "cartas-anteriores-una-sola",
+      "cartas-anteriores-con-historial",
+      "cartas-anteriores-un-mes",
+      "cartas-anteriores-con-cuenta"
     ]
   },
   {
@@ -186,6 +219,25 @@
     ]
   },
   {
+    "description": "What we say when signing in did not work. Deliberately one short line in the deck's red rather than a banner: a failed sign-in costs nothing here because the app is fully usable without an account, so it warrants a note, not an alarm.",
+    "filePath": "components/LoginError.tsx",
+    "name": "LoginError",
+    "scenarios": [
+      "loginerror-default",
+      "loginerror-english"
+    ]
+  },
+  {
+    "description": "Tu cuenta — the only screen where signing in happens, and it is optional: nothing in El Carot redirects here and no route waits on a session. Two faces on one route — signed out it offers Apple, Google and a way straight back out; signed in it shows who you are and how to leave — so the menu has one destination either way and signing in or out lands somewhere sensible.",
+    "filePath": "app/login.tsx",
+    "name": "LoginScreen",
+    "scenarios": [
+      "tu-cuenta-sin-sesión",
+      "tu-cuenta-con-sesión",
+      "tu-cuenta-sin-nombre"
+    ]
+  },
+  {
     "description": "The dim behind the slide-in menu — a full-screen Pressable that closes the menu on tap, its black overlay fading in on the opacity NavMenu passes from the shared open animation.",
     "filePath": "components/MenuBackdrop.tsx",
     "name": "MenuBackdrop",
@@ -225,6 +277,16 @@
     "name": "NavMenu",
     "scenarios": [
       "navmenu-open"
+    ]
+  },
+  {
+    "description": "One way in — the provider's button and the reason it cannot be used. Apple and Google render identically, which is why this exists rather than the same block written twice. An unusable provider stays visible and dimmed with the reason underneath, because a missing button reads as a bug while an explained one reads as an explanation; the note IS the disabled state.",
+    "filePath": "components/ProviderOption.tsx",
+    "name": "ProviderOption",
+    "scenarios": [
+      "provideroption-default",
+      "provideroption-unavailable",
+      "provideroption-no-configurado"
     ]
   },
   {
@@ -296,6 +358,17 @@
     ]
   },
   {
+    "description": "The two ways in and the way past. Purely presentational — handed labels and availability, it reports taps — which is what lets it be rendered for states that are awkward to reach for real, including both providers actually working. Seguir sin cuenta sits with the providers rather than tucked away as a link, because in El Carot it is not the lesser option.",
+    "filePath": "components/SignInPanel.tsx",
+    "name": "SignInPanel",
+    "scenarios": [
+      "signinpanel-default",
+      "signinpanel-unavailable",
+      "signinpanel-error",
+      "signinpanel-english"
+    ]
+  },
+  {
     "description": "The ✳ in the header — the button that opens the app menu. Shared by both headers so they wire one handler and one label; size is a prop because Home sets the star larger than the shared ScreenHeader.",
     "filePath": "components/StarLink.tsx",
     "name": "StarLink",
@@ -328,6 +401,12 @@
     "scenarios": [
       "wordmark-default"
     ]
+  },
+  {
+    "description": "Namespaces a provider's subject id with the provider that issued it, so an Apple and a Google account can never collide on the same string. The result is the suffix used by scopedKey.",
+    "filePath": "lib/account.ts",
+    "name": "accountId",
+    "testFile": "lib/account.test.ts"
   },
   {
     "description": "Adds a day to the trail, newest-first and never twice for the same date — re-adding a day replaces it rather than duplicating the row.",
@@ -372,10 +451,28 @@
     "testFile": "lib/cardPickerLayout.test.ts"
   },
   {
+    "description": "The name to actually show, or null when there isn't a usable one. Treats a missing session, a withheld name, and empty or whitespace-only strings alike as no name, so the greeting never renders with a hole where a person should be.",
+    "filePath": "lib/account.ts",
+    "name": "displayName",
+    "testFile": "lib/account.test.ts"
+  },
+  {
+    "description": "Takes just the given name from a display name. Apple returns whatever the account holds, routinely four parts in Spanish-speaking countries, and a greeting should use the name a person's friends use — this is also what keeps a long name from overrunning the home header.",
+    "filePath": "lib/account.ts",
+    "name": "firstName",
+    "testFile": "lib/account.test.ts"
+  },
+  {
     "description": "Renders a stored YYYY-MM-DD as the day a card belonged to, in the reader's language. Capitalizes only the first letter in Spanish, which lowercases weekdays and months — CSS `capitalize` would give \"Lunes, 20 De Julio\".",
     "filePath": "lib/lang.tsx",
     "name": "formatDay",
     "testFile": "lib/lang.test.ts"
+  },
+  {
+    "description": "Joins Apple's separate given and family name parts, tolerating either or both being missing or blank, and returns null when nothing usable is left so it can feed Session.name directly.",
+    "filePath": "lib/account.ts",
+    "name": "fullName",
+    "testFile": "lib/account.test.ts"
   },
   {
     "description": "Back navigation that survives a deep link. `router.back()` is a no-op when there is no history to pop — exactly what happens when a screen is opened directly by URL — so it falls back to an explicit destination and the back control keeps working either way.",
@@ -385,6 +482,12 @@
       "justification": "A two-line expo-router boundary: it reads router.canGoBack() and calls back() or replace(). There is no logic of its own to assert — only the router calls, which need a live navigation stack. Its effect is visible in every ScreenHeader scenario.",
       "kind": "platform-glue"
     }
+  },
+  {
+    "description": "Chooses the home greeting: the personalised line with the given name substituted when one is available, otherwise the plain welcome El Carot has always shown. Both copy strings arrive already localised, so this picks rather than translates.",
+    "filePath": "lib/account.ts",
+    "name": "greeting",
+    "testFile": "lib/account.test.ts"
   },
   {
     "description": "Loads today's state, rolling the day over when the stored draw is stale: a stale draw that was revealed graduates into history, while one never opened is dropped, on the reasoning that an unopened card was never really yours.",
@@ -409,6 +512,24 @@
     "filePath": "lib/dailyCard.ts",
     "name": "revealToday",
     "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Resolves where a piece of per-reader data lives: the bare storage key when signed out, or the key suffixed with the account id when signed in. This is what makes signing in non-destructive — an account writes only to its own suffixed key, so the signed-out trail survives untouched and reappears on sign-out.",
+    "filePath": "lib/account.ts",
+    "name": "scopedKey",
+    "testFile": "lib/account.test.ts"
+  },
+  {
+    "description": "Builds a session from an Apple credential while keeping what Apple stops telling us. Apple sends the name and email only on the very first authorization a user ever grants the app, so a later sign-in would otherwise blank out a name already known; anything the credential omits falls back to the previously held session for that same account, and only a session for the SAME account may donate it.",
+    "filePath": "lib/account.ts",
+    "name": "sessionFromApple",
+    "testFile": "lib/account.test.ts"
+  },
+  {
+    "description": "Builds a session from Google's userinfo response. Simpler than Apple's because Google returns the profile on every sign-in, so there is nothing to remember; absent fields still normalise to null rather than undefined so a stored session always has one shape.",
+    "filePath": "lib/account.ts",
+    "name": "sessionFromGoogleProfile",
+    "testFile": "lib/account.test.ts"
   },
   {
     "description": "Returns the whole 22-card deck in random order for the pick-your-own-card spread. Fisher-Yates over a copy, so the shared source deck is never reordered. Shuffling is what makes choosing a face-down card a real draw rather than picking an index.",
@@ -448,6 +569,15 @@
     "filePath": "lib/dailyCard.ts",
     "name": "today",
     "testFile": "lib/dailyCard.test.ts"
+  },
+  {
+    "description": "Reads the session context: who is signed in, whether the stored session has loaded yet, which providers are usable here, and the sign-in and sign-out actions. Consumers use this instead of importing expo-apple-authentication or expo-auth-session themselves.",
+    "filePath": "lib/auth.tsx",
+    "name": "useAuth",
+    "untestabilityReason": {
+      "justification": "A one-line useContext read with no logic of its own, matching the existing useLang and useMenu entries. Everything it returns is produced by AuthProvider, whose session-shaping rules are asserted directly through the sessionFromApple, sessionFromGoogleProfile, scopedKey and greeting tests in lib/account.test.ts.",
+      "kind": "trivial-wrapper"
+    }
   },
   {
     "description": "Loads today's card, its date, whether it has been revealed, and how many past cards exist. Reveal is optimistic — the card turns immediately and the write follows — and is a no-op on an already-open card or before the load lands.",

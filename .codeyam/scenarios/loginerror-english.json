@@ -1,0 +1,11 @@
+{
+  "name": "LoginError - English",
+  "id": "f5e12056-ea69-4906-b9b2-54558c995701",
+  "url": "/isolated-components/LoginError?s=English",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "LoginError",
+  "scenarioType": "component"
+}

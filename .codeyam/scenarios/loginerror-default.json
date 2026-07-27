@@ -1,0 +1,11 @@
+{
+  "name": "LoginError - Default",
+  "id": "5752b14b-9964-49e0-81ce-c5d2a1728c2f",
+  "url": "/isolated-components/LoginError?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "LoginError",
+  "scenarioType": "component"
+}

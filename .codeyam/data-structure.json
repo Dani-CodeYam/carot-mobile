@@ -26,7 +26,7 @@
     },
     {
       "name": "elcarot.history",
-      "description": "Past daily cards, newest first. A day is appended once its card is revealed. Empty array on a fresh install.",
+      "description": "Past daily cards for the signed-out reader, newest first. A day is appended once its card is revealed. Empty array on a fresh install. When an account is signed in this key is left untouched and the scoped key below is read instead, so signing out restores exactly the trail that was there before.",
       "shape": "array",
       "fields": [
         {
@@ -38,6 +38,72 @@
           "name": "n",
           "type": "number",
           "description": "Major-arcana index 0-21."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.history.<accountId>",
+      "description": "Past daily cards belonging to one signed-in account — same shape as elcarot.history, one key per account. The suffix is the account id from elcarot.session. Two people signing in on the same phone each get their own trail, and neither can see the other's.",
+      "shape": "array",
+      "fields": [
+        {
+          "name": "date",
+          "type": "string",
+          "description": "The calendar day, YYYY-MM-DD."
+        },
+        {
+          "name": "n",
+          "type": "number",
+          "description": "Major-arcana index 0-21."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.dailyCard.<accountId>",
+      "description": "The current day's card for one signed-in account — same shape as elcarot.dailyCard, one key per account. Absent while signed out, when the unscoped key is used instead.",
+      "shape": "object",
+      "fields": [
+        {
+          "name": "date",
+          "type": "string",
+          "description": "Local calendar day the card belongs to, as YYYY-MM-DD."
+        },
+        {
+          "name": "n",
+          "type": "number",
+          "description": "Major-arcana index 0-21."
+        },
+        {
+          "name": "revealed",
+          "type": "boolean",
+          "description": "Whether the user has already flipped the card face-up."
+        }
+      ]
+    },
+    {
+      "name": "elcarot.session",
+      "description": "The account currently signed in, or absent when reading anonymously. Login is entirely optional in El Carot — the app is fully usable with this key missing, which is the production default on a fresh install. Written on a successful Apple or Google sign-in and removed on sign-out.",
+      "shape": "object",
+      "fields": [
+        {
+          "name": "provider",
+          "type": "string",
+          "description": "'apple' or 'google' — which button the reader signed in with."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Stable account identifier from the provider, namespaced by provider so an Apple and a Google account can never collide. Used as the suffix on the scoped history and daily-card keys."
+        },
+        {
+          "name": "name",
+          "type": "string | null",
+          "description": "Display name for the greeting. Null when the provider withheld it — Apple only returns the name on the very first authorization, and lets the user hide it entirely — so the greeting must fall back to the generic welcome rather than render an empty name."
+        },
+        {
+          "name": "email",
+          "type": "string | null",
+          "description": "Provider email, when shared. Null for Apple's private-relay users who declined to share it. Not displayed anywhere today; stored so an account stays recognisable if the name is withheld."
         }
       ]
     },

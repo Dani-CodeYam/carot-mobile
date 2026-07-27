@@ -1,0 +1,20 @@
+{
+  "name": "Home - Nombre largo",
+  "id": "7a6af0e0-c25b-421d-ac32-d5df81a6fac5",
+  "url": "/",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.session": {
+      "email": "mfetcheverry@icloud.com",
+      "id": "apple:001188.7c5f2a9b3e6d1084c7f2b5e8a1d4079c.2033",
+      "name": "María Fernanda Etcheverry Balcarce",
+      "provider": "apple"
+    },
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/index.tsx"
+}

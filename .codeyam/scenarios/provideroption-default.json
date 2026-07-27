@@ -1,0 +1,11 @@
+{
+  "name": "ProviderOption - Default",
+  "id": "5aa364b2-e6c3-4d85-9642-58f7d0d440fc",
+  "url": "/isolated-components/ProviderOption?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "ProviderOption",
+  "scenarioType": "component"
+}

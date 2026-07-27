@@ -20,6 +20,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MenuBackdrop } from '@/components/MenuBackdrop';
 import { MenuHeader } from '@/components/MenuHeader';
 import { MenuItem } from '@/components/MenuItem';
+import { displayName } from '@/lib/account';
+import { useAuth } from '@/lib/auth';
 import { t, useLang } from '@/lib/lang';
 import { menuPanelWidth } from '@/lib/menuLayout';
 import { useMenu } from '@/lib/menu';
@@ -39,6 +41,7 @@ const CLOSE_MS = 200;
 export function NavMenu() {
   const { open, closeMenu } = useMenu();
   const { lang } = useLang();
+  const { session, signOut } = useAuth();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const panelWidth = menuPanelWidth(width);
@@ -101,6 +104,27 @@ export function NavMenu() {
         {ITEMS.map((item) => (
           <MenuItem key={item.route} label={t(lang, item.key)} onPress={() => go(item.route)} />
         ))}
+
+        {/* The account sits last, after the ways to read — signing in is an
+            aside in El Carot, not the front door. Signed out it is a single
+            invitation; signed in it becomes who you are plus the way out. */}
+        {session ? (
+          <>
+            <MenuItem
+              label={displayName(session) ?? t(lang, 'signedInNoName')}
+              onPress={() => go('/login')}
+            />
+            <MenuItem
+              label={t(lang, 'signOutEntry')}
+              onPress={() => {
+                closeMenu();
+                signOut();
+              }}
+            />
+          </>
+        ) : (
+          <MenuItem label={t(lang, 'signInEntry')} onPress={() => go('/login')} />
+        )}
       </Animated.View>
     </View>
   );

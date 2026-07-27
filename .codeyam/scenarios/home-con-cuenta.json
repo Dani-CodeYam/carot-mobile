@@ -1,0 +1,20 @@
+{
+  "name": "Home - Con cuenta",
+  "id": "64e9bb0e-abd1-4348-a503-16dd87f27eff",
+  "url": "/",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "seed": {
+    "elcarot.session": {
+      "email": "dani@privaterelay.appleid.com",
+      "id": "apple:001402.8f3c9d2e1a7b4c5d9e6f0a1b2c3d4e5f.0921",
+      "name": "Dani",
+      "provider": "apple"
+    },
+    "elcarot.todayOverride": "2026-07-20"
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/index.tsx"
+}

@@ -1,0 +1,18 @@
+{
+  "$comment": "A real full name of the length Spanish-speaking users actually have — two given names and two surnames. Apple returns givenName + familyName concatenated, so this is what arrives, not a nickname. It has to sit in the home greeting and in the menu without shoving the language toggle or the star off their line.",
+  "type": "application",
+  "seed": {
+    "elcarot.todayOverride": "2026-07-20",
+    "elcarot.session": {
+      "provider": "apple",
+      "id": "apple:001188.7c5f2a9b3e6d1084c7f2b5e8a1d4079c.2033",
+      "name": "María Fernanda Etcheverry Balcarce",
+      "email": "mfetcheverry@icloud.com"
+    },
+    "elcarot.history.apple:001188.7c5f2a9b3e6d1084c7f2b5e8a1d4079c.2033": [
+      { "date": "2026-07-19", "n": 4 },
+      { "date": "2026-07-17", "n": 13 },
+      { "date": "2026-07-16", "n": 18 }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "SignInPanel - Default",
+  "id": "37ec6191-8448-4585-94a1-7b5772f9e083",
+  "url": "/isolated-components/SignInPanel?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "SignInPanel",
+  "scenarioType": "component"
+}

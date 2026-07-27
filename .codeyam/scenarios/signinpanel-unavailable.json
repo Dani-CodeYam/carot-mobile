@@ -1,0 +1,11 @@
+{
+  "name": "SignInPanel - Unavailable",
+  "id": "2c97f8e3-882a-499d-9c55-02dcae753852",
+  "url": "/isolated-components/SignInPanel?s=Unavailable",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "SignInPanel",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "AccountSummary - Nombre largo",
+  "id": "56632ab7-9162-4320-ac8b-66b1912407ac",
+  "url": "/isolated-components/AccountSummary?s=NombreLargo",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "AccountSummary",
+  "scenarioType": "component"
+}
