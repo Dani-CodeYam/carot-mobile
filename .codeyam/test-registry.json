@@ -302,7 +302,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "clamp › caps anything further out at one card",
-      "line": 17,
+      "line": 22,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -311,7 +311,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "clamp › leaves values within one card either side untouched",
-      "line": 9,
+      "line": 14,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -502,6 +502,51 @@
       "key": "greeting › works the same in the other language",
       "line": 150,
       "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Fingers do not travel in straight lines. Demanding a purely horizontal drag rejected most real swipes, so a drag only has to be 1.2x more sideways than not — 30 across and 20 down is a swipe, not a scroll.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "isHorizontalSwipe › accepts a diagonal drag that is mostly sideways",
+      "line": 127,
+      "registeredAt": "2026-07-29T14:42:02Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Past the threshold a sideways drag is claimed, in either direction — the spread wraps, so neither edge is special.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "isHorizontalSwipe › claims a clear sideways drag either way",
+      "line": 110,
+      "registeredAt": "2026-07-29T14:42:02Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A tap, or the first pixel of any drag, is not yet an intent to move. The spread must let those through or it swallows the tap that chooses a card.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "isHorizontalSwipe › ignores a stationary or barely-moved finger",
+      "line": 102,
+      "registeredAt": "2026-07-29T14:42:02Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The whole point of the predicate: a vertical drag belongs to the page, which still has to scroll even when the finger started on the cards.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "isHorizontalSwipe › leaves a vertical drag alone",
+      "line": 118,
+      "registeredAt": "2026-07-29T14:42:02Z",
+      "runner": "tests"
+    },
+    {
+      "description": "...but not one that is merely sideways-ish. Just past parity still reads as a diagonal scroll, and claiming it would fight the page.",
+      "file": "lib/cardPickerLayout.test.ts",
+      "format": "vitest",
+      "key": "isHorizontalSwipe › rejects a diagonal drag that is only slightly sideways",
+      "line": 134,
+      "registeredAt": "2026-07-29T14:42:02Z",
       "runner": "tests"
     },
     {
@@ -761,7 +806,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › drops, tilts and dims the neighbouring slots at rest",
-      "line": 46,
+      "line": 51,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -770,7 +815,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › holds outer slots at the capped tilt and dimming",
-      "line": 86,
+      "line": 91,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -779,7 +824,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › lands an arriving neighbour in the exact centre pose",
-      "line": 61,
+      "line": 66,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -788,7 +833,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › puts the centre slot at rest upright, centred and at full opacity",
-      "line": 36,
+      "line": 41,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -797,7 +842,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › returns three samples for every property",
-      "line": 26,
+      "line": 31,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },
@@ -806,7 +851,7 @@
       "file": "lib/cardPickerLayout.test.ts",
       "format": "vitest",
       "key": "slotSamples › sends the departing centre card into the exact side pose",
-      "line": 74,
+      "line": 79,
       "registeredAt": "2026-07-21T00:26:53.542897+00:00",
       "runner": "tests"
     },

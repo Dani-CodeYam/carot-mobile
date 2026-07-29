@@ -1,0 +1,11 @@
+{
+  "name": "Star - Home size",
+  "id": "eaa46649-5667-4249-9a9d-358d582082e1",
+  "url": "/isolated-components/Star?s=Home%20size",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Star",
+  "scenarioType": "component"
+}

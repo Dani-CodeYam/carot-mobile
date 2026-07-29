@@ -57,6 +57,11 @@ npm run ios      # iOS simulator
 npm run android  # Android emulator
 ```
 
+Building onto a real iPhone needs a signing team and a couple of flags that
+`expo run:ios` omits — see `MOBILE_SETUP.md`. Shipping to the App Store,
+including the Pre-Order flow, is in `RELEASE.md`, and the listing copy, privacy
+policy and screenshots live in `store/`.
+
 ## Using CodeYam Editor
 
 This project was built with [CodeYam](https://codeyam.com). To launch the editor:

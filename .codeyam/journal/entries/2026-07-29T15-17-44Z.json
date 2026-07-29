@@ -1,0 +1,1223 @@
+{
+  "timestamp": "2026-07-29T15:17:44Z",
+  "title": "El Carot en el teléfono, y camino a la App Store",
+  "type": "feature",
+  "userRequest": "quiero poner esta en mi telefono, probarla y despues ponerla app en el app store como Pre Order, como hago?",
+  "description": "La pregunta era cómo poner El Carot en un iPhone y después publicarla como Pre-Order. La respuesta resultó tener dos mitades: el trámite, y tres bugs que sólo existían en el teléfono.\n\nEL CAMINO A LA TIENDA\n\napp.json quedó con ícono, splash, buildNumber, supportsTablet en false y la declaración de encriptación — esta última evita que Xcode pregunte por export compliance en cada subida. RELEASE.md documenta el trámite entero hasta el Pre-Order, verificado contra la documentación de Apple y no de memoria: el Pre-Order NO saltea la revisión, la fecha va entre 2 y 180 días, y una vez que esa fecha pasa la app no se puede volver a ofrecer así nunca más.\n\nMOBILE_SETUP.md estaba escrito para Xcode 16.4 e indicaba parchear el Podfile a mano con SWIFT_VERSION = '5.0'. En Xcode 26 eso es innecesario: la propia plantilla de Expo ya lo setea. Lo que sí hace falta y no estaba documentado es que `expo run:ios` no pasa -allowProvisioningUpdates, así que falla al crear el perfil en cualquier máquina nueva.\n\nEn store/ quedaron los textos de la ficha en español e inglés, la política de privacidad y las respuestas del cuestionario de App Privacy. La respuesta correcta ahí es 'No recopilamos datos': para Apple 'collect' significa transmitir fuera del dispositivo, y El Carot no tiene servidores.\n\nTRES BUGS QUE EL PREVIEW WEB NO PODÍA MOSTRAR\n\nEsta es la parte que importa, porque los tres eran invisibles hasta correr la app en un teléfono real.\n\nLas tipografías no cargaban hasta que el usuario tocaba el selector ES/EN. La causa: _layout llamaba a useFonts y descartaba su resultado. Las fuentes cargan de forma asíncrona y el navegador memoiza las pantallas, así que el texto ya montado se quedaba con la fuente de sistema hasta que un cambio de estado no relacionado forzaba un re-render. Ahora el árbol se retiene un frame detrás del splash hasta que las caras están registradas. Web queda exento porque react-native-web resuelve @font-face sin esto y el preview no debe quedar en blanco.\n\nLas estrellas se veían como cuadraditos verdes de emoji. El carácter ✳ es U+2733, que en iOS tiene presentación emoji: el sistema lo dibuja con la fuente de emoji a color e ignora el color del theme por completo. Un glifo que no se puede colorear no es un token de diseño, así que la marca pasó a ser arte propio del mazo. Se envía un PNG por tono en vez de tintar en runtime: tintColor es correcto en el dispositivo pero se renderiza blanco en la captura headless del preview, lo que habría dejado las 94 capturas mostrando el color equivocado.\n\nEl swipe del mazo perdía contra el scroll de la página. El primer intento —bajar umbrales del PanResponder y reclamar en fase de captura— no cambió nada, y por una razón de fondo: en iOS esa negociación no se gana desde JavaScript. El ScrollView es un UIScrollView real y cancela los toques de su contenido apenas decide scrollear; onShouldBlockNativeResponder es sólo de Android. La solución es que Screen exponga un useScrollLock y el picker apague el scroll mientras tiene el dedo. El costo es deliberado: sobre las cartas la página ya no scrollea, que es como se comporta cualquier carrusel.\n\nUN BUG DE CODEYAM\n\nEl generador de slugs producía slugs que el pipeline de seed después rechazaba. Un escenario llamado 'Carta del día' generaba el slug carta-del-día, y al capturarlo fallaba con 'only ASCII letters, digits, - and _ are allowed'. Seis escenarios quedaban imposibles de capturar, y el error aparecía mucho después del registro. Se renombraron los archivos a ASCII conservando los nombres visibles con acento; el arreglo de fondo sería que el slugifier translitere.\n\nQUÉ SE EXTRAJO\n\nisHorizontalSwipe salió de CardPicker a lib/cardPickerLayout.ts, que ya guardaba la aritmética pura del picker y dice en su propio comentario que es 'la parte que vale la pena testear sin renderizar nada'. Cinco tests nuevos, red-first, cubren el predicado: el umbral de intención, ambas direcciones, el rechazo de arrastres verticales y la tolerancia diagonal de 1.2x.\n\nQUEDA PENDIENTE\n\nEl botón de Google renderiza deshabilitado diciendo 'no configurado' porque no hay client IDs, y mandar eso a revisión invita un rechazo por funcionalidad incompleta. Sacarlo para la v1 es un cambio de UI aparte. También quedan las capturas de la ficha, alojar la política de privacidad y conseguir la Support URL.",
+  "modifiedFiles": [
+    {
+      "path": ".claude/hooks/_step_metadata.py",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/hooks/editor-pretool-hook.py",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/hooks/editor-step-hook.py",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/finalize-procedure.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-design/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-edit-plan/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-editor/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-explore/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-new-app/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-onboard/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-plan/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-prototype/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/review-procedure.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-app/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-recent-change/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-slice/SKILL.md",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/capture.js",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/editor.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenario-handlers.js",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenario-interactivity.js",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenario-playwright.js",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/carta-del-día-revelada.json\t.codeyam/scenarios/carta-del-dia-revelada.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/carta-del-día.json\t.codeyam/scenarios/carta-del-dia.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/navmenu-con-sesión.json\t.codeyam/scenarios/navmenu-con-sesion.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-fallback--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-fallback--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-largo--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountname-largo--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-nombre-largo--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-nombre-largo--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-sin-nombre--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/accountsummary-sin-nombre--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-outlined--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbar-outlined--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-disabled--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-disabled--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-filled--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-filled--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-outline--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/actionbutton-outline--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-long-question--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/askedquestion-long-question--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/authprovider-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/authprovider-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardfan-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardfan-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardpicker-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardpicker-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-long-meaning--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-long-meaning--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-spanish--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardreveal-spanish--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-awaiting-tap--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-awaiting-tap--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-revealed--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-revealed--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-self-turning--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cardstage-self-turning--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-dia--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-dia--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-dia-revelada--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-dia-revelada--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-día--iphone-16.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-día--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-día-revelada--iphone-16.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/carta-del-día-revelada--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-cuenta--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-cuenta--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-con-historial--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-un-mes--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-un-mes--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-una-sola--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/cartas-anteriores-una-sola--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/choosecardstep-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-first-day--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-first-day--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-with-history--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dailyoutcome-with-history--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-alternate--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-alternate--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerycard-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerygrid-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/gallerygrid-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyempty-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyempty-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-collapsed--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-collapsed--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-expanded--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/historyrow-expanded--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-con-cuenta--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-con-cuenta--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-nombre-largo--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-nombre-largo--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeactions-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/homeheader-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langprovider-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langprovider-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langtoggle-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/langtoggle-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-single-line--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/lede-single-line--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/loginerror-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/loginerror-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/loginerror-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/loginerror-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menubackdrop-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menubackdrop-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuheader-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuitem-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuprovider-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/menuprovider-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-con-sesión--iphone-16.png\t.codeyam/scenarios/screenshots/navmenu-con-sesion--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-con-sesion--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-con-sesión--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/navmenu-open--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-no-configurado--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-no-configurado--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-unavailable--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/provideroption-unavailable--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-empty--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-empty--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-filled--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/questionform-filled--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/quiero-recibir-un-mensaje--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-centered--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-centered--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-top-aligned--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screen-top-aligned--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screenheader-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screenheader-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screensubtitle-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-two-lines--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/screentitle-two-lines--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-english--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-english--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-error--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-error--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-unavailable--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/signinpanel-unavailable--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-large--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starlink-large--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starrule-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/starrule-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-down--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-down--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-up--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tarotcard-face-up--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tengo-una-pregunta-especifica--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tengo-una-pregunta-especifica--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tengo-una-pregunta-específica--iphone-16.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tengo-una-pregunta-específica--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/todas-las-cartas--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-con-sesion--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-con-sesion--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-con-sesión--iphone-16.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-con-sesión--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-nombre--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-nombre--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-sesion--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-sesion--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-sesión--iphone-16.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/tu-cuenta-sin-sesión--iphone-16.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/wordmark-default--iphone-16.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/wordmark-default--iphone-16.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/tengo-una-pregunta-específica.json\t.codeyam/scenarios/tengo-una-pregunta-especifica.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/tu-cuenta-con-sesión.json\t.codeyam/scenarios/tu-cuenta-con-sesion.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/tu-cuenta-sin-sesión.json\t.codeyam/scenarios/tu-cuenta-sin-sesion.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".gitattributes",
+      "status": "modified"
+    },
+    {
+      "path": ".gitignore",
+      "status": "modified"
+    },
+    {
+      "path": "MOBILE_SETUP.md",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "RELEASE.md",
+      "status": "added"
+    },
+    {
+      "path": "app.json",
+      "status": "modified"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/Star.tsx",
+      "status": "added"
+    },
+    {
+      "path": "assets/adaptive-icon.png",
+      "status": "added"
+    },
+    {
+      "path": "assets/icon.png",
+      "status": "added"
+    },
+    {
+      "path": "assets/splash-icon.png",
+      "status": "added"
+    },
+    {
+      "path": "components/CardPicker.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/Screen.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/Star.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/StarLink.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/StarRule.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "lib/cardPickerLayout.test.ts",
+      "status": "modified"
+    },
+    {
+      "path": "lib/cardPickerLayout.ts",
+      "status": "modified"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "modified"
+    },
+    {
+      "path": "package.json",
+      "status": "modified"
+    },
+    {
+      "path": "patches/expo-modules-autolinking+3.0.24.patch\tpatches/expo-modules-autolinking+3.0.26.patch",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/.capture-pipeline.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-default--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-default--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-home-size--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-home-size--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-muted--iphone-16.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/star-muted--iphone-16.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/star-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/star-home-size.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/star-muted.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/merge-drivers-version",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/tool-loading-injected.json",
+      "status": "added"
+    },
+    {
+      "path": "assets/star-muted.png",
+      "status": "added"
+    },
+    {
+      "path": "assets/star-sage.png",
+      "status": "added"
+    },
+    {
+      "path": "store/README.md",
+      "status": "added"
+    },
+    {
+      "path": "store/app-privacy-answers.md",
+      "status": "added"
+    },
+    {
+      "path": "store/listing.md",
+      "status": "added"
+    },
+    {
+      "path": "store/privacy-policy.html",
+      "status": "added"
+    },
+    {
+      "path": "store/screenshots/01-home.png",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Carta del día",
+      "screenshotPath": "carta-del-dia--iphone-16.png"
+    },
+    {
+      "name": "Carta del día - Revelada",
+      "screenshotPath": "carta-del-dia-revelada--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores",
+      "screenshotPath": "cartas-anteriores--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Con cuenta",
+      "screenshotPath": "cartas-anteriores-con-cuenta--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Con historial",
+      "screenshotPath": "cartas-anteriores-con-historial--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Un mes",
+      "screenshotPath": "cartas-anteriores-un-mes--iphone-16.png"
+    },
+    {
+      "name": "Cartas anteriores - Una sola",
+      "screenshotPath": "cartas-anteriores-una-sola--iphone-16.png"
+    },
+    {
+      "name": "Home",
+      "screenshotPath": "home--iphone-16.png"
+    },
+    {
+      "name": "Home - Con cuenta",
+      "screenshotPath": "home-con-cuenta--iphone-16.png"
+    },
+    {
+      "name": "Home - Nombre largo",
+      "screenshotPath": "home-nombre-largo--iphone-16.png"
+    },
+    {
+      "name": "Quiero recibir un mensaje",
+      "screenshotPath": "quiero-recibir-un-mensaje--iphone-16.png"
+    },
+    {
+      "name": "Tengo una pregunta específica",
+      "screenshotPath": "tengo-una-pregunta-especifica--iphone-16.png"
+    },
+    {
+      "name": "Todas las cartas",
+      "screenshotPath": "todas-las-cartas--iphone-16.png"
+    },
+    {
+      "name": "Tu cuenta - Con sesión",
+      "screenshotPath": "tu-cuenta-con-sesion--iphone-16.png"
+    },
+    {
+      "name": "Tu cuenta - Sin nombre",
+      "screenshotPath": "tu-cuenta-sin-nombre--iphone-16.png"
+    },
+    {
+      "name": "Tu cuenta - Sin sesión",
+      "screenshotPath": "tu-cuenta-sin-sesion--iphone-16.png"
+    },
+    {
+      "name": "CardPicker - Default",
+      "screenshotPath": "cardpicker-default--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - English",
+      "screenshotPath": "cardreveal-english--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - Long meaning",
+      "screenshotPath": "cardreveal-long-meaning--iphone-16.png"
+    },
+    {
+      "name": "CardReveal - Spanish",
+      "screenshotPath": "cardreveal-spanish--iphone-16.png"
+    },
+    {
+      "name": "ChooseCardStep - Default",
+      "screenshotPath": "choosecardstep-default--iphone-16.png"
+    },
+    {
+      "name": "ChooseCardStep - English",
+      "screenshotPath": "choosecardstep-english--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - Default",
+      "screenshotPath": "homeheader-default--iphone-16.png"
+    },
+    {
+      "name": "HomeHeader - English",
+      "screenshotPath": "homeheader-english--iphone-16.png"
+    },
+    {
+      "name": "Screen - Centered",
+      "screenshotPath": "screen-centered--iphone-16.png"
+    },
+    {
+      "name": "Screen - Top aligned",
+      "screenshotPath": "screen-top-aligned--iphone-16.png"
+    },
+    {
+      "name": "ScreenHeader - Default",
+      "screenshotPath": "screenheader-default--iphone-16.png"
+    },
+    {
+      "name": "Star - Default",
+      "screenshotPath": "star-default--iphone-16.png"
+    },
+    {
+      "name": "Star - Home size",
+      "screenshotPath": "star-home-size--iphone-16.png"
+    },
+    {
+      "name": "Star - Muted",
+      "screenshotPath": "star-muted--iphone-16.png"
+    },
+    {
+      "name": "StarLink - Default",
+      "screenshotPath": "starlink-default--iphone-16.png"
+    },
+    {
+      "name": "StarLink - Large",
+      "screenshotPath": "starlink-large--iphone-16.png"
+    },
+    {
+      "name": "StarRule - Default",
+      "screenshotPath": "starrule-default--iphone-16.png"
+    }
+  ],
+  "testResults": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 13,
+        "passed": 13
+      }
+    ]
+  }
+}

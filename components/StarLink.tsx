@@ -7,10 +7,11 @@
  * one handler and one label rather than each wiring their own Pressable. Size is
  * a prop because the two headers set the star at different sizes.
  *
- * No fontFamily on the glyph: Josefin Sans has no coverage for ✳, so it stays
- * on the system face like the other symbol glyphs.
+ * The mark itself lives in Star — see the note there on why it is artwork and
+ * not a character.
  */
-import { Pressable, StyleSheet, Text } from 'react-native';
+import { Pressable } from 'react-native';
+import { Star } from '@/components/Star';
 import { t, useLang } from '@/lib/lang';
 import { useMenu } from '@/lib/menu';
 import { theme } from '@/lib/theme';
@@ -26,13 +27,7 @@ export function StarLink({ size = theme.fontSize.lg }: { size?: number }) {
       accessibilityRole="button"
       accessibilityLabel={t(lang, 'menuLabel')}
     >
-      <Text style={[styles.star, { fontSize: size }]}>✳</Text>
+      <Star size={size} tone="link" />
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  star: {
-    color: theme.colors.sageLight,
-  },
-});

@@ -369,7 +369,17 @@
     ]
   },
   {
-    "description": "The ✳ in the header — the button that opens the app menu. Shared by both headers so they wire one handler and one label; size is a prop because Home sets the star larger than the shared ScreenHeader.",
+    "description": "The seven-pointed star of the deck — the app's one recurring mark, worn by a header link or a divider. Replaced the ✳ character, which iOS draws from the colour emoji face as a green tile that ignores colour entirely. Ships one PNG per tone rather than tinting at runtime, because tintColor is right on the device but renders white in the web preview, which would have left every captured scenario showing the wrong colour.",
+    "filePath": "components/Star.tsx",
+    "name": "Star",
+    "scenarios": [
+      "star-default",
+      "star-home-size",
+      "star-muted"
+    ]
+  },
+  {
+    "description": "The star in the header — the button that opens the app menu. Shared by both headers so they wire one handler and one label; size is a prop because Home sets the star larger than the shared ScreenHeader. The mark itself is Star.",
     "filePath": "components/StarLink.tsx",
     "name": "StarLink",
     "scenarios": [
@@ -378,7 +388,7 @@
     ]
   },
   {
-    "description": "Three small stars — the divider setting a revealed card's quote apart from its meaning, in place of a plain rule.",
+    "description": "Three small stars in the deck's muted tone — the divider setting a revealed card's quote apart from its meaning, in place of a plain rule.",
     "filePath": "components/StarRule.tsx",
     "name": "StarRule",
     "scenarios": [
@@ -488,6 +498,12 @@
     "filePath": "lib/account.ts",
     "name": "greeting",
     "testFile": "lib/account.test.ts"
+  },
+  {
+    "description": "Whether a drag is an attempt to move through the card spread rather than to scroll the page or tap a card. Eager on both counts — six pixels, and only 1.2x more sideways than vertical — because a scrolling page claims a drag within a few pixels and fingers do not travel in straight lines.",
+    "filePath": "lib/cardPickerLayout.ts",
+    "name": "isHorizontalSwipe",
+    "testFile": "lib/cardPickerLayout.test.ts"
   },
   {
     "description": "Loads today's state, rolling the day over when the stored draw is stale: a stale draw that was revealed graduates into history, while one never opened is dropped, on the reasoning that an unopened card was never really yours.",
@@ -600,6 +616,15 @@
     "name": "useMenu",
     "untestabilityReason": {
       "justification": "One-line hook returning useContext(MenuContext); the open/close state it exposes lives in MenuProvider, which is scenario-covered.",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Lets a child suspend the page's vertical scrolling while it needs the finger for a sideways gesture of its own. Exists because on iOS the argument cannot be won any other way — the ScrollView is a real UIScrollView and cancels touches in its content the moment it decides to scroll, so the child says 'not now' instead of trying to out-argue it. Defaults to a no-op outside a Screen.",
+    "filePath": "components/Screen.tsx",
+    "name": "useScrollLock",
+    "untestabilityReason": {
+      "justification": "A one-line useContext read. The behaviour worth asserting is the gesture arbitration it enables, which lives on the device and cannot be reproduced in jsdom.",
       "kind": "trivial-wrapper"
     }
   },

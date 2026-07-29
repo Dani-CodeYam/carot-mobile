@@ -5,7 +5,7 @@ index 47487c0..58a6069 100644
 @@ -113,7 +113,7 @@ async function generatePackageListFileContentAsync(modules, className, entitleme
   * but only these that are written in Swift and use the new API for creating Expo modules.
   */
-
+ 
 -import ExpoModulesCore
 +public import ExpoModulesCore
  ${generateCommonImportList(swiftModules)}

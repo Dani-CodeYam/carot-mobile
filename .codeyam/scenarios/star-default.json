@@ -1,0 +1,11 @@
+{
+  "name": "Star - Default",
+  "id": "ebcd5bef-6a6d-4ec0-925f-be95684f9825",
+  "url": "/isolated-components/Star?s=Default",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Star",
+  "scenarioType": "component"
+}

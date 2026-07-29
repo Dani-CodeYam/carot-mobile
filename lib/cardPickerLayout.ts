@@ -54,3 +54,27 @@ export function slotSamples(offset: number, geom: SpreadGeometry): SlotSamples {
     opacity: at.map((o) => geom.dim + (1 - geom.dim) * (1 - Math.abs(clamp(o)))),
   };
 }
+
+/** How far a finger must travel sideways before it counts as a swipe, in px. */
+const SWIPE_INTENT_PX = 6;
+
+/** How much more sideways than vertical a drag must be to count as a swipe. */
+const SWIPE_INTENT_RATIO = 1.2;
+
+/**
+ * Is this drag an attempt to move through the spread, rather than to scroll
+ * the page or tap a card?
+ *
+ * Deliberately eager on both counts. The spread sits inside a scrolling page,
+ * and a native scroll view claims a drag within a few pixels — a cautious test
+ * loses the gesture before it ever runs. And fingers do not travel in straight
+ * lines: demanding a purely horizontal drag rejected most real swipes, so
+ * "mostly sideways" is enough.
+ *
+ * Still strict enough that a clearly vertical drag falls through to the page,
+ * which has to keep scrolling even when the finger started on the cards.
+ */
+export function isHorizontalSwipe(gesture: { dx: number; dy: number }): boolean {
+  const across = Math.abs(gesture.dx);
+  return across > SWIPE_INTENT_PX && across > Math.abs(gesture.dy) * SWIPE_INTENT_RATIO;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Star - Muted",
+  "id": "bb4e7eec-3b9c-4390-9de4-89641fb85bed",
+  "url": "/isolated-components/Star?s=Muted",
+  "dimensions": [
+    "iPhone 16"
+  ],
+  "mocks": {},
+  "componentName": "Star",
+  "scenarioType": "component"
+}

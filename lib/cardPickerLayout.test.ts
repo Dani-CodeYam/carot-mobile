@@ -1,5 +1,10 @@
 import { describe, expect, it } from '@jest/globals';
-import { clamp, slotSamples, type SpreadGeometry } from '@/lib/cardPickerLayout';
+import {
+  clamp,
+  isHorizontalSwipe,
+  slotSamples,
+  type SpreadGeometry,
+} from '@/lib/cardPickerLayout';
 
 const GEOM: SpreadGeometry = { peek: 100, drop: 30, tilt: 6, dim: 0.7 };
 
@@ -88,5 +93,45 @@ describe('slotSamples', () => {
     expect(outer.rotate).toEqual(['6deg', '6deg', '6deg']);
     outer.opacity.forEach((o) => expect(o).toBeCloseTo(0.7));
     expect(outer.translateX).toEqual([100, 200, 300]);
+  });
+});
+
+describe('isHorizontalSwipe', () => {
+  // A tap, or the first pixel of any drag, is not yet an intent to move. The
+  // spread must let those through or it swallows the tap that chooses a card.
+  it('ignores a stationary or barely-moved finger', () => {
+    expect(isHorizontalSwipe({ dx: 0, dy: 0 })).toBe(false);
+    expect(isHorizontalSwipe({ dx: 5, dy: 0 })).toBe(false);
+    expect(isHorizontalSwipe({ dx: -5, dy: 0 })).toBe(false);
+  });
+
+  // Past the threshold a sideways drag is claimed, in either direction —
+  // the spread wraps, so neither edge is special.
+  it('claims a clear sideways drag either way', () => {
+    expect(isHorizontalSwipe({ dx: 7, dy: 0 })).toBe(true);
+    expect(isHorizontalSwipe({ dx: -7, dy: 0 })).toBe(true);
+    expect(isHorizontalSwipe({ dx: 60, dy: 10 })).toBe(true);
+  });
+
+  // The whole point of the predicate: a vertical drag belongs to the page,
+  // which still has to scroll even when the finger started on the cards.
+  it('leaves a vertical drag alone', () => {
+    expect(isHorizontalSwipe({ dx: 0, dy: 40 })).toBe(false);
+    expect(isHorizontalSwipe({ dx: 10, dy: 40 })).toBe(false);
+    expect(isHorizontalSwipe({ dx: -10, dy: -40 })).toBe(false);
+  });
+
+  // Fingers do not travel in straight lines. Demanding a purely horizontal
+  // drag rejected most real swipes, so a drag only has to be 1.2x more
+  // sideways than not — 30 across and 20 down is a swipe, not a scroll.
+  it('accepts a diagonal drag that is mostly sideways', () => {
+    expect(isHorizontalSwipe({ dx: 30, dy: 20 })).toBe(true);
+    expect(isHorizontalSwipe({ dx: -30, dy: 20 })).toBe(true);
+  });
+
+  // ...but not one that is merely sideways-ish. Just past parity still reads
+  // as a diagonal scroll, and claiming it would fight the page.
+  it('rejects a diagonal drag that is only slightly sideways', () => {
+    expect(isHorizontalSwipe({ dx: 22, dy: 20 })).toBe(false);
   });
 });

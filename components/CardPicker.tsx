@@ -8,9 +8,11 @@
  *
  * Movement is by arrow or by swipe, and the ends wrap — a spread has no edges
  * to get stuck against. Swiping is wired with PanResponder rather than a
- * gesture library so this stays dependency-free; the responder only claims the
- * gesture once it's clearly horizontal, which leaves taps free to reach the
- * card underneath.
+ * gesture library so this stays dependency-free. The responder claims only
+ * sideways drags, which leaves taps free to reach the card underneath and
+ * leaves up-and-down drags to the page's own scrolling — see `horizontal` and
+ * the capture note below for why winning that negotiation takes three
+ * settings rather than one.
  *
  * Moving is ANIMATED, and that is not decoration: every card is the same
  * face-down back, so changing the index alone repaints an identical frame and
@@ -31,8 +33,13 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useScrollLock } from '@/components/Screen';
 import type { Card } from '@/data/cards';
-import { slotSamples, type SpreadGeometry } from '@/lib/cardPickerLayout';
+import {
+  isHorizontalSwipe,
+  slotSamples,
+  type SpreadGeometry,
+} from '@/lib/cardPickerLayout';
 import { CARD_BACK } from '@/lib/cardImages';
 import { theme } from '@/lib/theme';
 
@@ -88,6 +95,7 @@ export function CardPicker({
   onChoose: (card: Card) => void;
 }) {
   const [index, setIndex] = useState(0);
+  const setScrollEnabled = useScrollLock();
   const slide = useRef(new Animated.Value(0)).current;
   /** Ignore a second press mid-move, which would strand the rail off-centre. */
   const moving = useRef(false);
@@ -111,9 +119,17 @@ export function CardPicker({
 
   const pan = useRef(
     PanResponder.create({
-      // Claim only clearly-horizontal drags, so a tap still reaches the card.
-      onMoveShouldSetPanResponder: (_, g) =>
-        Math.abs(g.dx) > 12 && Math.abs(g.dx) > Math.abs(g.dy),
+      // Claim on CAPTURE, not just on bubble: the spread sits inside Screen's
+      // vertical ScrollView, and a native scroll view latches onto a drag
+      // within a few pixels. Waiting for the gesture to bubble up meant the
+      // scroll almost always won and the cards barely moved sideways.
+      onMoveShouldSetPanResponderCapture: (_, g) => isHorizontalSwipe(g),
+      onMoveShouldSetPanResponder: (_, g) => isHorizontalSwipe(g),
+      // Once the swipe is ours it stays ours. Without this the ScrollView
+      // reclaims it the moment a finger drifts vertically mid-swipe — which is
+      // most swipes — and the card stops following halfway across.
+      onPanResponderTerminationRequest: () => false,
+      onShouldBlockNativeResponder: () => true,
       onPanResponderRelease: (_, g) => {
         if (g.dx <= -SWIPE_MIN) step(1);
         else if (g.dx >= SWIPE_MIN) step(-1);
@@ -123,7 +139,18 @@ export function CardPicker({
 
   return (
     <View style={styles.wrap}>
-      <View style={styles.stage} {...pan.panHandlers}>
+      {/* While a finger is on the spread the page stops scrolling, so the
+          swipe is uncontested — see useScrollLock for why nothing subtler
+          works. The trade is deliberate: you scroll the page from anywhere
+          else on it, and the spread owns its own patch of screen the way a
+          carousel should. */}
+      <View
+        style={styles.stage}
+        {...pan.panHandlers}
+        onTouchStart={() => setScrollEnabled(false)}
+        onTouchEnd={() => setScrollEnabled(true)}
+        onTouchCancel={() => setScrollEnabled(true)}
+      >
         {SLOTS.map((offset) =>
           offset === 0 ? (
             <AnimatedPressable
