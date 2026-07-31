@@ -27,9 +27,11 @@ import {
 } from 'react';
 import { Platform } from 'react-native';
 import * as AppleAuthentication from 'expo-apple-authentication';
+import Constants from 'expo-constants';
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
 import {
+  googleRedirectScheme,
   sessionFromApple,
   sessionFromGoogleProfile,
   type GoogleProfileLike,
@@ -42,17 +44,44 @@ import { storage } from '@/lib/storage';
 WebBrowser.maybeCompleteAuthSession();
 
 /**
- * Google client ids come from the environment, not the repo — they are issued
- * per Google Cloud project and differ per platform. `EXPO_PUBLIC_` is the
- * prefix Expo inlines into the client bundle; these are public identifiers by
- * design (the OAuth flow never uses a client secret on a mobile client).
+ * Google client ids are public identifiers by design — the OAuth flow on a
+ * mobile client never uses a client secret — so they are not kept out of the
+ * repo for secrecy.
+ *
+ * iOS reads its id from app.json rather than the environment, because the
+ * REVERSED form of that same id has to appear there anyway as a URL scheme (see
+ * `redirectFor`). Keeping the id in the environment and the scheme in app.json
+ * would be two copies of one value in two files, and nothing would notice when
+ * they drifted. Android and web still read the environment, where no such
+ * coupling exists.
  */
+const IOS_CLIENT_ID =
+  (Constants.expoConfig?.extra?.googleIosClientId as string | undefined) ??
+  process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID;
+
 const GOOGLE_CLIENT_ID =
   Platform.select({
-    ios: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
+    ios: IOS_CLIENT_ID,
     android: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
     default: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
   }) ?? null;
+
+/**
+ * Where Google sends the reader back to.
+ *
+ * An iOS OAuth client accepts exactly ONE redirect shape: the client id with
+ * its dot-separated parts reversed, used as a URL scheme. `carot://` — the
+ * app's own scheme, and what this used to send — is rejected outright with
+ * `redirect_uri_mismatch`, which is why the button had never worked even once
+ * the ids were supplied. The scheme is derived here rather than written out
+ * again so the only place it is spelled by hand is app.json's `scheme` array.
+ */
+function redirectFor(clientId: string): string {
+  if (Platform.OS !== 'ios') return AuthSession.makeRedirectUri({ scheme: 'carot' });
+  return AuthSession.makeRedirectUri({
+    native: `${googleRedirectScheme(clientId)}:/oauth2redirect`,
+  });
+}
 
 const GOOGLE_DISCOVERY: AuthSession.DiscoveryDocument = {
   authorizationEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
@@ -159,20 +188,42 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
     try {
-      const redirectUri = AuthSession.makeRedirectUri({ scheme: 'carot' });
+      const redirectUri = redirectFor(GOOGLE_CLIENT_ID);
+      // Authorization-code flow with PKCE. An earlier version asked for a token
+      // directly, reasoning that a public client has no secret to exchange a
+      // code with — which is the thing PKCE exists to solve: the verifier below
+      // stands in for the secret. Google rejects the implicit flow outright for
+      // installed apps now (`code_challenge_method` is not allowed alongside
+      // `response_type=token`), so this is not a preference, it is the only
+      // flow that works.
       const request = new AuthSession.AuthRequest({
         clientId: GOOGLE_CLIENT_ID,
         scopes: ['openid', 'profile', 'email'],
         redirectUri,
-        // Implicit flow: a mobile client is public and holds no client secret,
-        // so there is nothing to exchange a code with.
-        responseType: AuthSession.ResponseType.Token,
+        responseType: AuthSession.ResponseType.Code,
+        usePKCE: true,
       });
 
       const result = await request.promptAsync(GOOGLE_DISCOVERY);
       if (result.type !== 'success') return; // dismissed or cancelled
 
-      const token = result.authentication?.accessToken;
+      const code = result.params.code;
+      if (!code || !request.codeVerifier) {
+        setError('google');
+        return;
+      }
+
+      const exchanged = await AuthSession.exchangeCodeAsync(
+        {
+          clientId: GOOGLE_CLIENT_ID,
+          code,
+          redirectUri,
+          extraParams: { code_verifier: request.codeVerifier },
+        },
+        GOOGLE_DISCOVERY,
+      );
+
+      const token = exchanged.accessToken;
       if (!token) {
         setError('google');
         return;

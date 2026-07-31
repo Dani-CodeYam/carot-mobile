@@ -49,12 +49,11 @@ your Team ID under Membership details.
       far less harshly, so the exposure is real but modest. This is a judgement
       call, not a defect; just know it is the likeliest reason a submission
       comes back.
-- [ ] **Resolve the Google sign-in button.** Without
-      `EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID` the button renders disabled reading
-      "not configured", and shipping a visibly dead control invites a
-      rejection for incomplete functionality. Either configure Google fully
-      (see `README.md`) or hide the option in native builds. Sign in with
-      Apple works on its own and satisfies guideline 4.8.
+- [ ] **Confirm Google sign-in works on a device.** It is now configured for iOS
+      (see `README.md`), but this flow cannot be verified anywhere except a real
+      device — not in the web preview, not in the simulator's browser. Sign in
+      once before submitting. Offering Google also makes Sign in with Apple
+      mandatory under guideline 4.8; the app already has it.
 - [ ] **Consider in-app account deletion.** Guideline 5.1.1(v) requires apps
       that support account creation to also offer deletion. El Carot creates
       no account on any server — sign-in only writes a local session — so the
@@ -155,12 +154,18 @@ the questionnaire honestly and let it compute the rating.
 
 ### Listing metadata
 
-- **Name**, **subtitle**, **promotional text**, **description**, **keywords**
-- **Support URL** and **Privacy Policy URL** — both mandatory. The privacy
-  policy is required even though nothing is collected; a short page saying
-  exactly that is sufficient and is the honest version.
+- **Name**, **subtitle**, **promotional text**, **description**, **keywords** —
+  drafted in both languages in `store/listing.md`
+- **Privacy Policy URL** — <https://elcarot.com/privacy>. Mandatory even though
+  nothing is collected; the page says exactly that, which is the honest version.
+- **Support URL** — <https://elcarot.com/support>. App Review opens this link,
+  so it answers real questions rather than only offering an address.
+- **Marketing URL** — <https://elcarot.com>, the app running on the web.
+  Optional, but it is the natural home for this field.
 - **Category** — Lifestyle or Entertainment
 - **Copyright**, and App Review contact details
+
+Both pages live in the El Carot web project (a separate repository), not here.
 
 The app is bilingual (Spanish/English), so add both localizations to the
 listing if you want it discoverable in either.

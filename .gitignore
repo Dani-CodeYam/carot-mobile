@@ -50,6 +50,7 @@ test-results/
 playwright-report/
 blob-report/
 .codeyam/logs/
+.codeyam/.locks/
 .codeyam/run/
 .codeyam/llm-calls/
 .codeyam/captures/
@@ -115,3 +116,6 @@ expo-env.d.ts
 # Agent tooling — machine-local, not shared
 .claude/settings.local.json
 .codex/
+
+# macOS
+.DS_Store

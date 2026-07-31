@@ -20,23 +20,24 @@ npm run setup
 No API keys or services to configure — a fresh clone runs with
 `git clone` → `npm run setup` → `npm run dev`.
 
-### Enabling sign-in (optional)
+### Signing in
 
-The app is complete without this. The Apple and Google buttons render disabled,
-each saying why, until you supply credentials:
+The app is complete without an account; signing in only adds your name to the
+greeting and a drawer of your own for your cards.
 
 - **Apple** — needs a paid Apple Developer membership to enable the Sign in with
   Apple capability. `app.json` already declares the plugin and
   `ios.usesAppleSignIn`, so `npx expo prebuild` emits the entitlement. Apple's
   button is iOS-only and is always disabled on web and Android.
-- **Google** — needs OAuth client ids from a Google Cloud project, read from the
-  environment at build time:
-
-  ```bash
-  EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID=...
-  EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID=...
-  EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...
-  ```
+- **Google, iOS** — configured. The client id lives in `app.json` under
+  `extra.googleIosClientId`, and its REVERSED form is the second entry of
+  `scheme`. Those two are the same value in two shapes: change one and you must
+  change the other, or Google answers `redirect_uri_mismatch`. They live
+  together in one file for exactly that reason — an id in the environment and a
+  scheme in `app.json` drifted silently.
+- **Google, Android and web** — still unconfigured, so the button stays disabled
+  there and says so. Supply `EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID` /
+  `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID` to enable them.
 
 Neither provider authenticates in the web preview — native sign-in needs a real
 device or simulator build. The signed-in states are shown in the preview through

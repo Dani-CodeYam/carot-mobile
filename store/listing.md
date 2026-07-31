@@ -119,12 +119,28 @@ tarot,cards,arcana,divination,horoscope,astrology,mystic,esoteric,reading,oracle
 
 ---
 
+## URLs
+
+Las tres van al dominio de la app. Que la política de El Carot viva en el
+dominio de El Carot y no en el de otra marca es lo que un revisor espera ver.
+
+| Campo | Valor |
+| --- | --- |
+| **Privacy Policy URL** | `https://elcarot.com/privacy` — obligatorio |
+| **Support URL** | `https://elcarot.com/support` — obligatorio |
+| **Marketing URL** | `https://elcarot.com` — opcional; es la app corriendo en web |
+
+Ambas páginas listan `hola@elcarot.com` como contacto. El dominio no tenía
+registros MX — el correo rebotaba — así que se resolvió con reenvío de ImprovMX:
+`mx1`/`mx2.improvmx.com` más el SPF, cargados en el DNS de Linode (el dominio
+está en Namecheap pero delega los nameservers a Linode). El plan gratuito
+**recibe pero no envía**: se contesta desde otra casilla, que para App Review
+alcanza.
+
 ## Campos que faltan y dependen de vos
 
 | Campo | Estado |
 | --- | --- |
-| **Support URL** | Obligatorio. Cualquier página con forma de contacto sirve |
-| **Privacy Policy URL** | Obligatorio. Texto listo en `store/privacy-policy.html` — falta alojarlo y poner el mail real |
 | **Category** | Sugerencia: Primary **Lifestyle**, Secondary **Entertainment** |
-| **Copyright** | `2026 Nod Labs, Inc.` |
+| **Copyright** | `2026 Daniela Raskovsky` — es texto libre y no tiene por qué coincidir con la cuenta. En la ficha van a verse los dos nombres: Nod Labs, Inc. como desarrollador (viene de la cuenta de Apple, no se edita) y este en el copyright |
 | **App Review contact** | Tu nombre, mail y teléfono |

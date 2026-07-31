@@ -104,7 +104,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "accountId › keeps the same subject distinct across providers",
-      "line": 30,
+      "line": 31,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -113,7 +113,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "accountId › namespaces the subject by provider",
-      "line": 23,
+      "line": 24,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -320,7 +320,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "displayName › returns null when the provider withheld the name",
-      "line": 69,
+      "line": 70,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -329,7 +329,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "displayName › returns null when there is no session",
-      "line": 64,
+      "line": 65,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -338,7 +338,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "displayName › returns the name when there is one",
-      "line": 59,
+      "line": 60,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -347,7 +347,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "displayName › treats empty and whitespace-only names as no name",
-      "line": 75,
+      "line": 76,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -356,7 +356,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "displayName › trims and collapses internal whitespace",
-      "line": 81,
+      "line": 82,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -365,7 +365,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "firstName › returns a one-word name unchanged",
-      "line": 113,
+      "line": 114,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -374,7 +374,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "firstName › returns null when there is no usable name",
-      "line": 118,
+      "line": 119,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -383,7 +383,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "firstName › takes only the given name from a long full name",
-      "line": 108,
+      "line": 109,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -437,7 +437,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "fullName › joins the given and family names",
-      "line": 88,
+      "line": 89,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -446,7 +446,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "fullName › returns null when both parts are missing or blank",
-      "line": 99,
+      "line": 100,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -455,8 +455,44 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "fullName › returns whichever single part is present",
-      "line": 93,
+      "line": 94,
       "registeredAt": "2026-07-27T14:32:48Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The suffix is stripped, not merely detected: leaving it on produces a scheme Google does not recognise, and the failure only shows up on a device, mid-sign-in.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "googleRedirectScheme › drops the googleusercontent suffix",
+      "line": 274,
+      "registeredAt": "2026-07-31T02:08:00Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An id that arrives without the suffix — hand-typed, or from a provider that formats it differently — still yields a usable scheme rather than a silently malformed one.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "googleRedirectScheme › handles an id that carries no suffix",
+      "line": 283,
+      "registeredAt": "2026-07-31T02:08:00Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The suffix is only stripped from the END. A client id that happens to contain the string elsewhere keeps it.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "googleRedirectScheme › only strips the suffix at the end",
+      "line": 289,
+      "registeredAt": "2026-07-31T02:08:00Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The whole point: Google issues an id ending in .apps.googleusercontent.com, and an iOS OAuth client will only accept a redirect on the REVERSED form of it. Sending the app's own scheme — which is what this used to do — is rejected with redirect_uri_mismatch every single time.",
+      "file": "lib/account.test.ts",
+      "format": "vitest",
+      "key": "googleRedirectScheme › reverses a Google client id into its URL scheme",
+      "line": 265,
+      "registeredAt": "2026-07-31T02:08:00Z",
       "runner": "tests"
     },
     {
@@ -464,7 +500,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "greeting › falls back to the plain welcome when signed out",
-      "line": 131,
+      "line": 132,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -473,7 +509,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "greeting › falls back to the plain welcome when the name was withheld",
-      "line": 137,
+      "line": 138,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -482,7 +518,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "greeting › greets a long full name by its first name only",
-      "line": 144,
+      "line": 145,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -491,7 +527,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "greeting › uses the named greeting when a name is available",
-      "line": 126,
+      "line": 127,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -500,7 +536,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "greeting › works the same in the other language",
-      "line": 150,
+      "line": 151,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -671,7 +707,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "scopedKey › gives different accounts different keys",
-      "line": 50,
+      "line": 51,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -680,7 +716,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "scopedKey › returns the bare key when no account is signed in",
-      "line": 38,
+      "line": 39,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -689,7 +725,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "scopedKey › suffixes the key with the account id when signed in",
-      "line": 43,
+      "line": 44,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -698,7 +734,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › accepts a partial credential",
-      "line": 208,
+      "line": 209,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -707,7 +743,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › builds a session from a first-time credential",
-      "line": 157,
+      "line": 158,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -716,7 +752,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › does not borrow a name from a different account",
-      "line": 187,
+      "line": 188,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -725,7 +761,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › keeps the remembered name when Apple omits it on a later sign-in",
-      "line": 173,
+      "line": 174,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -734,7 +770,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › prefers a newly offered name over the remembered one",
-      "line": 219,
+      "line": 220,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -743,7 +779,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromApple › yields a nameless session when nothing is offered or remembered",
-      "line": 201,
+      "line": 202,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -752,7 +788,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromGoogleProfile › builds a session from a full profile",
-      "line": 236,
+      "line": 237,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },
@@ -761,7 +797,7 @@
       "file": "lib/account.test.ts",
       "format": "vitest",
       "key": "sessionFromGoogleProfile › normalises missing fields to null",
-      "line": 252,
+      "line": 253,
       "registeredAt": "2026-07-27T14:32:48Z",
       "runner": "tests"
     },

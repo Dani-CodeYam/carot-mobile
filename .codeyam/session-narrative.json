@@ -1,0 +1,91 @@
+{
+  "summary": "Dejar listo el trámite de la App Store — las seis capturas, las tres URLs que Apple exige y la política publicada como página del sitio — y de paso hacer que el login con Google funcione de verdad, que era el último bloqueante para mandar a revisión.",
+  "changes": [
+    {
+      "title": "Google sign-in, funcionando en iOS",
+      "description": "El botón existía pero nunca había funcionado, por dos motivos independientes. Faltaba el client id: ahora vive en app.json bajo extra.googleIosClientId, junto a su forma REVERSADA que es el segundo esquema de URL. Están en el mismo archivo a propósito — son un valor en dos formas, y tenerlos separados (uno en .env sin trackear) es cómo se desincronizan sin que nadie lo note. Y el redirect estaba mal: mandaba carot://, el esquema propio de la app, que un cliente OAuth de iOS rechaza siempre con redirect_uri_mismatch. Cargar sólo las variables de entorno habría habilitado el botón para que fallara, que es peor que verlo deshabilitado. Al arreglarlo apareció un tercer problema: el código pedía el token directo — flujo implícito — razonando que un cliente público no tiene secreto con qué intercambiar un código. Eso es justamente lo que PKCE resuelve, y Google ya rechaza el flujo implícito para apps instaladas. Ahora pide un código y lo intercambia con el verifier.",
+      "files": [
+        "app.json",
+        "lib/auth.tsx",
+        "lib/account.ts",
+        "README.md"
+      ],
+      "tests": [
+        {
+          "name": "googleRedirectScheme",
+          "file": "lib/account.test.ts",
+          "description": "Cuatro casos sobre la derivación del esquema invertido: el id normal, que el sufijo se quite y no sólo se detecte, un id sin sufijo, y que sólo se quite al final.",
+          "status": "passing"
+        }
+      ],
+      "waysToTest": [
+        {
+          "kind": "read-tests",
+          "text": "lib/account.test.ts cubre googleRedirectScheme, que es la derivación que estaba mal."
+        },
+        {
+          "kind": "read-tests",
+          "text": "El flujo completo sólo se puede verificar en un dispositivo real: se probó firmando con Google en el iPhone."
+        }
+      ]
+    },
+    {
+      "title": "Las seis capturas de la ficha",
+      "description": "Capturadas del simulador iPhone 17 Pro Max, que da los 1320×2868 exactos que Apple pide para 6.9\". Salen del simulador y no del preview web porque el preview es react-native-web: no tiene barra de estado, no aplica safe areas y puede medir las fuentes distinto, y Apple pide capturas que representen la app real. Dos correcciones salieron de verificarlas en vez de darlas por buenas: todas venían con canal alfa, que Apple rechaza, y la de la galería mostraba una carta con desnudos — arte clásico de Rider-Waite, sin problema dentro de la app, pero una captura de tienda la ve cualquiera sin haber aceptado clasificación. Lleva estrellas del mazo compuestas encima; el arte original no se tocó.",
+      "files": [
+        "store/screenshots/01-home.png",
+        "store/screenshots/02-carta-del-dia.png",
+        "store/screenshots/03-elegir-carta.png",
+        "store/screenshots/04-pregunta.png",
+        "store/screenshots/05-respuesta.png",
+        "store/screenshots/06-galeria.png"
+      ],
+      "waysToTest": [
+        {
+          "kind": "read-tests",
+          "text": "No hay tests: son PNG. La verificación fue medir cada archivo — 1320×2868 y sin canal alfa — y mirar cuáles muestran desnudos."
+        }
+      ]
+    },
+    {
+      "title": "Las tres URLs de la ficha",
+      "description": "Privacy Policy y Support URL son obligatorias, y elcarot.com quedó para Marketing URL. Las dos primeras se resolvieron como páginas nuevas en el sitio de El Carot, no acá: una política para El Carot alojada bajo otra marca le lee como inconsistencia a un revisor. La página de soporte contesta preguntas de verdad en vez de sólo ofrecer un mail, porque App Review abre ese link y una página que sólo dice 'escribinos' se lee como placeholder.",
+      "files": [
+        "RELEASE.md",
+        "store/listing.md"
+      ],
+      "waysToTest": [
+        {
+          "kind": "read-tests",
+          "text": "Verificado abriendo elcarot.com/privacy y /support en producción: las dos responden y publican hola@elcarot.com."
+        }
+      ]
+    },
+    {
+      "title": "Baja de la copia duplicada de la política",
+      "description": "store/privacy-policy.html existía mientras la página no estaba publicada. Con la página viva, mantener las dos era garantizar que divergieran sin que nadie se entere, y después no saber cuál rige. store/README.md ahora apunta a la página y explica por qué el archivo ya no está.",
+      "files": [
+        "store/README.md"
+      ],
+      "waysToTest": [
+        {
+          "kind": "read-tests",
+          "text": "Confirmado que ningún archivo del repo sigue referenciando store/privacy-policy.html."
+        }
+      ]
+    },
+    {
+      "title": "Corrección de una afirmación falsa en la guía de capturas",
+      "description": "store/README.md aseguraba que las capturas del simulador ya salían sin canal alfa. Es falso: las seis venían con alfa, que es motivo de rechazo. La guía ahora incluye el paso de aplanado y la advertencia sobre desnudos en las filas de abajo de la galería.",
+      "files": [
+        "store/README.md"
+      ],
+      "waysToTest": [
+        {
+          "kind": "read-tests",
+          "text": "La afirmación se refutó midiendo los archivos con sharp: hasAlpha=true en las seis."
+        }
+      ]
+    }
+  ]
+}

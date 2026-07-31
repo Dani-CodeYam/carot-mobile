@@ -494,6 +494,12 @@
     }
   },
   {
+    "description": "The URL scheme an iOS OAuth client has to hand Google as its redirect: the client id with its dot-separated parts reversed. Handing Google the app's own scheme instead — which El Carot did — is answered with redirect_uri_mismatch every time, and only ever on a device, mid-sign-in. Pure and here so the derivation is a property you can assert rather than a failure you reproduce by hand on a phone.",
+    "filePath": "lib/account.ts",
+    "name": "googleRedirectScheme",
+    "testFile": "lib/account.test.ts"
+  },
+  {
     "description": "Chooses the home greeting: the personalised line with the given name substituted when one is available, otherwise the plain welcome El Carot has always shown. Both copy strings arrive already localised, so this picks rather than translates.",
     "filePath": "lib/account.ts",
     "name": "greeting",
@@ -522,6 +528,15 @@
     "filePath": "lib/menuLayout.ts",
     "name": "menuPanelWidth",
     "testFile": "lib/menuLayout.test.ts"
+  },
+  {
+    "description": "Picks the redirect URI for a Google sign-in: the reversed-client-id scheme on iOS, the app's own scheme elsewhere. iOS is the exception because a Google OAuth client of that type accepts exactly one redirect shape.",
+    "filePath": "lib/auth.tsx",
+    "name": "redirectFor",
+    "untestabilityReason": {
+      "justification": "Branches on Platform.OS and delegates: googleRedirectScheme holds the derivation worth asserting and is tested in lib/account.test.ts. What remains is expo-auth-session's makeRedirectUri, whose output only means anything inside a native runtime.",
+      "kind": "trivial-wrapper"
+    }
   },
   {
     "description": "Flips today's card face-up and records it, so a reload keeps it open. Returns a new draw rather than mutating the one passed in.",

@@ -4,6 +4,7 @@ import {
   displayName,
   firstName,
   fullName,
+  googleRedirectScheme,
   greeting,
   scopedKey,
   sessionFromApple,
@@ -253,5 +254,41 @@ describe('sessionFromGoogleProfile', () => {
     const session = sessionFromGoogleProfile({ sub: '118217459' });
     expect(session.name).toBeNull();
     expect(session.email).toBeNull();
+  });
+});
+
+describe('googleRedirectScheme', () => {
+  // The whole point: Google issues an id ending in .apps.googleusercontent.com,
+  // and an iOS OAuth client will only accept a redirect on the REVERSED form of
+  // it. Sending the app's own scheme — which is what this used to do — is
+  // rejected with redirect_uri_mismatch every single time.
+  it('reverses a Google client id into its URL scheme', () => {
+    expect(
+      googleRedirectScheme('934983528266-36vtt476b4d1l3qq.apps.googleusercontent.com'),
+    ).toBe('com.googleusercontent.apps.934983528266-36vtt476b4d1l3qq');
+  });
+
+  // The suffix is stripped, not merely detected: leaving it on produces a
+  // scheme Google does not recognise, and the failure only shows up on a
+  // device, mid-sign-in.
+  it('drops the googleusercontent suffix', () => {
+    expect(googleRedirectScheme('abc.apps.googleusercontent.com')).not.toContain(
+      '.apps.googleusercontent.com',
+    );
+  });
+
+  // An id that arrives without the suffix — hand-typed, or from a provider that
+  // formats it differently — still yields a usable scheme rather than a silently
+  // malformed one.
+  it('handles an id that carries no suffix', () => {
+    expect(googleRedirectScheme('123-xyz')).toBe('com.googleusercontent.apps.123-xyz');
+  });
+
+  // The suffix is only stripped from the END. A client id that happens to
+  // contain the string elsewhere keeps it.
+  it('only strips the suffix at the end', () => {
+    expect(googleRedirectScheme('a.apps.googleusercontent.com.b')).toBe(
+      'com.googleusercontent.apps.a.apps.googleusercontent.com.b',
+    );
   });
 });

@@ -5,16 +5,66 @@ Todo lo que hace falta para armar la ficha, menos lo que depende de tu cuenta.
 | Archivo | Qué es |
 | --- | --- |
 | `listing.md` | Nombre, subtítulo, texto promocional, descripción y keywords, en español e inglés |
-| `privacy-policy.html` | Política de privacidad lista para alojar. **Reemplazá el mail** antes de subirla |
 | `app-privacy-answers.md` | Qué contestar en App Privacy y en la clasificación por edad |
 | `screenshots/` | Capturas nativas a 1320×2868 (6.9") |
 
 La guía del trámite completo está en `RELEASE.md`, en la raíz.
 
-## Cómo sacar las capturas que faltan
+## Las páginas legales no viven acá
 
-`01-home.png` ya está. Las demás necesitan navegar por la app, así que van a
-mano — que además es mejor, porque elegís vos qué carta sale.
+La política de privacidad y la página de soporte son páginas del sitio, no
+archivos de este repo:
+
+| | |
+| --- | --- |
+| Privacidad | <https://elcarot.com/privacy> |
+| Soporte | <https://elcarot.com/support> |
+
+Se sirven desde el proyecto web de El Carot (`app/privacy/`, `app/support/`),
+que es un repositorio aparte. Este directorio tuvo un `privacy-policy.html`
+propio mientras no existía la página; se borró al publicarla, porque **dos
+copias de una política de privacidad divergen sin que nadie se entere** y
+después no se sabe cuál rige. Si hay que cambiar el texto, se cambia en el
+sitio.
+
+## Las capturas
+
+Las seis están hechas, todas a 1320×2868 desde el simulador iPhone 17 Pro Max:
+
+| | Pantalla |
+| --- | --- |
+| `01-home.png` | Home — el abanico y las tres entradas |
+| `02-carta-del-dia.png` | Carta del día revelada, con frase y significado |
+| `03-elegir-carta.png` | El mazo abierto, a mitad de recorrido |
+| `04-pregunta.png` | El formulario de pregunta |
+| `05-respuesta.png` | La pregunta junto a la carta que la respondió |
+| `06-galeria.png` | La grilla del mazo completo |
+
+`05-respuesta.png` es la más fuerte del set: muestra la pregunta y la respuesta
+en un mismo cuadro. `04-pregunta.png` es la más débil — media pantalla vacía —
+y está sólo por si querés mostrar el paso previo.
+
+### Dos cosas que hay que hacer a cada captura nueva
+
+**Quitar el canal alfa.** El simulador las emite CON alfa y Apple las rechaza
+así. El alfa es totalmente opaco, así que aplanar no cambia un pixel:
+
+```bash
+node -e "const s=require('sharp');s('store/screenshots/X.png').flatten({background:'#000'}).png().toBuffer().then(b=>require('fs').writeFileSync('store/screenshots/X.png',b))"
+```
+
+**Mirar si hay desnudos.** Seis de las 22 cartas los tienen, por la iconografía
+clásica de Rider-Waite: Los Amantes, El Diablo, La Estresha, El Sol, El Juicio
+Final y El Mundo. Dentro de la app no es problema con una clasificación 12+,
+pero **una captura de tienda la ve cualquiera navegando la App Store** sin haber
+aceptado clasificación alguna, y es motivo de rechazo conocido. `06-galeria.png`
+lleva estrellas compuestas encima por eso. El arte original no se tocó: la
+censura vive sólo en el PNG de la ficha.
+
+Si volvés a sacar la galería, ojo con las filas de abajo — ahí están El Diablo,
+La Estresha, El Sol, El Juicio y El Mundo, las cinco restantes.
+
+## Cómo sacar una captura nueva
 
 Arrancá el simulador con la build actual:
 
@@ -37,17 +87,8 @@ Después, por cada pantalla: navegás tocando en el simulador y corrés
 xcrun simctl io "iPhone 17 Pro Max" screenshot store/screenshots/NN-nombre.png
 ```
 
-Las que valen la pena, en orden:
-
-1. `01-home.png` — hecha
-2. `02-carta-del-dia.png` — Carta del día, ya revelada, con su significado
-3. `03-elegir-carta.png` — el mazo abierto en "Quiero recibir un mensaje"
-4. `04-pregunta.png` — la pantalla de pregunta con algo escrito
-5. `05-galeria.png` — Todas las cartas, que es donde el mazo se luce
-
-Apple pide **mínimo 1 y máximo 10**, en PNG o JPEG **sin canal alfa**. Las
-capturas del simulador ya salen así. Con el set de 6.9" alcanza: el resto de
-los tamaños los escala Apple.
+Apple pide **mínimo 1 y máximo 10**, en PNG o JPEG **sin canal alfa**. Con el
+set de 6.9" alcanza: el resto de los tamaños los escala Apple.
 
 ## Por qué del simulador y no del preview web
 

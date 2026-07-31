@@ -163,3 +163,20 @@ export function sessionFromGoogleProfile(profile: GoogleProfileLike): Session {
     email: profile.email ?? null,
   };
 }
+
+/**
+ * The URL scheme an iOS OAuth client has to hand Google as its redirect.
+ *
+ * Google issues client ids ending in `.apps.googleusercontent.com`, and an
+ * installed-app client accepts a redirect on exactly one scheme: those parts
+ * reversed. Handing it the app's own scheme instead — which El Carot did, and
+ * which looks perfectly reasonable — is answered with `redirect_uri_mismatch`
+ * every time, and only ever on a device, mid-sign-in.
+ *
+ * Kept here, pure, so the derivation is a property you can assert rather than a
+ * failure you have to reproduce by hand on a phone.
+ */
+export function googleRedirectScheme(clientId: string): string {
+  const bare = clientId.replace(/\.apps\.googleusercontent\.com$/, '');
+  return `com.googleusercontent.apps.${bare}`;
+}

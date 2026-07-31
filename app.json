@@ -3,7 +3,10 @@
     "name": "El Carot",
     "slug": "carot-mobile",
     "version": "1.0.0",
-    "scheme": "carot",
+    "scheme": [
+      "carot",
+      "com.googleusercontent.apps.934983528266-36vtt476b4d1l3qq4icsv7r7ki6a7b2d"
+    ],
     "icon": "./assets/icon.png",
     "platforms": [
       "ios",
@@ -32,6 +35,9 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "googleIosClientId": "934983528266-36vtt476b4d1l3qq4icsv7r7ki6a7b2d.apps.googleusercontent.com"
     },
     "ios": {
       "bundleIdentifier": "com.elcarot.mobile",
